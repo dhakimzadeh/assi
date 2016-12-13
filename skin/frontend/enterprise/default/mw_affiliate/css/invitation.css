@@ -1,0 +1,29 @@
+.aff_referral_link .legend {
+    float: left;
+    width: 20%;
+    border-bottom: none;
+}
+.aff_referral_link .div_share {
+    float: right;
+    width: 80%;
+}
+.aff_referral_link {
+    height: auto;
+    clear: both;
+    position: relative;
+    overflow: hidden;
+}
+.invitation_transaction .fieldset {
+    padding: 22px 25px 12px 33px;
+    margin: 28px 0;
+}
+.invitation_transaction .form-list .field {
+    float: left;
+    width: 275px;
+}
+.affiliate-invitation-index .form-list li label {
+    text-align: left;
+}
+.affiliate-invitation-index .form-list p {
+    padding: 0;
+}
