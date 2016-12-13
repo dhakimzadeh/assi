@@ -2169,7 +2169,7 @@ tr.summary-total .summary-collapse {
   float: right;
   text-align: right;
   padding-left: 20px;
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/bkg_collapse.gif) 0 5px no-repeat;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/bkg_collapse.gif) 0 5px no-repeat;
   cursor: pointer;
 }
 tr.show-details .summary-collapse {
@@ -2196,7 +2196,7 @@ tr.summary-details-excluded {
 .cart-tax-total {
   display: block;
   padding-right: 20px;
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/bkg_collapse.gif) 100% 5px no-repeat;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/bkg_collapse.gif) 100% 5px no-repeat;
   cursor: pointer;
 }
 .cart-tax-info .price,
@@ -2302,7 +2302,7 @@ tr.summary-details-excluded {
   height: 11px;
   font-size: 0;
   line-height: 0;
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/btn_previous.gif) 0 0 no-repeat;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/btn_previous.gif) 0 0 no-repeat;
   text-indent: -999em;
   overflow: hidden;
 }
@@ -2330,7 +2330,7 @@ tr.summary-details-excluded {
   line-height: 0;
   height: 1px;
   margin: 10px 0;
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/bkg_divider1.gif) 0 50% repeat-x;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/bkg_divider1.gif) 0 50% repeat-x;
   text-indent: -999em;
   overflow: hidden;
 }
@@ -2347,7 +2347,7 @@ tr.summary-details-excluded {
   width: 860px;
   margin: 0 auto;
   padding: 12px 0 12px 80px;
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/i_notice.gif) 20px 25px no-repeat;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/i_notice.gif) 20px 25px no-repeat;
   text-align: left;
 }
 .global-site-notice .notice-inner p {
@@ -2707,7 +2707,7 @@ tr.summary-details-excluded {
   height: 12px;
   font-size: 0;
   line-height: 0;
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/bkg_rating.png) 0 0 repeat-x;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/bkg_rating.png) 0 0 repeat-x;
   text-indent: -999em;
   overflow: hidden;
 }
@@ -2716,7 +2716,7 @@ tr.summary-details-excluded {
 .rating-box .rating {
   float: left;
   height: 12px;
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/bkg_rating.png) 0 100% repeat-x;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/bkg_rating.png) 0 100% repeat-x;
   position: relative;
   top: -2px;
 }
@@ -2964,7 +2964,7 @@ tr.summary-details-excluded {
 }
 .tier-prices li {
   line-height: 1.4;
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/i_tier.gif) no-repeat 0 3px;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/i_tier.gif) no-repeat 0 3px;
   padding: 2px 0 2px 10px;
 }
 .tier-prices .benefit {
@@ -3278,7 +3278,7 @@ tr.summary-details-excluded {
 .advanced-search-summary strong {
   color: #E17C24;
   padding-left: 15px;
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/i_search_criteria.gif) 0 3px no-repeat;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/i_search_criteria.gif) 0 3px no-repeat;
 }
 .advanced-search-summary p {
   clear: both;
@@ -3313,7 +3313,7 @@ tr.summary-details-excluded {
   color: #1e7ec8;
 }
 .rss-title h1 {
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/i_rss-big.png) 0 4px no-repeat;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/i_rss-big.png) 0 4px no-repeat;
   padding-left: 27px;
 }
 .rss-table .link-rss {
@@ -3406,7 +3406,7 @@ tr.summary-details-excluded {
   margin: 0 0 0 auto;
   width: 15px;
   height: 15px;
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/btn_window_close.gif) 100% 0 no-repeat;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/btn_window_close.gif) 100% 0 no-repeat;
   text-align: left;
   text-indent: -999em;
   overflow: hidden;
@@ -3461,7 +3461,7 @@ tr.summary-details-excluded {
 }
 .gift-message-link {
   font-size: 11px;
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/bkg_collapse-gm.gif) 100% 6px no-repeat;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/bkg_collapse-gm.gif) 100% 6px no-repeat;
   padding-right: 7px;
 }
 .gift-message-link.expanded {
@@ -3474,7 +3474,7 @@ tr.summary-details-excluded {
   float: right;
   width: 16px;
   height: 16px;
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/btn_gm-close.gif) 0 0 no-repeat;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/btn_gm-close.gif) 0 0 no-repeat;
   font-size: 0;
   line-height: 0;
   text-indent: -999em;
@@ -3661,14 +3661,14 @@ tr.summary-details-excluded {
   height: 71px;
   font-size: 1.5em;
   padding: 0 0 0 21px;
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/bkg_grand-total.gif) 0 0 no-repeat;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/bkg_grand-total.gif) 0 0 no-repeat;
   overflow: hidden;
 }
 .multiple-checkout .place-order .grand-total .inner {
   float: left;
   height: 57px;
   padding: 14px 21px 0 0;
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/bkg_grand-total.gif) 100% 0 no-repeat;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/bkg_grand-total.gif) 100% 0 no-repeat;
 }
 .multiple-checkout .place-order .grand-total .inner div {
   display: inline;
@@ -3699,7 +3699,7 @@ tr.summary-details-excluded {
 }
 .multiple-checkout .col2-set,
 .multiple-checkout .col3-set {
-  background: #fbfaf6 url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/bkg_checkout.gif) 0 0 repeat-x;
+  background: #fbfaf6 url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/bkg_checkout.gif) 0 0 repeat-x;
   border: 1px solid #bbb6a5;
   margin: 0 0 25px;
   padding: 20px;
@@ -3732,7 +3732,7 @@ tr.summary-details-excluded {
   right: -40px;
   width: 178px;
   height: 41px;
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/bkg_sp-methods.gif) 0 0 no-repeat;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/bkg_sp-methods.gif) 0 0 no-repeat;
   overflow: hidden;
 }
 .checkout-multishipping-billing .multiple-checkout {
@@ -3807,7 +3807,7 @@ tr.summary-details-excluded {
   }
 }
 .window-overlay {
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/window_overlay.png) repeat;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/window_overlay.png) repeat;
   background: rgba(0, 0, 0, 0.35);
   position: absolute;
   top: 0;
@@ -3844,7 +3844,7 @@ tr.summary-details-excluded {
   position: relative;
 }
 .remember-me-popup .remember-me-popup-head .remember-me-popup-close {
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/btn_window_close.gif) no-repeat;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/btn_window_close.gif) no-repeat;
   display: block;
   position: absolute;
   top: 7px;
@@ -3916,7 +3916,7 @@ tr.summary-details-excluded {
   text-overflow: ellipsis;
 }
 .map-popup-arrow {
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/map_popup_arrow.gif) no-repeat;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/map_popup_arrow.gif) no-repeat;
   position: absolute;
   left: 50%;
   top: -10px;
@@ -3924,7 +3924,7 @@ tr.summary-details-excluded {
   width: 19px;
 }
 .map-popup-close {
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/btn_window_close.gif) no-repeat;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/btn_window_close.gif) no-repeat;
   display: block;
   position: absolute;
   top: 8px;
@@ -4232,7 +4232,7 @@ tr.summary-details-excluded {
   top: 50%;
   margin-left: -40px;
   margin-top: -40px;
-  background: url("http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/css/path/owl.video.play.png") no-repeat;
+  background: url("http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/css/path/owl.video.play.png") no-repeat;
   cursor: pointer;
   z-index: 1;
   -webkit-backface-visibility: hidden;
@@ -4559,7 +4559,7 @@ tr.summary-details-excluded {
   content: "\f106";
 }
 .case-option-vertical .more-views .custom-slide-control.custom-slide-next {
-  bottom: 23px;
+  bottom: 19px;
   top: auto;
 }
 .case-option-vertical .more-views .custom-slide-control.custom-slide-next:after {
@@ -4809,7 +4809,7 @@ tr.summary-details-excluded {
 .fancybox-close,
 .fancybox-prev span,
 .fancybox-next span {
-  background-image: url('http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/fancybox_sprite.png');
+  background-image: url('http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/fancybox_sprite.png');
 }
 #fancybox-loading {
   position: fixed;
@@ -4825,7 +4825,7 @@ tr.summary-details-excluded {
 #fancybox-loading div {
   width: 44px;
   height: 44px;
-  background: url('http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/fancybox_loading.gif') center center no-repeat;
+  background: url('http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/fancybox_loading.gif') center center no-repeat;
 }
 .fancybox-close {
   position: absolute;
@@ -4843,7 +4843,7 @@ tr.summary-details-excluded {
   height: 100%;
   cursor: pointer;
   text-decoration: none;
-  background: transparent url('http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/blank.gif');
+  background: transparent url('http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/blank.gif');
   /* helps IE */
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   z-index: 8040;
@@ -4979,12 +4979,12 @@ tr.summary-details-excluded {
   .fancybox-close,
   .fancybox-prev span,
   .fancybox-next span {
-    background-image: url('http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/fancybox_sprite@2x.png');
+    background-image: url('http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/fancybox_sprite@2x.png');
     background-size: 44px 152px;
     /*The size of the normal image, half the size of the hi-res image*/
   }
   #fancybox-loading div {
-    background-image: url('http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/fancybox_loading@2x.gif');
+    background-image: url('http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/fancybox_loading@2x.gif');
     background-size: 24px 24px;
     /*The size of the normal image, half the size of the hi-res image*/
   }
@@ -5207,7 +5207,7 @@ h2.resp-tab-active span.resp-arrow {
   right: 0;
   top: 0;
   bottom: 0;
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/bg_x.png) center no-repeat transparent;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/bg_x.png) center no-repeat transparent;
   z-index: 10;
 }
 .configurable-swatch-list {
@@ -5425,6 +5425,10 @@ h2.resp-tab-active span.resp-arrow {
 .case-option-vertical .product-image-zoom {
   padding-bottom: 30px;
 }
+.case-option-vertical .btn-lightbox {
+  bottom: 2px;
+  right: 2px;
+}
 .product-img-box .product-image-zoom img {
   display: none;
 }
@@ -5470,8 +5474,8 @@ h2.resp-tab-active span.resp-arrow {
   width: 40px;
   height: 40px;
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 125px;
+  right: 16px;
   z-index: 1000;
   text-align: center;
 }
@@ -5845,6 +5849,11 @@ h2.resp-tab-active span.resp-arrow {
 .product-view-3 .case-option-vertical .more-views .custom-slide-control.custom-slide-next {
   bottom: 21px;
 }
+.product-view-2 .case-option-vertical .btn-lightbox,
+.product-view-3 .case-option-vertical .btn-lightbox {
+  right: 100px;
+  bottom: 2px;
+}
 .product-view-2 .like-social,
 .product-view-3 .like-social {
   text-align: left;
@@ -5939,7 +5948,7 @@ ul.list-desc-detail {
   padding-left: 15px;
 }
 ul.list-desc-detail li {
-  background: url('http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/icon-list-desc-product.jpg') no-repeat 0 4px;
+  background: url('http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/icon-list-desc-product.jpg') no-repeat 0 4px;
   list-style: none;
   margin-left: -15px;
   padding-left: 25px;
@@ -6206,15 +6215,15 @@ ul.tags-list li a:hover {
   text-indent: -9999px;
 }
 .about-us .skills-value .range-value .rating-skills.skill-1 {
-  background-image: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/skill-style-1.png);
+  background-image: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/skill-style-1.png);
   background-position: -28px 0;
 }
 .about-us .skills-value .range-value .rating-skills.skill-2 {
-  background-image: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/skill-style-2.png);
+  background-image: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/skill-style-2.png);
   background-position: 20px 0;
 }
 .about-us .skills-value .range-value .rating-skills.skill-3 {
-  background-image: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/skill-style-3.png);
+  background-image: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/skill-style-3.png);
   background-position: 20px 0;
 }
 .about-us .about-us-content .description-about {
@@ -7634,7 +7643,7 @@ ul.tags-list li a:hover {
   line-height: 43px;
   overflow: hidden;
   width: 41px;
-  background: #000000 url('http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/icon-control-camera.png') no-repeat center center;
+  background: #000000 url('http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/icon-control-camera.png') no-repeat center center;
   color: #fff !important;
   position: absolute;
   top: 50%;
@@ -8544,7 +8553,7 @@ div#divinstagramusers {
   display: inline-block;
   text-align: center;
   line-height: 31px;
-  background-image: url('http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/bg-nav-deal.png');
+  background-image: url('http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/bg-nav-deal.png');
   background-repeat: no-repeat;
   background-position: top center;
 }
@@ -8845,7 +8854,7 @@ div#divinstagramusers {
   }
 }
 .full-wrapper.full-block-deals-wrapper {
-  background: url('http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/bg_deals.jpg') no-repeat center top;
+  background: url('http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/bg_deals.jpg') no-repeat center top;
   height: 586px;
   text-align: center;
   padding: 43px 0;
@@ -9421,7 +9430,7 @@ div#divinstagramusers {
   max-width: 100%;
   padding: 0;
   position: relative;
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/477.gif) no-repeat scroll center center transparent;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/477.gif) no-repeat scroll center center transparent;
   min-height: 300px;
   display: block;
   z-index: 0;
@@ -9444,7 +9453,7 @@ div#divinstagramusers {
   border-color: #e44935;
 }
 .sj-listing-tabs .ltabs-items .ltabs-loadmore .ltabs-loadmore-btn .ltabs-image-loading {
-  background: url('http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/301.gif') no-repeat scroll center center transparent;
+  background: url('http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/301.gif') no-repeat scroll center center transparent;
   width: 22px;
   height: 22px;
   display: none;
@@ -10846,7 +10855,7 @@ div#divinstagramusers {
   width: 100%;
 }
 .sm-cartpro .cartpro-content:after {
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/ajax_loading.gif) no-repeat scroll center center transparent;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/ajax_loading.gif) no-repeat scroll center center transparent;
   z-index: 3;
 }
 .sm-cartpro .cartpro-content.loading:before,
@@ -11216,7 +11225,7 @@ div#divinstagramusers {
   z-index: 999;
 }
 #cpanel_wrapper #cpanel_btn {
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/bg-cpanel-head.png) left top #666666;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/bg-cpanel-head.png) left top #666666;
   width: 40px;
   border-right: none;
   position: absolute;
@@ -11235,7 +11244,7 @@ div#divinstagramusers {
   font-size: 20px;
 }
 #cpanel_wrapper .cpanel-head {
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/bg-cpanel-head.png) left top #666666;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/bg-cpanel-head.png) left top #666666;
   font-size: 14px;
   font-weight: bold;
   width: 100%;
@@ -11347,7 +11356,7 @@ div#divinstagramusers {
   height: 405px;
   text-align: center;
   padding: 84px 422px 24px 30px;
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/bg_newsletter_popup.jpg) no-repeat top right;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/bg_newsletter_popup.jpg) no-repeat top right;
 }
 .promotional-popup .pop-subscribe .w-newsletter .des-newsletter {
   margin-bottom: 10px;
@@ -11528,7 +11537,7 @@ body .block-popup-login .tt_popup_login strong:before {
   left: 20px;
   top: 9px;
   height: 25px;
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/icon-login-popup.png) no-repeat top left;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/icon-login-popup.png) no-repeat top left;
 }
 body .block-popup-login .block-content {
   padding-top: 20px;
@@ -11595,7 +11604,7 @@ body .block-popup-login .pass-input {
   position: relative;
 }
 body .block-popup-login .email-input:before {
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/icon-username.png) no-repeat top left #f7f7f7;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/icon-username.png) no-repeat top left #f7f7f7;
   content: "";
   display: inline-block;
   width: 42px;
@@ -11605,7 +11614,7 @@ body .block-popup-login .email-input:before {
   left: 0px;
 }
 body .block-popup-login .pass-input:before {
-  background: url(http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/icon-pass.png) no-repeat top left #f7f7f7;
+  background: url(http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/icon-pass.png) no-repeat top left #f7f7f7;
   content: "";
   display: inline-block;
   width: 42px;
@@ -12024,11 +12033,28 @@ body .block-popup-login .more-actions .ft-link-p a {
   }
 }
 .tag-list-index.cms-page-2 .main-container {
-  background: url('http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/bg-container-hd2.jpg') no-repeat top center;
+  background: url('http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/bg-container-hd2.jpg') no-repeat top center;
   padding-top: 355px;
 }
+.blog-index-list.bd-header-2 .main-container .main > .container .col-main,
+.blog-cat-view.bd-header-2 .main-container .main > .container .col-main {
+  top: -29px;
+}
+.blog-cat-view.bd-header-2 .main-container .breadcrumbs {
+  margin-top: -30px;
+}
+.blog-index-list.bd-header-2 .main-container .main > .container .col-main:before,
+.blog-cat-view.bd-header-2 .main-container .main > .container .col-main:before {
+  height: 66px;
+}
+.blog-post-view.bd-header-2 .main-container .main > .container .col-main {
+  top: 12px;
+}
+.blog-post-view.bd-header-2 .main-container .breadcrumbs {
+  margin-top: -30px;
+}
 .bd-header-2 .main-container {
-  background: url('http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/bg-container-hd2.jpg') no-repeat top center;
+  background: url('http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/bg-container-hd2.jpg') no-repeat top center;
   padding-top: 355px;
 }
 .bd-header-2 .main-container .main {
@@ -12049,9 +12075,14 @@ body .block-popup-login .more-actions .ft-link-p a {
   border-bottom: 0;
   padding: 10px 20px 0;
 }
+.bd-header-2 .main-container .main .col-main > .container > .row > div .page-title,
+.bd-header-2 .main-container .main > .container > .row > div .page-title {
+  border-bottom: 0;
+}
 .bd-header-2 .main-container .main .col-main > .container > .row > div .page-title h1,
 .bd-header-2 .main-container .main > .container > .row > div .page-title h1 {
   color: #fff;
+  border-bottom: 0;
 }
 .bd-header-2 .main-container .main .col-main > .container > .row > div:before,
 .bd-header-2 .main-container .main > .container > .row > div:before {
@@ -12762,293 +12793,382 @@ body .block-popup-login .more-actions .ft-link-p a {
   margin-left: 7px;
 }
 /* Mega menu */
-.cms-index-index .col-main {
-  padding-top: 20px;
-}
-.homestyle2 .listingtab-wrapper-default ul.ltabs-tabs li {
-  font-size: 133.33%;
-  margin: 0 11px;
-}
-.homestyle2 .listingtab-wrapper-default {
-  margin: 45px 0px 30px;
-}
-.homestyle2 .full-wrapper.full-block-deals-wrapper {
-  padding: 49px 0px;
-}
-.homestyle2 .deal_title_text {
-  font-size: 200%;
-}
-.homestyle2 .deal_title_text:before,
-.homestyle2 .deal_title_text:after {
-  display: none;
-}
-.homestyle2 .deal-pretext {
-  text-transform: none;
-  opacity: 1;
-}
-.homestyle2 .sm-deal {
-  margin-top: 36px;
-}
-.service-list-home2 {
-  padding: 0px !important;
-  margin: 0px 0px 8px;
-}
-.service-list-home2 .sv-item {
-  list-style: outside none none;
+.full-block-newlester-wrapper {
+  background: url('http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/bg_newsletter.jpg') no-repeat center center;
+  height: 467px;
+  padding: 58px 0px;
   text-align: center;
-  padding: 55px 15px 35px;
 }
-.service-list-home2 .sv-item .icon-sv-home2 i {
-  font-size: 60px;
-  font-style: normal;
-  transition: 0.3s ease-in-out 0s;
-  -moz-transition: 0.3s ease-in-out 0s;
-  -webkit-transition: 0.3s ease-in-out 0s;
-}
-.service-list-home2 .sv-item .info-sv-home2 h2 {
-  font-size: 133.33%;
-  text-transform: uppercase;
-  font-weight: bold;
-  margin: 33px 15px 10px;
-  color: #444;
-}
-.service-list-home2 .sv-item .info-sv-home2 h2:hover {
-  color: #e44935;
-}
-.service-list-home2 .sv-item:hover .icon-sv-home2 i {
-  color: #e44935;
-}
-.collections-wapper {
-  position: relative;
-}
-.collections-wapper .content {
-  padding: 60px 0px;
-  max-width: 550px;
+.full-block-newlester-wrapper .title-subscribe {
   color: #fff;
-}
-.collections-wapper .content .title {
-  position: relative;
-  margin: 71px 0 0;
-  margin-bottom: 23px;
-  display: inline-block;
-  width: 100%;
-  transition: 0.3s ease-in-out 0s;
-  -moz-transition: 0.3s ease-in-out 0s;
-  -webkit-transition: 0.3s ease-in-out 0s;
-}
-.collections-wapper .content .title .inner {
+  text-transform: uppercase;
+  font-size: 250%;
+  padding-top: 49px;
+  background: url('http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/icon-newsletter.png') no-repeat top center;
   position: relative;
   display: inline-block;
-  max-width: 100%;
-  transition: 0.3s ease-in-out 0s;
-  -moz-transition: 0.3s ease-in-out 0s;
-  -webkit-transition: 0.3s ease-in-out 0s;
 }
-.collections-wapper .content .title .inner img {
-  max-width: 100%;
-}
-.collections-wapper .content .title .inner:after {
+.full-block-newlester-wrapper .title-subscribe:before,
+.full-block-newlester-wrapper .title-subscribe:after {
   content: "";
   position: absolute;
-  bottom: -22px;
-  height: 3px;
-  width: 0;
-  background: #fff;
-  transition: 0.3s ease-in-out 0s;
-  -moz-transition: 0.3s ease-in-out 0s;
-  -webkit-transition: 0.3s ease-in-out 0s;
+  bottom: 14px;
+  left: -70px;
+  width: 60px;
+  height: 1px;
+  background-color: #4b4d4c;
 }
-.collections-wapper .content .desc {
-  opacity: 0.8;
-  font-style: italic;
-  font-weight: bold;
-  margin-bottom: 10px;
+.full-block-newlester-wrapper .title-subscribe:after {
+  left: auto;
+  right: -70px;
 }
-.collections-wapper .action a {
+.full-block-newlester-wrapper .desc {
   text-transform: uppercase;
-  color: #fff;
+  color: #909090;
+  margin-bottom: 27px;
   font-size: 116.67%;
-  font-weight: bold;
-  padding: 6px 24px;
-  margin-top: 10px;
-  display: inline-block;
+}
+.full-block-newlester-wrapper div.input-box {
   position: relative;
-}
-.collections-wapper .action a:before {
-  content: "";
-  position: absolute;
-  border: 1px solid #fff;
-  opacity: 0.3;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  display: inline-block;
-  transition: 0.3s ease-in-out 0s;
-  -moz-transition: 0.3s ease-in-out 0s;
-  -webkit-transition: 0.3s ease-in-out 0s;
-}
-.collections-wapper .action a:hover:before {
-  border: 5px solid #fff;
-  opacity: 1;
-}
-.collections-wapper .left-collections {
-  float: left;
-  width: 50%;
-  background: url('http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/men-collec.jpg') no-repeat top right;
-  text-align: right;
-  padding-right: 58px;
-  height: 395px;
-}
-.collections-wapper .left-collections .content {
-  float: right;
-}
-.collections-wapper .left-collections .content .title .inner:after {
-  right: 0;
-}
-.collections-wapper .left-collections:hover .content .title {
-  padding: 0 0 20px;
-  margin-bottom: 74px;
-  margin-top: 0;
-}
-.collections-wapper .left-collections:hover .content .title .inner:after {
-  width: 100%;
-}
-.collections-wapper .right-collections {
-  height: 395px;
-  float: left;
-  width: 50%;
-  background: url('http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/women-collec.jpg') no-repeat top left 1px;
-  text-align: left;
-  padding-left: 58px;
-}
-.collections-wapper .right-collections .content {
-  float: left;
-}
-.collections-wapper .right-collections .content .title .inner:after {
-  left: 0;
-}
-.collections-wapper .right-collections:hover .content .title {
-  padding: 0 0 20px;
-  margin-bottom: 74px;
-  margin-top: 0;
-}
-.collections-wapper .right-collections:hover .content .title .inner:after {
-  width: 100%;
-}
-.container-1920 {
-  max-width: 1920px;
+  max-width: 768px;
+  height: 45px;
   margin: auto;
 }
-.listingtab-wrapper-default {
-  display: inline-block;
-  width: 100%;
+.full-block-newlester-wrapper div.input-box > i {
+  position: absolute;
+  top: 15px;
+  font-size: 14px;
+  color: #fff;
+  font-style: normal;
+  left: 19px;
+  z-index: 1;
 }
-.listingtab-wrapper-default .sj-listing-tabs {
-  margin: 0 -15px;
-}
-.listingtab-wrapper-default .sj-listing-tabs ul.ltabs-tabs {
-  margin: 0 15px;
-}
-.listingtab-wrapper-default .owl-controls .owl-nav > div.owl-prev {
-  left: 15px;
-}
-.listingtab-wrapper-default .owl-controls .owl-nav > div.owl-next {
-  right: 15px;
-}
-.listingtab-wrapper-default .ltabs-wrap {
-  overflow: visible;
-}
-.listingtab-wrapper-default .ltabs-items-container .ltabs-items .owl-carousel .owl-stage-outer {
-  overflow: visible;
-}
-.listingtab-wrapper-default .ltabs-items-container .ltabs-items .owl-carousel .owl-stage-outer .owl-item .item-inner {
-  padding: 0 15px;
-}
-.listingtab-wrapper-default .ltabs-items-container .ltabs-items .owl-carousel .owl-stage-outer .owl-item .item-inner:after {
+.full-block-newlester-wrapper div.input-box:before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 15px;
-  right: 15px;
-  bottom: 0;
-  display: inline-block;
+  width: 100%;
+  border-radius: 45px;
   background: #fff;
-  opacity: 0.6;
-  z-index: 10;
+  height: 45px;
+  opacity: 0.2;
 }
-.listingtab-wrapper-default .ltabs-items-container .ltabs-items .owl-carousel .owl-stage-outer .owl-item.active .item-inner:after {
-  display: none;
+.full-block-newlester-wrapper div.input-box input.input-text,
+.full-block-newlester-wrapper div.input-box select,
+.full-block-newlester-wrapper div.input-box textarea {
+  background: transparent;
+  border: 0;
+  position: relative;
+  font-style: italic;
+  font-size: 91.67%;
+  line-height: 45px !important;
+  height: 45px;
+  padding: 0px 45px;
+  color: #fff !important;
 }
-.brand-wrapper {
-  background-color: #f5f5f5;
-}
-.brand-wrapper .brand-block {
+.full-block-newlester-wrapper div.input-box .button {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 65px;
+  height: 45px;
+  overflow: hidden;
+  background: transparent none repeat scroll 0% 0%;
+  font-size: 21px;
+  text-align: center;
   display: inline-block;
-  padding-bottom: 42px;
+  line-height: 45px;
 }
-.brand-wrapper .brand-list {
-  margin: 44px -10px;
+.full-block-newlester-wrapper div.input-box .button:hover {
+  color: #e44935;
 }
-.brand-wrapper .brand-list .item {
-  float: left;
-  margin: 5px 10px;
+.testimonial-wrapper {
+  position: relative;
+  margin-top: -150px;
+  z-index: 1;
 }
-.brand-wrapper .brand-list .item img {
-  border: 1px solid #ededed;
+.testimonial-wrapper:before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  height: 100%;
+  border: 1px solid #efefef;
+  right: -6px;
+  bottom: -6px;
+  background-color: #fff;
+  z-index: 0;
+  top: 6px;
+}
+.testimonial-wrapper:after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  height: 100%;
+  border: 1px solid #efefef;
+  right: -3px;
+  bottom: -3px;
+  background-color: #fff;
+  z-index: 1;
+  top: 3px;
+}
+.testimonial-wrapper .prev-custom,
+.testimonial-wrapper .next-custom {
+  position: absolute;
+  width: 157px;
+  height: 157px;
+  top: 27px;
+  z-index: 2;
+  opacity: 0.5;
+}
+.testimonial-wrapper .next-custom {
+  right: 155px;
+}
+.testimonial-wrapper .prev-custom {
+  left: 155px;
+}
+.testimonial-wrapper .testimonial-wrapper-border {
+  position: relative;
+  background: #ffffff none repeat scroll 0% 0%;
+  border: 1px solid #efefef;
+  z-index: 3;
+  text-align: center;
+}
+.testimonial-wrapper .testimonial-wrapper-border .testimonial-wrapper-slide {
+  max-width: 800px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  padding: 65px 0 33px;
+}
+.testimonial-wrapper .testimonial-wrapper-border .title {
+  display: inline-block;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 250%;
+  margin-top: 64px;
+  color: #444;
+}
+.testimonial-wrapper .testimonial-wrapper-border .title:before,
+.testimonial-wrapper .testimonial-wrapper-border .title:after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 1px;
+  background: #e44935;
+  bottom: 15px;
+  left: -76px;
+}
+.testimonial-wrapper .testimonial-wrapper-border .title:after {
+  left: auto;
+  right: -76px;
+}
+.testimonial-wrapper .owl-carousel .owl-controls .owl-nav:before,
+.testimonial-wrapper .owl-carousel .owl-controls .owl-nav:after {
+  content: "";
+  position: absolute;
+  top: -65px;
+  left: -350px;
+  width: 200px;
+  height: 200px;
+  background: #fff;
+  z-index: 1;
+}
+.testimonial-wrapper .owl-carousel .owl-controls .owl-nav:after {
+  left: auto;
+  right: -350px;
+}
+.testimonial-wrapper .owl-carousel .owl-controls .owl-nav > div {
+  position: absolute;
+  top: 39px;
+  left: -199px;
+  width: 20px;
+  height: 35px;
+  border-radius: 0;
+  background-color: #d4d4d4;
+  background-image: url('http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/testimonial-icon-prev.png');
+  background-position: center center;
+  z-index: 9;
+}
+.testimonial-wrapper .owl-carousel .owl-controls .owl-nav > div:before {
+  content: "";
+}
+.testimonial-wrapper .owl-carousel .owl-controls .owl-nav > div.owl-next {
+  left: auto;
+  right: -199px;
+  background-image: url('http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/testimonial-icon-next.png');
+}
+.testimonial-wrapper .owl-carousel .owl-controls .owl-nav > div:hover {
+  background-color: #e44935;
+}
+.testimonial-wrapper .clientsay-wrapper {
+  margin: auto;
+  max-width: 150px;
+}
+.testimonial-wrapper .clientsay-wrapper .owl-carousel .owl-stage-outer {
+  overflow: visible;
+}
+.testimonial-wrapper .clientsay-wrapper .owl-carousel .owl-stage-outer .owl-item {
+  /*&.active:nth-child(2) {*/
+}
+.testimonial-wrapper .clientsay-wrapper .owl-carousel .owl-stage-outer .owl-item .item {
+  text-align: center;
+}
+.testimonial-wrapper .clientsay-wrapper .owl-carousel .owl-stage-outer .owl-item .item img {
+  margin: auto;
+  width: 113px;
+  height: 113px;
+  border-radius: 100%;
+  border: 5px solid #eaeaea;
   transition: 0.3s ease-in-out 0s;
   -moz-transition: 0.3s ease-in-out 0s;
   -webkit-transition: 0.3s ease-in-out 0s;
+  -o-filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+  -moz-filter: grayscale(1);
+  -ms-filter: grayscale(1);
+  filter: grayscale(1);
 }
-.brand-wrapper .brand-list .item img:hover {
-  border-color: #e44935;
-  opacity: 0.8;
+.testimonial-wrapper .clientsay-wrapper .owl-carousel .owl-stage-outer .owl-item .item .info-content {
+  display: none;
 }
-.awblog-wrapper {
-  padding: 53px 0px 10px;
-}
-.awblog-wrapper .title-home {
-  text-align: center;
-}
-.awblog-wrapper .title-home h2 {
-  font-size: 200%;
-  font-weight: bold;
-  color: #444;
-  text-transform: uppercase;
-  margin-bottom: 3px;
-}
-.awblog-wrapper .title-home .desc {
-  font-style: italic;
-  margin-bottom: 24px;
-}
-.latest-post .image-blog {
+.testimonial-wrapper .clientsay-wrapper .owl-carousel .owl-stage-outer .owl-item.active .item {
   position: relative;
 }
-.latest-post .image-blog:hover img {
-  opacity: 0.8;
+.testimonial-wrapper .clientsay-wrapper .owl-carousel .owl-stage-outer .owl-item.active .item :before {
+  content: "\f10d";
+  width: 32px;
+  height: 32px;
+  border: 1px solid #d3d3d3;
+  position: absolute;
+  top: -10px;
+  background-color: #fff;
+  left: 5px;
+  z-index: 9;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 32px;
+  display: inline-block;
+  font-family: fontawesome;
+  color: #d3d3d3;
 }
-.latest-post .info-blog {
-  padding-top: 15px;
+.testimonial-wrapper .clientsay-wrapper .owl-carousel .owl-stage-outer .owl-item.active .item img {
+  transform: scale(1.35);
+  -moz-transform: scale(1.35);
+  -webkit-transform: scale(1.35);
+  -ms-transform: scale(1.35);
+  margin-top: -17px;
+  -o-filter: grayscale(0);
+  -webkit-filter: grayscale(0);
+  -moz-filter: grayscale(0);
+  -ms-filter: grayscale(0);
+  filter: grayscale(0);
 }
-.latest-post .info-blog .postTitle {
-  font-size: 116.67%;
+.testimonial-wrapper .clientsay-wrapper .owl-carousel .owl-stage-outer .owl-item.active .item .info-content {
+  display: block;
+  margin: 41px -300px;
+}
+.testimonial-wrapper .clientsay-wrapper .owl-carousel .owl-stage-outer .owl-item.active .item .info-content .name {
+  text-transform: uppercase;
+  color: #444;
   font-weight: bold;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  margin-bottom: 7px;
 }
-.latest-post .info-blog .postTitle a {
-  white-space: nowrap;
-  color: #333;
-}
-.latest-post .info-blog .postTitle a:hover {
-  color: #e44935;
-}
-.latest-post .info-blog .date-post {
-  padding: 0;
-  font-size: 91.67%;
-  color: #909090;
-  margin-bottom: 10px;
+.testimonial-wrapper .clientsay-wrapper .owl-carousel .owl-stage-outer .owl-item.active .item .info-content .desc {
+  margin-top: 17px;
   font-style: italic;
+}
+.cms-index-index .col-main {
+  padding-top: 10px;
+}
+.homestyle1 .static-cate .sub-cate {
+  margin-bottom: 33px;
+}
+.homestyle1 .slider-basic-wrapper,
+.homestyle1 .slider-latest-blog {
+  padding-top: 5px;
+}
+.homestyle1 .static-wrapper-2 {
+  padding-top: 12px;
+}
+.homestyle1 .title-home {
+  border-bottom: 1px solid #c9c9c9;
+  margin-bottom: 20px;
+}
+.homestyle1 .title-home h2 {
+  border-bottom: 3px solid #e44935;
+  display: inline-block;
+  position: relative;
+  bottom: -1px;
+  font-size: 114.285%;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #444;
+  padding-bottom: 5px;
+}
+.homestyle1 .pix_slideshow {
+  margin-bottom: 30px;
+}
+.homestyle1 .static-wrapper .static-item {
+  margin-bottom: 30px;
+}
+.homestyle1 .static-wrapper .static-item a {
+  display: block;
+}
+.homestyle1 .static-wrapper .static-item a.first-image {
+  margin-bottom: 30px;
+}
+.homestyle1 .static-wrapper.static-wrapper-1 {
+  background: url('http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/bg-static-wrapp-1.jpg') no-repeat center top;
+  height: 790px;
+  padding: 80px 0;
+}
+.homestyle1 .static-wrapper.static-wrapper-1 .static-info {
+  margin-bottom: 48px;
+}
+.homestyle1 .static-wrapper.static-wrapper-1 .static-info .info-inner {
+  border-left: 4px solid #e44935;
+  padding-left: 20px;
+}
+.homestyle1 .static-wrapper.static-wrapper-1 .static-info .info-inner .title {
+  text-transform: uppercase;
+  color: #444;
+  line-height: 100%;
+  margin-bottom: 7px;
+  font-weight: bold;
+}
+.homestyle1 .static-wrapper.static-wrapper-1 .static-info .info-inner .desc {
+  color: inherit;
+  font-style: italic;
+}
+.homestyle1 .static-wrapper.static-wrapper-1 .static-item a:first-child {
+  margin-bottom: 18px;
+}
+.homestyle1 .static-wrapper.static-wrapper-1 .static-item:last-child > a {
+  margin-left: -12px;
+  margin-right: -12px;
+}
+.homestyle1 .static-wrapper.static-wrapper-2 .sub-cate .sub-cate-info {
+  bottom: 30px;
+}
+.homestyle1 .static-wrapper.static-wrapper-2 .sub-cate .sub-cate-info h2 {
+  font-size: 171.428%;
+  font-weight: bold;
+}
+.homestyle1 .static-wrapper.static-wrapper-2 .sub-cate:hover .sub-cate-info {
+  bottom: 35px;
+}
+.homestyle1 .basic-products-slider .owl-controls .owl-nav,
+.homestyle1 .slider-blog .owl-controls .owl-nav,
+.homestyle1 .brand-product .owl-controls .owl-nav {
+  position: absolute;
+  top: -44px;
+  right: -1px;
+}
+.homestyle1 .brand-wrapper {
+  padding-top: 10px;
+  margin-bottom: 40px;
+}
+.homestyle1 .sm-deal {
+  margin: 35px 0px 28px;
 }
 .footer-fixed {
   border-top: 1px solid #202020;
@@ -13103,7 +13223,7 @@ ul.box-footer-fixed li a:hover i {
   position: absolute;
   width: 44px;
   height: 44px;
-  background: url('http://dev.ytcvn.com/ytc_templates/magento/sm-ballishop/skin/frontend/sm-ballishop/default/images/btn-close-ff.png') no-repeat center center;
+  background: url('http://dev.advancedsheltersystemsinc.com/skin/frontend/sm-ballishop/default/images/btn-close-ff.png') no-repeat center center;
   top: 0;
   right: 0;
   opacity: 0.3;
@@ -14102,120 +14222,109 @@ ul.box-footer-fixed li a:hover i {
     min-height: 180px;
   }
 }
-@media (min-width: 1200px) {
-  .static-wrapper-1 .static-item {
-    margin-left: -20px;
-  }
-  .static-wrapper-1 .static-item a:first-child {
-    margin-bottom: 10px;
-  }
-}
-@media (min-width: 992px) and (max-width: 1199px) {
-  .pix_slideshow {
-    padding-top: 130px;
-  }
-  .service-list-home2 .sv-item .info-sv-home2 h2 {
-    font-size: 100%;
-  }
-  .collections-wapper .content {
-    max-width: 445px;
-  }
-  .brand-wrapper .brand-list .item {
-    margin: 5px 6px;
-  }
-  .header-style-2 .mega-v2-parent > .sm-megamenu-child {
-    left: 195px !important;
-    right: auto !important;
-  }
-  .header-style-2 .about-list-parent > div {
-    right: 150px !important;
-    left: auto !Important;
-  }
-}
 @media (max-width: 991px) {
-  .pix_slideshow {
-    margin-top: -10px;
+  .homestyle1 .static-wrapper.static-wrapper-1 {
+    background: #fff;
+    padding-bottom: 40px;
+    height: auto;
   }
-  .collections-wapper .left-collections {
-    padding-right: 30px;
+  .homestyle1 .static-wrapper.static-wrapper-1 .static-item:last-child > a {
+    margin-right: 0;
   }
-  .collections-wapper .right-collections {
-    padding-left: 30px;
+  .testimonial-wrapper .clientsay-wrapper .owl-carousel .owl-stage-outer .owl-item.active .item .info-content {
+    margin: 41px -250px;
   }
-  .collections-wapper .content {
-    max-width: 338px;
+  .testimonial-wrapper .prev-custom {
+    left: 16%;
   }
-  .brand-wrapper .brand-list .item {
-    margin: 5px;
-  }
-  .collections-wapper .left-collections .content .title {
-    width: 82%;
-  }
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .homestyle2 .info-sv-home2 {
-    font-size: 91.67%;
-  }
-  .homestyle2 .static-item {
-    margin-left: -15px;
-    margin-right: -15px;
-  }
-  .homestyle2 .static-item > a {
-    float: left;
-    padding: 0 15px;
-    width: 50%;
-    margin-bottom: 30px;
-  }
-  .homestyle2 .static-item > a img {
-    width: 100%;
+  .testimonial-wrapper .next-custom {
+    right: 16%;
   }
 }
 @media (max-width: 767px) {
-  .homestyle2 .full-wrapper {
-    margin-left: -15px;
-    margin-right: -15px;
-  }
-  .homestyle2 .service-list-home2 {
-    padding-top: 60px !important;
-  }
-  .homestyle2 .service-list-home2 .sv-item {
-    width: 50%;
+  .homestyle1 .static-wrapper .static-item {
     float: left;
-    padding-top: 0;
+    width: 50%;
   }
-  .homestyle2 .collections-wapper .content {
-    max-width: 270px;
+  .testimonial-wrapper .clientsay-wrapper .owl-carousel .owl-stage-outer .owl-item.active .item .info-content {
+    margin: 41px -200px;
+  }
+  .testimonial-wrapper .prev-custom {
+    left: 5%;
+  }
+  .testimonial-wrapper .next-custom {
+    right: 5%;
   }
 }
-@media (max-width: 567px) {
-  .homestyle2 .collections-wapper .left-collections {
-    width: 100%;
+@media (max-width: 639px) {
+  .testimonial-wrapper .owl-carousel .owl-controls .owl-nav > div.owl-prev {
+    left: -180px;
   }
-  .homestyle2 .collections-wapper .right-collections {
-    width: 100%;
-    background-position: right top;
+}
+@media (max-width: 480px) {
+  .testimonial-wrapper .clientsay-wrapper .owl-carousel .owl-stage-outer .owl-item.active .item .info-content {
+    margin: 41px -145px;
   }
-  .homestyle2 .collections-wapper .content {
-    max-width: 90%;
+  .testimonial-wrapper .owl-carousel .owl-controls .owl-nav > div.owl-prev {
+    left: -151px;
   }
-  .homestyle2 .brand-wrapper .brand-list .item img {
-    max-height: 33px;
+  .testimonial-wrapper .owl-carousel .owl-controls .owl-nav > div.owl-next {
+    right: -151px;
+  }
+  .testimonial-wrapper .clientsay-wrapper .owl-carousel .owl-stage-outer .owl-item {
+    max-width: 145px !important;
+  }
+  .testimonial-wrapper .prev-custom {
+    left: 0;
+    width: 127px;
+  }
+  .testimonial-wrapper .next-custom {
+    right: 0;
+    width: 127px;
   }
 }
 @media (max-width: 479px) {
-  .homestyle2 .service-list-home2 .sv-item {
+  .homestyle1 .static-wrapper .static-item {
     width: 100%;
-    min-height: 0;
-    padding: 15px 0;
   }
-  .homestyle2 .sj-listing-tabs .ltabs-tabs-container .ltabs-tabs-wrap.ltabs-selectbox {
-    margin-left: 16px;
+  .homestyle1 .static-wrapper.static-wrapper-1 .static-item:last-child > a {
+    margin: -10px 0;
   }
-  .homestyle2 .sj-listing-tabs .ltabs-tabs-container .ltabs-tabs-wrap.ltabs-selectbox ul {
-    margin: 0;
+  .testimonial-wrapper .testimonial-wrapper-border .title:before {
+    width: 30px;
+    left: -42px;
   }
-  .homestyle2 .service-list-home2 {
-    padding-top: 30px;
+  .testimonial-wrapper .testimonial-wrapper-border .title:after {
+    width: 30px;
+    right: -42px;
+  }
+  .testimonial-wrapper .testimonial-wrapper-border .testimonial-wrapper-slide {
+    max-width: 320px;
+    padding-left: 0;
+  }
+  .testimonial-wrapper .owl-carousel.owl-loaded {
+    padding-left: 15px;
+  }
+  .testimonial-wrapper .owl-carousel .owl-controls .owl-nav::before {
+    left: -244px;
+  }
+  .testimonial-wrapper .owl-carousel .owl-controls .owl-nav::after {
+    right: -244px;
+  }
+  .testimonial-wrapper .owl-carousel .owl-controls .owl-nav > div.owl-prev {
+    left: -67px;
+  }
+  .testimonial-wrapper .owl-carousel .owl-controls .owl-nav > div.owl-next {
+    right: -67px;
+  }
+  .testimonial-wrapper .clientsay-wrapper .owl-carousel .owl-stage-outer .owl-item.active .item .info-content {
+    margin: 41px -60px 20px;
+  }
+  .testimonial-wrapper .prev-custom {
+    width: 60px;
+  }
+  .testimonial-wrapper .next-custom {
+    width: 60px;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
