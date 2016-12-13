@@ -1,0 +1,180 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category   design_default
+ * @package    Mage
+ * @copyright  Copyright (c) 2008 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php 
+/**
+ * Top menu for store
+ *
+ * @see Mage_Catalog_Block_Navigation
+ */
+?>
+
+<?php 
+$config = Mage::helper('ballishop/config');
+$config_type = $config->getGeneral('responsive_menu');
+$_menu = $this->getHtml('level-top');
+
+if($config_type == '2'){ ?>
+	<div class="mobile-menu-wrapper">
+		<div class="btn-mobile-wrapper">
+			<a class="btn-menu-mobile btn-collapse" title="<?php echo $this->__('Categories')?>"><span><?php echo $this->__('Categories')?></span></a>
+		</div>
+		<div class="dropdown_collapse">
+			<ul class="nav-mobile">
+				<?php echo $_menu ?>
+			</ul>
+		</div>
+		
+		<script>
+			jQuery(document).ready(function($) {
+				$('.btn-collapse').click(function(){
+					$('.dropdown_collapse').slideToggle(200);
+					$(this).toggleClass('active');
+				});
+				
+				$('.dropdown_collapse .nav-mobile > li').has('ul').append( '<span class="touch-button"><span>open</span></span>' );
+
+				$('.touch-button').click(function(){
+					$(this).prev().slideToggle(200);
+					$(this).toggleClass('active');
+					$(this).parent().toggleClass('parent-active');
+				});
+
+			});
+		</script>
+		
+	</div>
+<?php } elseif($config_type == '3'){ ?>
+	<div class="mobile-menu-wrapper">
+		<div class="btn-mobile-wrapper">
+			<a class="btn-menu-mobile btn-sidebar" title="<?php echo $this->__('Categories')?>"><span><?php echo $this->__('Categories')?></span></a>
+		</div>
+		<div class="dropdown_sidebar">
+			<ul class="nav-mobile">
+				<?php echo $_menu ?>
+			</ul>
+		</div>
+		
+		<script>
+			jQuery(document).ready(function($) {
+				$('.dropdown_sidebar .nav-mobile > li').has('ul').append( '<span class="touch-button"><span>open</span></span>' );
+
+				$('.btn-sidebar').click(function(){
+					$('.dropdown_sidebar').toggleClass('active');
+					$(this).toggleClass('active active_btn');
+					$('body').toggleClass('active_sidebar');
+				});
+				
+				$('.touch-button').click(function(){
+					$(this).prev().slideToggle(200);
+					$(this).toggleClass('active');
+					$(this).parent().toggleClass('parent-active');
+				});
+				
+			});
+		</script>
+		
+	</div>
+<?php }else{
+	$options = array();
+	$category_collection = Mage::getModel('catalog/category')->getCollection();
+	$category_collection->addAttributeToSelect('*');
+	foreach ($this->getStoreCategories() as $_category){
+		$catIds[] = $_category->getId();
+	}
+	$regexp  = "[0-9/]+(".implode("|", $catIds)."){1}[0-9/]?";
+	if (Mage::helper('catalog/category_flat')->isEnabled()) { 			
+		$category_collection->addPathsFilter();
+	}else{
+		$category_collection->addPathFilter($regexp);
+	}
+	foreach($category_collection as $category){
+		$c = new stdClass();
+		$c->label = $category->getName();
+		$c->value = $category->getId();
+		$c->level = $category->getLevel();
+		$c->parentid = $category->getParentId();
+		$c->url_path = $category->getUrlPath();
+		$c->is_active = false;
+		if ($this->getCurrentCategory()) {
+			if($c->value == array_pop($this->getCurrentCategory()->getPathIds())){
+				$c->is_active = true;
+			}
+		}			
+		$cats[$c->value] = $c;
+	}
+
+	foreach($cats as $id => $c){
+		if (isset($cats[$c->parentid])){
+			if (!isset($cats[$c->parentid]->child)){
+				$cats[$c->parentid]->child = array();
+			}
+			$cats[$c->parentid]->child[] =& $cats[$id];
+		}
+	}
+	foreach($cats as $id => $c){
+		if (!isset($cats[$c->parentid])){
+			$stack = array($cats[$id]);
+			while( count($stack)>0 ){
+				$opt = array_pop($stack);
+				$option = array(
+					'label' => ($opt->level>2 ? str_repeat('- - ', $opt->level-2) : '') . $opt->label,
+					'value' => $opt->value,
+					'url_path' 	=> $opt->url_path,
+					'is_active' => $opt->is_active,
+				);
+				array_push($options, $option);
+				if (isset($opt->child) && count($opt->child)){
+					foreach(array_reverse($opt->child) as $child){
+						array_push($stack, $child);
+					}
+				}
+			}
+		}
+	}
+	unset($cats);
+?>
+
+	<div class="mobile-menu-wrapper">
+		<div class="btn-mobile-wrapper">
+			<a class="btn-menu-mobile btn-collapse" title="<?php echo $this->__('Categories')?>"><span><?php echo $this->__('Categories')?></span></a>
+			<select id="resmenu_selectbox" onchange="MobileRedirectUrl(this);">
+				<?php foreach ($options as $item): 
+				if($item['url_path'] != '/root-catalog' && $item['value'] != '1'){
+				?>
+					<option <?php echo ($item['is_active'])?"selected='selected'":"" ?> value="<?php echo ($item['url_path'])?$this->getBaseUrl().$item['url_path']: $item['value'] ?>"><?php echo $item['label'] ?></option>
+				<?php 
+				} endforeach ?>
+			</select>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+		function MobileRedirectUrl(){
+			window.location.href = document.getElementById("resmenu_selectbox").value;
+		}
+	</script>
+<?php } ?>

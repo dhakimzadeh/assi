@@ -1,0 +1,228 @@
+<?php
+/*------------------------------------------------------------------------
+ # SM QuickView - Version 2.1.0
+ # Copyright (c) 2015 YouTech Company. All Rights Reserved.
+ # @license - Copyrighted Commercial Software
+ # Author: YouTech Company
+ # Websites: http://www.magentech.com
+-------------------------------------------------------------------------*/
+$_helper = $this->helper('catalog/output'); 
+$_product = $this->getProduct(); ?>
+<script type="text/javascript">
+    var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
+</script>
+
+<div class="quickview-main">
+<div class="product-view">
+    <div class="product-essential">
+        <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+            <?php echo $this->getBlockHtml('formkey') ?>
+            <div class="no-display">
+                <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
+                <input type="hidden" name="related_product" id="related-products-field" value="" />
+            </div>
+
+			<div class="row">
+				<div class="product-img-box col-lg-6 col-md-6 col-sm-6">
+					<?php echo $this->getChildHtml('media') ?>
+				</div>
+
+				<div class="product-shop col-lg-6 col-md-6 col-sm-6">
+					<div class="product-name">
+						<h2><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
+					</div>
+					
+					<?php echo $this->getChildHtml('other');?>
+					
+					<?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
+
+					<div class="price-info">
+						<?php echo $this->getChildHtml('bundle_prices') ?>
+						<?php echo $this->getTierPriceHtml() ?>
+					</div>
+					
+					<?php echo $this->getChildHtml('alert_urls') ?>
+					
+					<?php echo $this->getChildHtml('product_type_data') ?>
+					<?php echo $this->getChildHtml('extrahint') ?>
+
+					<?php if ($_product->getShortDescription()):?>
+						<div class="short-description">
+							<div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
+						</div>
+					<?php endif;?>
+
+					
+
+					<?php if ($_product->isSaleable() && $this->hasOptions()):?>
+						<?php echo $this->getChildChildHtml('container1', '', true, true) ?>
+					<?php endif;?>
+					
+					<?php if ($_product->isSaleable() && $this->hasOptions()):?>
+						<?php echo $this->getChildChildHtml('container2', '', true, true) ?>
+					<?php endif;?>
+					
+					<div class="add-to-cart-wrapper">
+						
+
+						<?php if (!$this->hasOptions()):?>
+							<div class="add-to-box">
+								<?php if($_product->isSaleable()): ?>
+									<?php echo $this->getChildHtml('addtocart') ?>
+									<?php if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
+									<?php endif; ?>
+								<?php endif; ?>
+								<?php echo $this->getChildHtml('addto') ?>
+								
+								<div class="share-button">
+									<div class="addthis_toolbox addthis_default_style ">
+										<a style="display:inline-block;" class="addthis_button_compact"><?php echo $this->__('Share')?></a>
+										<script type="text/javascript">var addthis_config = {"data_track_addressbar": false};</script>  
+										<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-529be2200cc72db5"></script>
+									</div>
+								</div>
+							</div>
+							<?php echo $this->getChildHtml('extra_buttons') ?>
+						<?php elseif (!$_product->isSaleable()): ?>
+							<div class="add-to-box">
+								<?php echo $this->getChildHtml('addto') ?>
+								<?php echo $this->getChildHtml('sharing') ?>
+							</div>
+						<?php endif; ?>
+					</div>
+
+				</div>
+			
+			</div>
+
+            
+        </form>
+        <script type="text/javascript">
+        //<![CDATA[
+            productAddToCartForm = new VarienForm('product_addtocart_form');
+            productAddToCartForm.submit = function(button, url) {
+                if (this.validator.validate()) {
+                    var form = this.form;
+                    var oldUrl = form.action;
+                    if (url) {
+                       form.action = url;
+                    }
+					url = form.action;
+                    var e = null;
+                    try {
+						if (typeof enable_ajax_cart !== 'undefined' && enable_ajax_cart && typeof ajaxCartPro !== 'undefined') {
+							if(window.top !== window.self)
+								window.top.ajaxCartPro.ajaxCartSubmit(form, 'form');
+							else
+								ajaxCartPro.ajaxCartSubmit(form, 'form');
+							return false;
+						}else{
+							if (window.top !== window.self){
+								 var $j = (typeof $j !== 'undefined') ? $j : jQuery.noConflict();
+								 if (typeof $j.fancybox === 'function' && typeof parent !== 'undefined' ){
+									parent.$j.fancybox.close();
+								 }
+								 window.top.location.href = '<?php echo Mage::getUrl('checkout/cart/'); ?>';
+							}
+							this.form.submit();
+						}
+                    } catch (e) {
+                    }
+                    this.form.action = oldUrl;
+                    if (e) {
+                        throw e;
+                    }
+
+                    if (button && button != 'undefined') {
+                        button.disabled = true;
+                    }
+                }
+            }.bind(productAddToCartForm);
+
+            productAddToCartForm.submitLight = function(button, url){
+                if(this.validator) {
+                    var nv = Validation.methods;
+                    delete Validation.methods['required-entry'];
+                    delete Validation.methods['validate-one-required'];
+                    delete Validation.methods['validate-one-required-by-name'];
+                    // Remove custom datetime validators
+                    for (var methodName in Validation.methods) {
+                        if (methodName.match(/^validate-datetime-.*/i)) {
+                            delete Validation.methods[methodName];
+                        }
+                    }
+                    if (this.validator.validate()) {
+						if (typeof enable_ajax_wishlist !== 'undefined' &&  enable_ajax_wishlist && typeof ajaxCartPro !== 'undefined'){
+							var form = this.form;
+							if (url) form.setAttribute('data-action', url);
+							try {
+								if (typeof ajaxCartPro !== 'undefined') {
+									if (url.search('wishlist/index/updateItemOptions') != -1 || url.search('wishlist/index/add') != -1){
+										if(window.top != window.self) {
+											window.top.ajaxCartPro.ajaxCartSubmit(this, 'wishlist_update');
+										}else{
+											ajaxCartPro.ajaxCartSubmit(this, 'wishlist_update');
+										}	
+									}else{
+										if(window.top != window.self)
+											window.top.ajaxCartPro.ajaxCartSubmit(this, 'form');
+										else
+											ajaxCartPro.ajaxCartSubmit(this, 'form');
+									}
+									return false;
+								}
+							} catch (e) {
+								
+							}	
+							this.form.submit();
+						}else{
+							if (url) {
+								this.form.action = url;
+							}
+							if(window.top !== window.self) {
+								var $j = (typeof $j !== 'undefined') ? $j : jQuery.noConflict();
+								if (typeof $j.fancybox === 'function' && typeof parent !== 'undefined' ){
+									parent.$j.fancybox.close();
+								}
+								window.top.location.href = url;
+							}	
+							this.form.submit();
+						}
+                    }
+                    Object.extend(Validation.methods, nv);
+                }
+            }.bind(productAddToCartForm);
+			
+			/* For Compare */
+			if(typeof enable_ajax_compare !== 'undefined' &&  enable_ajax_compare){
+			}else {
+				var _compare_btn = 	$$('.link-compare');
+				if (typeof _compare_btn !== 'undefined' && _compare_btn !== null){
+					_compare_btn.each(function (e){
+						var _w_href = $(e).readAttribute('href');
+						$(e).observe('click', function(event) {
+							event.preventDefault();
+							if(window.top !== window.self) {
+								var $j = (typeof $j !== 'undefined') ? $j : jQuery.noConflict();
+								if (parent.$j('.fancybox-overlay') &&  parent.$j('.fancybox-overlay').length){
+									parent.$j('.fancybox-overlay').hide();
+								}
+								var _base_url = window.top.location.href;
+								window.self.location.href = _w_href;
+								var t= window.top.setTimeout(function(){
+									if (typeof $j.fancybox === 'function' && typeof parent !== 'undefined' ){
+										parent.$j.fancybox.close();
+									}
+									window.top.location.reload();
+								 },500);
+							}
+						});
+					});
+				}
+			}
+        //]]>
+        </script>
+    </div>
+
+</div>
+</div>

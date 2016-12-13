@@ -1,0 +1,134 @@
+/* ============================================ *
+ * Configurable Swatches
+ * ============================================ */
+/* Clears */
+.clearfix:after,
+.configurable-swatch-list:after,
+.product-view .product-options .swatch-attr:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* General Swatch Styling */
+.swatch-link,
+.swatch-label {
+  text-transform: uppercase;
+}
+
+.swatch-link {
+  border: 1px solid @border-color;
+  display: inline-block;
+  margin-top: 3px;
+}
+
+.swatch-link:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.swatch-link .x {
+  display: none;
+  text-indent: -999em;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: url(../../images/bg_x.png) center no-repeat transparent;
+  z-index: 10;
+}
+
+.swatch-link.has-image .swatch-label {
+
+}
+
+.swatch-link.has-image img {
+}
+
+.configurable-swatch-list {
+  clear: both;
+}
+
+.configurable-swatch-list .not-available .x {
+  display: block;
+}
+
+.configurable-swatch-list .not-available .swatch-link {
+  border-color: #ededed;
+  position: relative;
+}
+
+.configurable-swatch-list .not-available .swatch-link.has-image img {
+  opacity: 0.4;
+}
+
+.configurable-swatch-list .not-available .swatch-label {
+  color: #aaa;
+  background: #fff;
+}
+
+.configurable-swatch-list .wide-swatch .swatch-label {
+  padding: 0 6px;
+}
+
+.configurable-swatch-list .not-available a:focus {
+  outline: 0;
+}
+
+#narrow-by-list dd .swatch-link {
+  border: none;
+  display: block;
+}
+
+#narrow-by-list dd .swatch-link.has-image {
+  line-height: inherit;
+  margin-top: 0;
+}
+
+.currently .swatch-current {
+  position: relative;
+}
+
+.currently .swatch-current .btn-remove {
+  margin-top: -10px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+.currently .swatch-current span {
+  display: block;
+  float: left;
+}
+
+.currently .swatch-link {
+  display: inline-block;
+  margin: 0 0 0 3px;
+}
+
+.configurable-swatch-box {
+  background: none !important;
+}
+
+.configurable-swatch-box select.swatch-select {
+  display: none;
+}
+
+.configurable-swatch-box .validation-advice {
+  margin: 0 0 5px;
+  background: #df280a;
+  padding: 2px 5px !important;
+  font-weight: bold;
+  color: #fff !important;
+  float: left;
+  display: block;
+  border-radius: 3px;
+}
+
+.configurable-swatch-list .has-image {
+  &:before {
+    display: none!important;
+  }
+
+}

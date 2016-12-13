@@ -1,0 +1,1322 @@
+<?xml version="1.0"?>
+<config>
+	<tabs>
+		<sm translate="label" module="ballishop">
+            <label>MagenTech.com</label>
+            <sort_order>206</sort_order>
+        </sm>
+	</tabs>
+	<sections>
+		<ballishop_cfg  translate="label" module="ballishop">
+		<label>SM Ballishop Setting</label>
+		<tab>sm</tab>
+		<frontend_type>text</frontend_type>
+		<sort_order>250</sort_order>
+		<show_in_default>1</show_in_default>
+		<show_in_website>1</show_in_website>
+		<show_in_store>1</show_in_store>            
+			<groups>
+				<general translate="label"> 				
+				<label>General</label>
+				<frontend_type>text</frontend_type>
+				<frontend_type>text</frontend_type>
+				<sort_order>4</sort_order>
+				<show_in_default>1</show_in_default>
+				<show_in_website>1</show_in_website>
+				<show_in_store>1</show_in_store>
+					<fields>
+						<theme_color translate="label">
+							<label>Theme Color</label>
+							<frontend_type>select</frontend_type>
+							<source_model>ballishop/system_config_source_listColor</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Support 5 Color Styles.You can define other styles by changing parameters</comment>
+						</theme_color>
+						
+						<body_font_heading translate="label">
+							<label>Body Font</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</body_font_heading>	
+						
+						<body_font_family translate="label">
+							<label>Main Font</label>
+							<frontend_type>select</frontend_type>
+							<source_model>ballishop/system_config_source_listBodyFont</source_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</body_font_family>	
+						
+						<google_font_body translate="label">
+							<label>Main Google Font</label>
+							<frontend_type>select</frontend_type>
+							<source_model>ballishop/system_config_source_listGoogleFont</source_model>
+							<sort_order>7</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends>
+                                <body_font_family>maingooglefont</body_font_family>
+                            </depends>
+						</google_font_body>	
+						
+						<googlefont_code translate="label">
+							<label>Google Font Code</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>8</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends separator=",">
+								<google_font_body>other</google_font_body>
+								<body_font_family>maingooglefont</body_font_family>
+							</depends>
+							
+							<comment>
+								Example: PT+Sans+Narrow
+                            </comment>
+						</googlefont_code>
+						
+						<googlefont_family translate="label">
+							<label>Google Font Family</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>9</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends separator=",">
+								<google_font_body>other</google_font_body>
+								<body_font_family>maingooglefont</body_font_family>
+							</depends>
+							<comment>
+								<![CDATA[
+									Example: 'PT Sans Narrow', sans-serif
+                                ]]>
+                            </comment>
+						</googlefont_family>
+
+						<body_font_size translate="label">
+							<label>Font Size</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>11</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</body_font_size>
+
+						
+						<element_google_font_heading translate="label">
+							<label>Element Google Font</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>12</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</element_google_font_heading>	
+						
+						<google_font translate="label">
+							<label>Google Font Target</label>
+							<frontend_type>select</frontend_type>
+							<source_model>ballishop/system_config_source_listGoogleFont</source_model>
+							<sort_order>15</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</google_font>
+						
+						<element_googlefont_code translate="label">
+							<label>Google Font Code</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>16</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends separator=",">
+								<google_font>other</google_font>
+							</depends>
+							
+							<comment>
+								Example: PT+Sans+Narrow
+                            </comment>
+						</element_googlefont_code>
+						
+						<element_googlefont_family translate="label">
+							<label>Google Font Family</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>17</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends separator=",">
+								<google_font>other</google_font>
+							</depends>
+							<comment>
+								<![CDATA[
+									Example: 'PT Sans Narrow', sans-serif
+                                ]]>
+                            </comment>
+						</element_googlefont_family>
+						
+						
+						<google_font_targets translate="label">
+							<label>Google Font Elements</label>
+							<frontend_type>textarea</frontend_type>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Tags will be applied with Google font with separate "," ( Ex: "h1, .classname" )</comment>
+						</google_font_targets>
+						<body_link_color translate="label">
+							<label>Link Color</label>
+							<frontend_type>text</frontend_type>
+							<validate>color</validate> 
+							<sort_order>25</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Please Click the text box to select color</comment>
+						</body_link_color>	
+						<body_link_hover_color translate="label">
+							<label>Hover Link Color</label>
+							<frontend_type>text</frontend_type>
+							<validate>color</validate> 
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Please Click the text box to select color</comment>
+						</body_link_hover_color>						
+						<body_text_color translate="label">
+							<label>Text Color</label>
+							<frontend_type>text</frontend_type>
+							<validate>color</validate> 
+							<sort_order>35</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Please Click the text box to select color</comment>
+						</body_text_color>	
+						<body_background_color translate="label">
+							<label>Background Color</label>
+							<frontend_type>text</frontend_type>
+							<validate>color</validate> 
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Please Click the text box to select color</comment>
+						</body_background_color>
+						<use_background_image translate="label">
+							<label>Use Background Image</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>45</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</use_background_image>						
+						<body_background_image translate="label">
+							<label>Background Image Pattern</label>
+							<frontend_type>radios</frontend_type>
+							<source_model>ballishop/system_config_source_listBgImage</source_model>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>							
+							<comment>Active when using Background Image </comment>
+							<depends><use_background_image>1</use_background_image></depends>
+						</body_background_image>
+						<use_customize_image translate="label">
+							<label>Use Customize Background Image</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>55</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><use_background_image>1</use_background_image></depends>
+						</use_customize_image>
+						<background_customize_image translate="label">
+							<label>Customize Background Image</label>
+							<frontend_type>image</frontend_type>
+							<backend_model>adminhtml/system_config_backend_image</backend_model>
+							<upload_dir config="system/filesystem/media" scope_info="1">pattern</upload_dir>
+							<base_url type="media" scope_info="1">pattern</base_url>
+							<sort_order>60</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><use_customize_image>1</use_customize_image></depends>
+							<depends><use_background_image>1</use_background_image></depends>
+						</background_customize_image>
+						<background_repeat translate="label">
+							<label>Background Repeat</label>
+							<frontend_type>select</frontend_type>
+							<source_model>ballishop/system_config_source_listBgRepeat</source_model>
+							<sort_order>65</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><use_background_image>1</use_background_image></depends>
+						</background_repeat>
+						<background_position translate="label">
+							<label>Background Position</label>
+							<frontend_type>select</frontend_type>
+							<source_model>ballishop/system_config_source_listBgPosition</source_model>
+							<sort_order>70</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><use_background_image>1</use_background_image></depends>
+						</background_position>
+						<menu_style_heading translate="label">
+							<label>Menu</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>75</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</menu_style_heading>	
+						<menu_styles translate="label">
+							<label>Menu Style</label>
+							<frontend_type>select</frontend_type>
+							<source_model>ballishop/system_config_source_listMenuStyles</source_model>
+							<sort_order>80</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</menu_styles>	
+						<menu_ontop translate="label">
+							<label>Menu on Top</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>85</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</menu_ontop>
+						<responsive_menu translate="label">
+							<label>Mobile Menu Type</label>
+							<frontend_type>select</frontend_type>
+							<source_model>ballishop/system_config_source_listResMenuStyles</source_model>
+							<sort_order>90</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</responsive_menu>															
+					</fields>					   
+				</general>
+				
+				<theme_layout translate="label">
+	            	<label>Theme Layout</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>5</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>								
+						<layout_styles translate="label">
+							<label>Layout Style</label>
+							<frontend_type>select</frontend_type>
+							<source_model>ballishop/system_config_source_listLayoutStyles</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</layout_styles>
+						
+						<header_style translate="label">
+							<label>Header Style</label>
+							<frontend_type>select</frontend_type>
+							<source_model>ballishop/system_config_source_listHeader</source_model>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Support 2 Header Styles.You can define other styles by changing parameters</comment>
+						</header_style>
+						
+						<footer_style translate="label">
+							<label>Footer Style</label>
+							<frontend_type>select</frontend_type>
+							<source_model>ballishop/system_config_source_listFooter</source_model>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Support 2 Footer Styles.You can define other styles by changing parameters</comment>
+						</footer_style>
+						
+						<cmspage_style translate="label">
+							<label>Home Page Style</label>
+							<frontend_type>select</frontend_type>
+							<source_model>ballishop/system_config_source_ListCmspage</source_model>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</cmspage_style>
+						
+						<device_responsive translate="label">
+							<label>Responsive Layout</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</device_responsive>
+						
+						<!-- <direction translate="label">
+							<label>Direction</label>
+							<frontend_type>select</frontend_type>
+							<source_model>ballishop/system_config_source_listDirection</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</direction> -->
+					</fields>
+	            </theme_layout>		
+
+				<!--LISTING PRODUCT-->
+				<product_listing translate="label">
+                    <label>Product Listing</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>7</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+
+                        <one_column_heading translate="label">
+                            <label>Layout 1 Column</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </one_column_heading>
+
+                        <onecolumn_device_1200 translate="label">
+                            <label>Device's screen is greater than or equal to 1200px</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>ballishop/system_config_source_columnlisting</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </onecolumn_device_1200>
+
+                        <onecolumn_device_992 translate="label">
+                            <label>Device's screen is greater than 992px or equal to 1199px</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>ballishop/system_config_source_columnlisting</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </onecolumn_device_992>
+
+                        <onecolumn_device_768 translate="label">
+                            <label>Device's screen is greater than 768px or equal to 991px</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>ballishop/system_config_source_columnlisting</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </onecolumn_device_768>
+
+                        <onecolumn_device_481 translate="label">
+                            <label>Device's screen is greater than 481px or equal to 767px</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>ballishop/system_config_source_columnlisting</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </onecolumn_device_481>
+
+                        <onecolumn_device_less_481 translate="label">
+                            <label>Device's screen is less than 480px</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>ballishop/system_config_source_columnlisting</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </onecolumn_device_less_481>
+
+                        <!--2 COLUMNS-->
+
+                        <two_column_heading translate="label">
+                            <label>Layout 2 Columns</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </two_column_heading>
+
+                        <twocolumn_device_1200 translate="label">
+                            <label>Device's screen is greater than or equal to 1200px</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>ballishop/system_config_source_columnlisting</source_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </twocolumn_device_1200>
+
+                        <twocolumn_device_992 translate="label">
+                            <label>Device's screen is greater than 992px or equal to 1199px</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>ballishop/system_config_source_columnlisting</source_model>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </twocolumn_device_992>
+
+                        <twocolumn_device_768 translate="label">
+                            <label>Device's screen is greater than 768px or equal to 991px</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>ballishop/system_config_source_columnlisting</source_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </twocolumn_device_768>
+
+                        <twocolumn_device_481 translate="label">
+                            <label>Device's screen is greater than 481px or equal to 767px</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>ballishop/system_config_source_columnlisting</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </twocolumn_device_481>
+
+                        <twocolumn_device_less_481 translate="label">
+                            <label>Device's screen is less than 480px</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>ballishop/system_config_source_columnlisting</source_model>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </twocolumn_device_less_481>
+
+                        <!--3 COLUMNS-->
+
+                        <three_column_heading translate="label">
+                            <label>Layout 3 Columns</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </three_column_heading>
+
+                        <threecolumn_device_1200 translate="label">
+                            <label>Device's screen is greater than or equal to 1200px</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>ballishop/system_config_source_columnlisting</source_model>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </threecolumn_device_1200>
+
+                        <threecolumn_device_992 translate="label">
+                            <label>Device's screen is greater than 992px or equal to 1199px</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>ballishop/system_config_source_columnlisting</source_model>
+                            <sort_order>140</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </threecolumn_device_992>
+
+                        <threecolumn_device_768 translate="label">
+                            <label>Device's screen is greater than 768px or equal to 991px</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>ballishop/system_config_source_columnlisting</source_model>
+                            <sort_order>150</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </threecolumn_device_768>
+
+                        <threecolumn_device_481 translate="label">
+                            <label>Device's screen is greater than 481px or equal to 767px</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>ballishop/system_config_source_columnlisting</source_model>
+                            <sort_order>160</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </threecolumn_device_481>
+
+                        <threecolumn_device_less_481 translate="label">
+                            <label>Device's screen is less than 480px</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>ballishop/system_config_source_columnlisting</source_model>
+                            <sort_order>170</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </threecolumn_device_less_481>
+						
+						<effect_product_heading translate="label">
+                            <label>Product Shows Effect On Hover</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>180</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </effect_product_heading>
+
+                        <effect_style translate="label">
+                            <label>Effect Style</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>ballishop/system_config_source_effectimage</source_model>
+                            <sort_order>190</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </effect_style>
+						
+						<slide_limit translate="label">
+							<label>Slide Limitation</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>192</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><effect_style>slider</effect_style></depends>
+							<comment>3, 4, 5, 0: Display all images of product</comment>
+						</slide_limit>
+						
+						<show_nav translate="label">
+							<label>Display Navigation</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>195</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><effect_style>slider</effect_style></depends>
+							<comment>Display "next" and "previous" buttons.</comment>
+						</show_nav>
+						
+						<show_dot translate="label">
+							<label>Display Pagination</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>200</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><effect_style>slider</effect_style></depends>
+							<comment>Show pagination.</comment>
+						</show_dot>
+                    </fields>
+                </product_listing>
+				<!--END LISTING PRODUCT-->
+				
+				<product_setting translate="label">
+	            	<label>Product Detail</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+					
+						<detail_style translate="label">
+							<label>Detail Styles</label>
+							<frontend_type>select</frontend_type>
+							<source_model>ballishop/system_config_source_ListDetail</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						
+						</detail_style>
+						
+						<thumbs_style translate="label">
+							<label>Thumb Styles</label>
+							<frontend_type>select</frontend_type>
+							<source_model>ballishop/system_config_source_ListThumbs</source_model>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							
+						</thumbs_style>
+						
+						<zoom_heading translate="label">
+							<label>Image Zoom</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</zoom_heading>
+						
+                    	<use_zoom_image translate="label">
+							<label>Enable Product Image Zoom</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</use_zoom_image>
+						<zoom_mode translate="label">
+							<label>Zoom Mode</label>
+							<frontend_type>select</frontend_type>
+							<source_model>ballishop/system_config_source_listZoomImage</source_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><use_zoom_image>1</use_zoom_image></depends>
+						</zoom_mode>
+						
+						<lightbox_heading translate="label">
+							<label>Light Box</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>6</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</lightbox_heading>
+						
+						<lightbox_types translate="label">
+							<label>Light Box Style</label>
+							<frontend_type>select</frontend_type>
+							<source_model>ballishop/system_config_source_lightboxStyles</source_model>
+							<sort_order>7</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><use_zoom_image>1</use_zoom_image></depends>
+						</lightbox_types>
+						
+						<open_close_effect translate="label">
+							<label>Open/close Effect</label>
+							<frontend_type>select</frontend_type>
+							<source_model>ballishop/system_config_source_lightboxEffect</source_model>
+							<sort_order>8</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><use_zoom_image>1</use_zoom_image></depends>
+						</open_close_effect>
+						
+						<next_prev_effect translate="label">
+							<label>Next/previours Effect</label>
+							<frontend_type>select</frontend_type>
+							<source_model>ballishop/system_config_source_lightboxEffect</source_model>
+							<sort_order>9</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><use_zoom_image>1</use_zoom_image></depends>
+						</next_prev_effect>
+						
+						<up_releated_heading translate="label">
+							<label>Related - Upsell Product</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</up_releated_heading>
+						
+						<show_related translate="label">
+							<label>Enable Related Product</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>11</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_related>	
+						<related_number translate="label">
+		            		<label>Related Product Limitation</label>
+		            		<frontend_type>text</frontend_type>
+		            		<sort_order>15</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><show_related>1</show_related></depends>
+						</related_number>						
+						<show_upsell translate="label">
+							<label>Enable Up-Sell Product</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_upsell>
+						<upsell_number translate="label">
+		            		<label>Up-Sell Product Limitation</label>
+		            		<frontend_type>text</frontend_type>
+		            		<sort_order>25</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><show_upsell>1</show_upsell></depends>
+						</upsell_number>
+						
+						<customtab_heading translate="label">
+							<label>Custom Tab</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>27</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</customtab_heading>
+						
+						<show_customtab translate="label">
+							<label>Show Custom Tab</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_customtab>												
+	            		<customtab_name translate="label">
+		            		<label>Custom Tab Name</label>
+		            		<frontend_type>text</frontend_type>
+		            		<sort_order>35</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><show_customtab>1</show_customtab></depends>
+						</customtab_name>
+						<customtab_content translate="label">
+		            		<label>Custom Tab Content</label>
+		            		<frontend_type>editor</frontend_type>
+							<frontend_model>ballishop/adminhtml_system_config_editor</frontend_model>
+		            		<sort_order>45</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><show_customtab>1</show_customtab></depends>
+						</customtab_content>
+					</fields>
+	            </product_setting>
+				
+				<rich_snippets_setting translate="label">
+	            	<label>Rich Snippets</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>15</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>   
+						<use_rich_snippet translate="label">
+							<label>Use Rich Snippets</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</use_rich_snippet> 
+						<set_breadcrumbs translate="label">
+							<label>Set Breadcrumbs</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><use_rich_snippet>1</use_rich_snippet></depends>
+						</set_breadcrumbs>						
+						<google_plus_href translate="label">
+		            		<label>Google Plus Href</label>
+		            		<frontend_type>text</frontend_type>
+		            		<sort_order>3</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><use_rich_snippet>1</use_rich_snippet></depends>
+						</google_plus_href>												
+					</fields>
+	            </rich_snippets_setting>				
+
+				<social_setting translate="label">
+	            	<label>Socials</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+						<facebook_heading translate="label">
+							<label>Facebook</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>39</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</facebook_heading>
+                    	<show_facebook translate="label">
+							<label>Show Facebook</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_facebook>
+						<facebook_name translate="label">
+		            		<label>Facebook Name</label>
+		            		<frontend_type>text</frontend_type>
+		            		<sort_order>41</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><show_facebook>1</show_facebook></depends>
+						</facebook_name>
+						<facebook_url translate="label">
+		            		<label>Facebook Url</label>
+		            		<frontend_type>text</frontend_type>
+		            		<sort_order>42</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><show_facebook>1</show_facebook></depends>
+						</facebook_url>
+						<twitter_heading translate="label">
+							<label>Twitter</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>43</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</twitter_heading>
+						<show_twitter translate="label">
+							<label>Show Twitter</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>44</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_twitter>
+						<twitter_name translate="label">
+		            		<label>Twitter Name</label>
+		            		<frontend_type>text</frontend_type>
+		            		<sort_order>45</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><show_twitter>1</show_twitter></depends>
+						</twitter_name>
+						<twitter_url translate="label">
+		            		<label>Twitter Url</label>
+		            		<frontend_type>text</frontend_type>
+		            		<sort_order>46</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><show_twitter>1</show_twitter></depends>
+						</twitter_url>
+						<google_heading translate="label">
+							<label>Google+</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>47</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</google_heading>
+						<show_google translate="label">
+							<label>Show Google+</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>48</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_google>
+						<google_name translate="label">
+		            		<label>Google+ Name</label>
+		            		<frontend_type>text</frontend_type>
+		            		<sort_order>49</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><show_google>1</show_google></depends>
+						</google_name>
+						<google_url translate="label">
+		            		<label>Google+ Url</label>
+		            		<frontend_type>text</frontend_type>
+		            		<sort_order>50</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><show_google>1</show_google></depends>
+						</google_url>
+						<linkedin_heading translate="label">
+							<label>Linkedin</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>51</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</linkedin_heading>
+						<show_linkedin translate="label">
+							<label>Show Linkedin</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>52</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_linkedin>
+						<linkedin_name translate="label">
+		            		<label>Linkedin Name</label>
+		            		<frontend_type>text</frontend_type>
+		            		<sort_order>53</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><show_linkedin>1</show_linkedin></depends>
+						</linkedin_name>
+						<linkedin_url translate="label">
+		            		<label>Linkedin Url</label>
+		            		<frontend_type>text</frontend_type>
+		            		<sort_order>54</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><show_linkedin>1</show_linkedin></depends>
+						</linkedin_url>	
+					
+						<pinterest_heading translate="label">
+							<label>Pinterest</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>59</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</pinterest_heading>
+						<show_pinterest translate="label">
+							<label>Show Pinterest</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>60</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_pinterest>
+						<pinterest_name translate="label">
+		            		<label>Pinterest Name</label>
+		            		<frontend_type>text</frontend_type>
+		            		<sort_order>61</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><show_pinterest>1</show_pinterest></depends>
+						</pinterest_name>
+						<pinterest_url translate="label">
+		            		<label>Pinterest Url</label>
+		            		<frontend_type>text</frontend_type>
+		            		<sort_order>62</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><show_pinterest>1</show_pinterest></depends>
+						</pinterest_url>						
+					</fields>
+	            </social_setting>					
+
+				<advanced translate="label">
+	            	<label>Advanced</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>25</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>						
+                    	<show_cpanel translate="label">
+							<label>Show Cpanel</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Show/Hide cPanel on the frontend</comment>
+						</show_cpanel>
+						<show_ontop translate="label">
+							<label>Show Go to Top</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>							
+						</show_ontop>
+						<show_fixedfooter translate="label">
+							<label>Show Fixed Footer</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>							
+						</show_fixedfooter>
+						<show_addtocart translate="label">
+							<label>Show Add to Cart</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>15</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_addtocart>						
+						<show_wishlist translate="label">
+							<label>Show Add to Wishlist</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_wishlist>
+						<show_compare translate="label">
+							<label>Show Add to Compare</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>25</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_compare>
+						
+						<show_newsletter translate="label">
+							<label>Show Newsletter Popup</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>27</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_newsletter>
+						
+						<show_livechat translate="label">
+							<label>Show Livechat</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>28</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_livechat>
+						
+	            		<custom_copyright translate="label">
+							<label>Enable Custom Copyright</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>29</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</custom_copyright>						
+	            		<copyright translate="label">
+		            		<label>Copyright</label>
+		            		<frontend_type>textarea</frontend_type>
+		            		<sort_order>30</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><custom_copyright>1</custom_copyright></depends>
+						</copyright>
+	            		<custom_css translate="label">
+		            		<label>Custom Css</label>
+		            		<frontend_type>textarea</frontend_type>
+		            		<sort_order>35</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</custom_css>
+						<custom_js translate="label">
+		            		<label>Custom Javascript</label>
+		            		<frontend_type>textarea</frontend_type>
+		            		<sort_order>40</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</custom_js>
+						<compress_css_js translate="label">
+                            <label>Compress Css, Js</label>
+                            <comment><![CDATA[ Use when merge css and merge js = Yes ]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>45</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </compress_css_js>						
+						<enable_yuicompressor translate="label">
+                            <label>Enable YUICompress</label>
+                            <comment>this allows better minifications results. (requires Java)</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<depends><compress_css_js>1</compress_css_js></depends>
+                        </enable_yuicompressor>						
+						<less_compile translate="label">
+							<label>Less Compile</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+		            		<sort_order>55</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</less_compile>
+					</fields>
+	            </advanced>
+
+				<theme_install translate="label">
+					<label>Theme Installation</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>30</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<heading_import_blocks translate="label">
+							<label>Import Static Blocks</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</heading_import_blocks>
+						
+						<import_blocks translate="label">
+							<label>Static Blocks</label>
+							<comment>
+								<![CDATA[Click this button to create all static blocks provided with this theme.]]>
+							</comment>
+							<frontend_type>button</frontend_type>
+							<frontend_model>ballishop/adminhtml_button_import_cms</frontend_model>
+							<process>blocks</process>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</import_blocks>
+						<overwrite_blocks translate="label">
+							<label>Overwrite Existing Blocks</label>
+							<comment>If set to "Yes", imported blocks will overwrite existing blocks with the same identifiers (if any blocks with the same identifiers already exist). To change value of this field, save the configuration (without saving, the option will remain unchanged after you refresh the page).</comment>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</overwrite_blocks>
+						
+						<heading_import_pages translate="label">
+							<label>Import Pages</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>15</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</heading_import_pages>
+						
+						<import_pages translate="label">
+							<label>Pages</label>
+							<comment>
+								<![CDATA[Click this button to create CMS pages provided with this theme.]]>
+							</comment>
+							<frontend_type>button</frontend_type>
+							<frontend_model>ballishop/adminhtml_button_import_cms</frontend_model>
+							<process>pages</process>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</import_pages>
+						<overwrite_pages translate="label">
+							<label>Overwrite Existing Pages</label>
+							<comment>If set to "Yes", imported pages will overwrite existing pages with the same identifiers (if any pages with the same identifiers already exist). To change value of this field, save the configuration (without saving, the option will remain unchanged after you refresh the page).</comment>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>25</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</overwrite_pages>
+						
+						<heading_import_menu translate="label">
+							<label>Import Menu Sample Data</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>27</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</heading_import_menu>
+						
+						<import_menu translate="label">
+							<label>Megamenu Item</label>
+							<comment>
+								<![CDATA[Click button to create demo data for Megamenu. Created data of megamenu will be removed.]]>
+							</comment>
+							<frontend_type>button</frontend_type>
+							<frontend_model>ballishop/adminhtml_button_import_cms</frontend_model>
+							<process>menu</process>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</import_menu>
+					</fields>
+				</theme_install>
+			   
+			    <product_information translate="label">
+					<label>Product Information</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>35</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<comment>
+					<![CDATA[
+						<p>Author   : <a target="_blank" title="Magen Tech" href="http://www.magentech.com">Magen Tech</a></p>
+						<p>Version  : 1.0.0</p>
+						<p>Userguide: <a target="_blank" title="Userguide" href="http://www.magentech.com/documentation/sm-ballishop/">Userguide</a></p>
+						<p>Support  : <a target="_blank" href="http://www.magentech.com/forum">http://www.magentech.com/forum</a></p>
+					]]>
+					</comment>							
+				</product_information>
+			</groups>
+		</ballishop_cfg>
+	</sections>
+</config>

@@ -1,0 +1,252 @@
+<?php
+/*------------------------------------------------------------------------
+ # SM Basic Products - Version 1.0.0
+ # Copyright (c) 2014 YouTech Company. All Rights Reserved.
+ # @license - Copyrighted Commercial Software
+ # Author: YouTech Company
+ # Websites: http://www.magentech.com
+-------------------------------------------------------------------------*/
+$list = $this->_getProducts();
+$count_item = count($list);
+$helper = Mage::helper('basicproducts/data');
+
+$config = Mage::helper('ballishop/config');
+$effect_style = $config->getProductListing('effect_style');
+$display_nav = $config->getProductListing('show_nav');
+$display_dot = $config->getProductListing('show_dot');
+
+$screen1 = $this->_getConfig('nb_column1');
+$screen2 = $this->_getConfig('nb_column2');
+$screen3 = $this->_getConfig('nb_column3');
+$screen4 = $this->_getConfig('nb_column4');
+$screen5 = $this->_getConfig('nb_column5');
+
+if (!empty($list)) { ?>
+
+    <?php if ($this->_getConfig('pretext') != null) { ?>
+        <div class="bs-pretext">
+            <?php echo $this->_getConfig('pretext'); ?>
+        </div>
+    <?php } ?>
+
+    <?php if ($this->_getConfig('basicproducts_title_text')) { ?>
+        <div class="title-home">
+            <h2><?php echo $this->_getConfig('basicproducts_title_text', 'Basic Products Title'); ?></h2>
+        </div>
+    <?php } ?>
+
+    <div class="basic-products-slider">
+        <div class="bs-items products-grid">
+            <?php  
+			$j = 0;
+			$count = 0;
+			$nb_rows = 2;
+            foreach ($list as $_product) { 
+				$count ++;
+				$j++;
+			?>
+				<?php if ($count % $nb_rows == 1 || $nb_rows == 1) { ?>
+                <div class="item">
+				<?php } ?>
+                    <div class="item-product">
+						
+						<div class="item-inner">
+							<?php if ($_product->_image) { ?>
+							<div class="box-image">
+	
+								<?php if($effect_style == 'default'){?>
+								<div class="effect-default">
+									<a class="product-image" href="<?php echo $_product->link ?>" title="<?php echo $_product->title; ?>" <?php echo $helper->parseTarget($this->_getConfig('product_links_target')); ?> >
+										<img src="<?php echo $_product->_image; ?>"  alt="<?php echo $_product->title; ?>" >
+									</a>
+								</div>
+								<?php } else if($effect_style == 'thumbs'){?>
+								<div class="effect-thumbs">
+									<a class="product-image" href="<?php echo $_product->link ?>" title="<?php echo $_product->title; ?>" <?php echo $helper->parseTarget($this->_getConfig('product_links_target')); ?> >
+										<img src="<?php echo $_product->_image; ?>" alt="<?php echo $_product->title; ?>" />
+										<?php if($_product->getThumbnail() != $_product->getSmallImage()) { ?> 
+											<img class="second-image" src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail')->resize(270, 360); ?>" alt="<?php echo $_product->title; ?>" />
+										<?php } ?>
+									</a>
+								</div>
+								<?php } ?>
+								
+								<?php if ($this->_getConfig('product_source') != 'media') { ?>
+								<div class="actions">
+									<?php if ((int)$this->_getConfig('product_addcart_display', 1)) : ?>
+										<?php if ($_product->isSaleable()): ?>
+											<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="btn-action btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')">
+												<span>
+													<span><?php echo $this->__('Add to Cart') ?></span>
+												</span>
+											</button>
+										<?php else: ?>
+											<p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+										<?php endif; ?>
+									<?php endif; ?>
+									
+									<?php if ((int)$this->_getConfig('product_addwishlist_display', 1) || (int)$this->_getConfig('product_addcompare_display', 1)) :?>
+										<ul class="add-to-links">
+											<?php if ($this->helper('wishlist')->isAllow() && (int)$this->_getConfig('product_addwishlist_display', 1)) : ?>
+												<li>
+													<a title="<?php echo $this->__('Wishlist') ?>" href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="btn-action link-wishlist">
+														<span><?php echo $this->__('Wishlist') ?></span>
+													</a>
+												</li>
+											<?php endif; ?>
+											
+											<?php if ($_compareUrl = $this->getAddToCompareUrl($_product) && (int)$this->_getConfig('product_addcompare_display', 1)): ?>
+												<li>
+													<a title="<?php echo $this->__('Compare') ?>" href="<?php echo $this->getAddToCompareUrl($_product) ?>" class="btn-action link-compare">
+														<span><?php echo $this->__('Compare') ?></span>
+													</a>
+												</li>
+											<?php endif; ?>
+										</ul>
+									<?php endif; ?>
+								</div>
+								<?php } ?>
+								
+								<!--LABEL PRODUCT-->
+								<?php
+                                $id_product = Mage::getModel('catalog/product')->load($_product->getId());
+                                $specialprice = $id_product->getSpecialPrice();
+                                $specialPriceFromDate = $id_product->getSpecialFromDate();
+                                $specialPriceToDate = $id_product->getSpecialToDate();
+                                $today = time();
+
+                                if ($specialprice) {
+                                    if ($today >= strtotime($specialPriceFromDate) && $today <= strtotime($specialPriceToDate) || $today >= strtotime($specialPriceFromDate) && is_null($specialPriceToDate)) { ?>
+                                        <div class="label-product label-sale">
+											<span class="sale-product-icon">
+												<?php echo $this->__('Sale'); ?>
+											</span>
+                                        </div>
+                                    <?php }
+                                }?>
+
+
+                                <?php
+                                $now = date("Y-m-d");
+                                $newsFrom = substr($_product->getData('news_from_date'), 0, 10);
+                                $newsTo = substr($_product->getData('news_to_date'), 0, 10);
+                                if ($newsTo != '' || $newsFrom != '') {
+                                    if (($newsTo != '' && $newsFrom != '' && $now >= $newsFrom && $now <= $newsTo) || ($newsTo == '' && $now >= $newsFrom) || ($newsFrom == '' && $now <= $newsTo)) {?>
+                                            <div class="label-product label-new">
+												<span class="new-product-icon"><?php echo $this->__('New'); ?></span>
+											</div>
+                                    <?php }
+                                } ?>
+								
+								<!--END LABEL PRODUCT-->
+								
+							</div>
+							<?php } ?>
+							
+							<div class="box-info">
+								<?php if ((int)$this->_getConfig('product_title_display', 1)) { ?>
+                                <h2 class="product-name">
+                                    <a href="<?php echo $_product->link; ?>" title="<?php echo $_product->title; ?>"
+                                        <?php echo $helper->parseTarget($this->_getConfig('product_links_target')); ?>
+                                        >
+                                        <?php echo $helper->truncate($_product->title, $this->_getConfig('product_title_maxlength')); ?>
+                                    </a>
+                                </h2>
+								<?php } ?>
+								
+								<?php if ($this->_getConfig('product_source') != 'media') { ?>
+								
+									<?php if ($this->_getConfig('product_reviews_count')) {
+										echo $this->getReviewsSummaryHtml($_product, "short", true);
+									} ?>
+									
+									<?php if ((int)$this->_getConfig('product_price_display', 1)) {
+                                        echo $this->getPriceHtml($_product, true);
+									} ?>
+									
+								<?php } ?>
+								
+								<?php if ((int)$this->_getConfig('product_description_display', 1) && $helper->_trimEncode($_product->_description) != '') { ?>
+									<div class="bs-description">
+										<?php echo $_product->_description; ?>
+									</div>
+								<?php } ?>
+								
+								<?php if ($this->_getConfig('cat_title_display') == 1) { ?>
+									<div class="bs-category">
+										<a href="<?php echo $_product->catlink; ?>"
+										   title="<?php echo $_product->category_title; ?>"
+											<?php echo $helper->parseTarget($this->_getConfig('product_links_target')); ?>
+											>
+											<?php echo 'Category:&nbsp' . $helper->truncate($_product->category_title, $this->_getConfig('category_title_max_characs', 25)); ?>
+										</a>
+									</div>
+								<?php } ?>
+								
+								<?php if ($this->_getConfig('item_date_display') == 1) { ?>
+									<div class="bs-date">
+										<?php echo $_product->created_at; ?>
+									</div>
+								<?php } ?>
+								
+								<?php if ($this->_getConfig('product_readmore_display') == 1) { ?>
+									<div class="bs-detail">
+										<a href="<?php echo $_product->link ?>" title="<?php echo $_product->title; ?>" <?php echo $helper->parseTarget($this->_getConfig('product_links_target')); ?> >
+											<?php echo $this->_getConfig('product_readmore_text', 'Details'); ?>
+										</a>
+									</div>
+								<?php } ?>
+								
+							</div>
+						</div>
+
+                    </div>
+				<?php if (($count % $nb_rows == 0 || $count == $count_item)) { ?>
+                </div>
+				<?php } ?>
+            <?php } ?>
+        </div>
+    </div>
+    <?php if ($this->_getConfig('posttext') != null) { ?>
+        <div class="bs-posttext">
+            <?php echo $this->_getConfig('posttext'); ?>
+        </div>
+    <?php } ?>
+
+	<script>
+		jQuery(document).ready(function($) {
+			var bs_slider = $(".basic-products-slider .bs-items");
+			bs_slider.owlCarousel({				
+				responsive:{
+					0:{
+						items:1
+					},
+					480:{
+						items:<?php echo $screen4;?>
+					},
+					768:{
+						items:<?php echo $screen3;?>
+					},
+					992:{
+						items:<?php echo $screen2;?>
+					},
+					1200:{
+						items:<?php echo $screen1;?>
+					}
+				},
+				autoplay:false,
+				loop:false,
+				nav : true, // Show next and prev buttons
+				dots: false,
+				autoplaySpeed : 500,
+				navSpeed : 500,
+				dotsSpeed : 500,
+				autoplayHoverPause: true,
+				margin:30,
+			});	  
+		});	
+	</script>
+<?php
+} else {
+    echo 'Has no content to show!';
+}?>

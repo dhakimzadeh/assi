@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<root>
+  <pages>
+    <cms_page>
+      <title>404 Not Found</title>
+      <root_template>one_column</root_template>
+      <identifier>no-route</identifier>
+      <content_heading></content_heading>
+      <content><![CDATA[<div class="wrapper_404page">
+	<div class="col-lg-7 col-md-7">
+		<div class="content-404page">
+			<p class="top-text">Don't worry you will be back on track in no time!</p>
+			<p class="img-404"><img src="{{media url="wysiwyg/404image/404-img-text.png"}}" alt="" /></p>
+			<p class="bottom-text">Page doesn't exist or some other error occured. Go to our home page or go back previous page</p>
+			<div class="button-404">
+				<a href="javascript:void(0);" onclick="goBack()" class="btn-404 prev-page-btn" title="PREVIOUS PAGE">PREVIOUS PAGE</a>
+				<a href="{{store url=""}}" class="btn-404 back2home" title="BACK TO HOMEPAGE">BACK TO HOMEPAGE</a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="col-lg-5 col-md-5">
+		<div class="img-right-404">
+            <img src="{{media url="wysiwyg/404image/404-image.png"}}" alt="" />
+		</div>
+	</div>
+	<div style="clear:both; height:0px">&nbsp;</div>
+	<script>
+	function goBack() {
+		window.history.back()
+	}
+	</script>
+</div>]]></content>
+      <is_active>1</is_active>
+      <layout_update_xml><![CDATA[]]></layout_update_xml>
+      <store_id>0</store_id>
+    </cms_page>
+    <cms_page>
+      <title>Ballishop - Responsive Magento Theme for Fashion store</title>
+      <root_template>one_column</root_template>
+      <identifier>home-demo-01</identifier>
+      <content_heading></content_heading>
+      <content><![CDATA[<div class="home-default homestyle1">
+	<div class="listingtab-wrapper">
+		{{block type="listingtabs/list" name="listingtabs.list.default.home1" template="sm/listingtabs/default-home1.phtml"
+		listingtabs_title_text="Trending"
+		filter_type="categories"
+		product_category="4,5,12,70,81,130,132,133,163"
+		category_preload="133"
+		nbi_column1="3"
+		nbi_column2="3"
+		nbi_column3="2"
+		nbi_column4="1"
+		pretext="THE BEST PRODUCTS FROM US"
+		}}
+	</div>
+
+	<div class="full-wrapper full-block-deals-wrapper">
+		<div class="container">
+			{{block type="deal/list" name="deal.list.default" template="sm/deal/default.phtml"}}
+		</div>
+	</div>
+
+	<div class="full-wrapper static-wrapper static-wrapper-1">
+		<div class="container">
+			{{block type="cms/block" block_id="static-image-1"}}
+		</div>
+	</div>
+
+	<div class="full-wrapper full-block-newlester-wrapper">
+		<div class="container">
+			{{block type="newsletter/subscribe" name="newsletter" template="newsletter/subscribe.phtml"}}
+		</div>
+	</div>
+
+	<div class="testimonial-wrapper">
+		<div class="testimonial-wrapper-border">
+		         {{block type="cms/block" block_id="static-testimonial"}}
+		</div>
+	</div>
+	
+	<div class="listingtab-wrapper-default">
+		{{block type="listingtabs/list" name="listingtabs.list.default" template="sm/listingtabs/default.phtml"
+		listingtabs_title_text=""
+		filter_order_by="lastest_product,most_viewed,best_sales"
+		field_preload="most_viewed"
+		nbi_column1="5"
+		nbi_column2="4"
+		nbi_column3="3"
+		nbi_column4="2"
+		nav="1"
+		}}
+	</div>
+</div>]]></content>
+      <is_active>1</is_active>
+      <layout_update_xml><![CDATA[<reference name="full_top">
+	<block type="accordionslider/slider_view" name="accordionslider.view.default" template="sm/accordionslider/default.phtml"></block>
+</reference>]]></layout_update_xml>
+      <store_id>0</store_id>
+    </cms_page>
+    <cms_page>
+      <title>Ballishop - V2 - Responsive Magento Theme for Fashion store</title>
+      <root_template>one_column</root_template>
+      <identifier>home-demo-02</identifier>
+      <content_heading></content_heading>
+      <content><![CDATA[<div class="home-default homestyle2">
+	<div class="service-wrapper">
+		{{block type="cms/block" block_id="service-home2"}}
+	</div>
+
+	<div class="collections-wapper full-wrapper">
+		<div class="container-1920">
+			{{block type="cms/block" block_id="collection-h2"}}
+		</div>
+	</div>
+	
+	<div class="listingtab-wrapper-default">
+		{{block type="listingtabs/list" name="listingtabs.list.default" template="sm/listingtabs/default.phtml"
+			listingtabs_title_text=""
+			filter_type="categories"
+			product_category="4,5,70"
+			category_preload="4"
+			nbi_column1="4"
+			nbi_column2="4"
+			nbi_column3="3"
+			nbi_column4="2"
+			center="0"
+			margin="0"
+			nav="1"
+			loop="1"
+		}}
+	</div>
+
+	<div class="full-wrapper full-block-deals-wrapper">
+		<div class="container">
+			{{block type="deal/list" name="deal.list.default" template="sm/deal/default.phtml"}}
+		</div>
+	</div>
+
+	<div class="full-wrapper brand-wrapper">
+		<div class="container">
+			{{block type="cms/block" block_id="brand"}}
+		</div>
+	</div>
+	<div class="awblog-wrapper">
+		{{block type="blog/blog" name="latest_post" template="aw_blog/latest-post.phtml"}}
+	</div>
+
+</div>]]></content>
+      <is_active>1</is_active>
+      <layout_update_xml><![CDATA[<reference name="full_top">
+	<block type="sm_cameraslide/slide_preview" name="sm_cameraslide" as="cameraslide" ></block>
+</reference>]]></layout_update_xml>
+      <store_id>0</store_id>
+    </cms_page>
+  </pages>
+</root>

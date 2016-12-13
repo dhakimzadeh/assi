@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<default>
+		<reference name="head">
+			<action method="addItem">
+				<type>skin_js</type>
+				<name helper="instagramgallery/data/getInlucdeJQquery"></name>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name helper="instagramgallery/data/getInlucdeNoconflict"></name>
+			</action>
+			<!--<action method="addItem">-->
+				<!--<type>skin_js</type>-->
+				<!--<name helper="instagramgallery/data/getInlucdeMigrate"></name>-->
+			<!--</action>-->
+			<!-- 
+			<action method="addCss" ifconfig="instagramgallery/general/enabled">
+				<name>sm/instagramgallery/css/instagramgallery.css</name>
+			</action>
+			
+			<action method="addCss" ifconfig="instagramgallery/general/enabled">
+				<name>sm/instagramgallery/css/jquery.fancybox.css</name>
+			</action>
+			
+			<action method="addCss" ifconfig="instagramgallery/general/enabled">
+				<name>sm/instagramgallery/helpers/jquery.fancybox-buttons.css</name>
+			</action>
+			
+			<action method="addCss" ifconfig="instagramgallery/general/enabled">
+				<name>sm/instagramgallery/helpers/jquery.fancybox-thumbs.css</name>
+			</action> -->
+
+			<!-- <action method="addItem" ifconfig="instagramgallery/general/enabled">
+				<type>skin_js</type>
+				<name>sm/instagramgallery/js/jquery.fancybox.js</name>
+			</action>
+			
+			<action method="addItem" ifconfig="instagramgallery/general/enabled">
+				<type>skin_js</type>
+				<name>sm/instagramgallery/helpers/jquery.fancybox-buttons.js</name>
+			</action>
+			
+			<action method="addItem" ifconfig="instagramgallery/general/enabled">
+				<type>skin_js</type>
+				<name>sm/instagramgallery/helpers/jquery.fancybox-media.js</name>
+			</action>
+			
+			<action method="addItem" ifconfig="instagramgallery/general/enabled">
+				<type>skin_js</type>
+				<name>sm/instagramgallery/helpers/jquery.fancybox-thumbs.js</name>
+			</action> -->
+			
+		</reference>
+	</default>
+</layout>

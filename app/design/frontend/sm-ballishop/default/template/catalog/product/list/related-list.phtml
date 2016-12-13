@@ -1,0 +1,112 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+?> 
+ 
+<?php  
+global $show_rich_snippet;
+$show_rich_snippet = 0;
+$config = Mage::helper('ballishop/config');
+$limit = $config->getProductSetting('related_number');
+?>
+
+<?php if($this->getItems()->getSize()): ?>
+<div class="block box-related">
+	<div class="overflow-slider">
+		<div class="title-view">
+			<h2><?php echo $this->__('Related Products')?></h2>
+		</div>
+
+			<div id="block-related" class="basic-products-list">
+				<div class="list-items">
+				<?php $i = 0; foreach($this->getItems() as $_item): $i++; ?>
+					<?php if($i <= $limit){?>
+						<div class="item">
+							<div class="item-inner">
+								<div class="image-box">
+									<a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>" class="product-image">
+										<img src="<?php echo $this->helper('catalog/image')->init($_item, 'small_image')->resize(100,133) ?>" alt="<?php echo $this->escapeHtml($_item->getName()) ?>" />
+									</a>
+								</div>
+								
+								<div class="info-product-box">
+									<div class="bs-title">
+										<a title="<?php echo $this->escapeHtml($_item->getName()) ?>" href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->escapeHtml($_item->getName()) ?></a>
+									</div>
+									
+									<?php echo $this->getReviewsSummaryHtml($_item, "short", true) ?>
+									
+									<?php echo $this->getPriceHtml($_item, true, '-upsell') ?>
+								</div>
+							</div>
+						</div>
+
+					<?php } ?>
+				<?php endforeach ?>
+				</div>
+			</div>
+			<script type="text/javascript">decorateList('block-related', 'none-recursive')</script>
+
+		<script type="text/javascript">
+		//<![CDATA[
+		$$('.related-checkbox').each(function(elem){
+			Event.observe(elem, 'click', addRelatedToProduct)
+		});
+
+		var relatedProductsCheckFlag = false;
+		function selectAllRelated(txt){
+			if (relatedProductsCheckFlag == false) {
+				$$('.related-checkbox').each(function(elem){
+					elem.checked = true;
+				});
+				relatedProductsCheckFlag = true;
+				txt.innerHTML="<?php echo $this->__('unselect all') ?>";
+			} else {
+				$$('.related-checkbox').each(function(elem){
+					elem.checked = false;
+				});
+				relatedProductsCheckFlag = false;
+				txt.innerHTML="<?php echo $this->__('select all') ?>";
+			}
+			addRelatedToProduct();
+		}
+
+		function addRelatedToProduct(){
+			var checkboxes = $$('.related-checkbox');
+			var values = [];
+			for(var i=0;i<checkboxes.length;i++){
+				if(checkboxes[i].checked) values.push(checkboxes[i].value);
+			}
+			if($('related-products-field')){
+				$('related-products-field').value = values.join(',');
+			}
+		}
+		//]]>
+		</script>
+
+	</div>
+</div>
+<?php endif ?>

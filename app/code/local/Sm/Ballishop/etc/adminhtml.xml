@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+	<config>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<ballishop_cfg translate="title" module="ballishop">
+											<title>SM ballishop Section</title>
+											<sort_order>150</sort_order>
+										</ballishop_cfg>
+									</children>
+								</config>
+							</children>
+						</system>						
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<menu>
+			<ballishop translate="title" module="ballishop">
+				<title>SM Ballishop Setting</title>
+				<sort_order>100</sort_order>
+				<depends>
+					<module>Sm_Ballishop</module>
+				</depends>
+				<children>
+					<ballishop translate="title" module="ballishop">
+						<title>SM Ballishop Setting</title>
+						<action>adminhtml/system_config/edit/section/ballishop_cfg</action>
+						<sort_order>0</sort_order>
+					</ballishop>
+					
+					<basicproducts_cfg translate="title" module="ballishop">
+						<title>SM Basic Products</title>
+						<sort_order>1</sort_order>
+						<action>adminhtml/system_config/edit/section/basicproducts_cfg</action>
+					</basicproducts_cfg>	
+
+							
+					<cartpro translate="title" module="ballishop">
+						<title>SM Cart Pro</title>
+						<action>adminhtml/system_config/edit/section/cartpro_cfg</action>
+						<sort_order>3</sort_order>
+					</cartpro>					
+			
+
+					<megamenu translate="title">
+						<title>SM Mega Menu</title>
+						<children>
+							<menugroup translate="title" module="ballishop">
+								<title>Menu Manager</title>
+								<action>megamenu/adminhtml_menugroup/</action>
+								<sort_order>1</sort_order>
+							</menugroup>	
+							<menuitems translate="title" module="ballishop">
+								<title>Menu Items Manager</title>
+								<action>megamenu/adminhtml_menuitems/</action>
+								<sort_order>2</sort_order>
+							</menuitems>
+							<configurtion translate="title" module="ballishop">
+								<title>Configuration</title>
+								<action>adminhtml/system_config/edit/section/megamenu_cfg</action>
+								<sort_order>3</sort_order>
+							</configurtion>
+						</children>
+					</megamenu>
+					
+					<sm_cameraslide>
+						<title>SM Camera Slide</title>
+						<children>
+							<cameraslide translate="title">
+								<title>Manager Slide</title>
+								<sort_order>1</sort_order>
+								<action>cameraslide/adminhtml_cameraslide</action>
+
+							</cameraslide>
+							<settings translate="title">
+								<title>Settings</title>
+								<sort_order>2</sort_order>
+								<action>adminhtml/system_config/edit/section/cameraslide</action>
+							</settings>
+
+						</children>
+					</sm_cameraslide>
+					
+					<deal_cfg translate="title" module="ballishop">
+						<title>SM Deal</title>
+						<action>adminhtml/system_config/edit/section/deal_cfg</action>
+						<sort_order>4</sort_order>
+					</deal_cfg>	
+	
+					<quickview translate="title" module="ballishop">
+						<title>SM Quickview</title>
+						<action>adminhtml/system_config/edit/section/quickview</action>
+						<sort_order>7</sort_order>
+					</quickview>
+					
+					<sm_shopby translate="title" module="ballishop">
+						<title>SM Shopby</title>
+						<action>adminhtml/system_config/edit/section/sm_shopby</action>
+						<sort_order>8</sort_order>
+					</sm_shopby>
+					
+					<listingtabs_cfg translate="title" module="ballishop">
+						<title>SM Listing Tabs</title>
+						<action>adminhtml/system_config/edit/section/listingtabs_cfg</action>
+						<sort_order>9</sort_order>
+					</listingtabs_cfg>	
+					
+					<accordionslider translate="title" module="ballishop">
+						<title>SM Accordion Slider</title>
+						<action>adminhtml/system_config/edit/section/accordionslider</action>
+						<sort_order>10</sort_order>
+					</accordionslider>	
+					
+					<instagramgallery translate="title" module="ballishop">
+						<title>SM Instagram Gallery</title>
+						<action>adminhtml/system_config/edit/section/instagramgallery</action>
+						<sort_order>11</sort_order>
+					</instagramgallery>	
+					
+				</children>
+			</ballishop>
+		</menu>		
+	</config>

@@ -1,0 +1,660 @@
+<?xml version="1.0"?>
+<config>
+	<tabs>
+		<sm translate="label">
+			<label>Magentech.com</label>
+			<sort_order>310</sort_order>
+		</sm>
+	</tabs>
+	<sections>
+		<accordionslider translate="label" module="accordionslider">
+			<label>SM Accordion Slider</label>
+			<tab>sm</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>270</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<general translate="label" module="accordionslider">
+					<expanded>1</expanded>
+					<label>General Settings</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<enabled translate="label">
+							<label>Enabled Extension</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_enabledisable</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</enabled>
+						<display_title_header>
+							<label>Display Title</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</display_title_header>
+						<title>
+							<label>Title</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</title>
+						<link_target translate="label">
+							<label>Link Target</label>
+							<frontend_type>select</frontend_type>
+							<source_model>accordionslider/system_config_source_LinkTarget</source_model>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</link_target>
+						<select_type_slider>
+							<label>Select Type Slider</label>
+							<frontend_type>select</frontend_type>
+							<source_model>accordionslider/system_config_source_SelectSlider</source_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</select_type_slider>
+					</fields>
+				</general>
+
+				<source_options translate="label">
+					<label>Source Options</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>4</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<select_source translate="label">
+							<label>Select Source</label>
+							<frontend_type>select</frontend_type>
+							<source_model>accordionslider/system_config_source_ListSource</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</select_source>
+						<select_category translate="label">
+							<label>Select Category</label>
+							<frontend_type>multiselect</frontend_type>
+							<source_model>accordionslider/system_config_source_ListCategory</source_model>
+							<comment>Please select one or more categories.</comment>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends>
+								<select_source>catalog</select_source>
+							</depends>
+						</select_category>
+						<child_category translate="label">
+							<label>Child Category Products</label>
+							<frontend_type>select</frontend_type>
+							<source_model>accordionslider/system_config_source_IncludeExclude</source_model>
+							<comment>Include or Exclude Products from Child Categories.</comment>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends>
+								<select_source>catalog</select_source>
+							</depends>
+						</child_category>
+						<category_depth translate="label">
+							<label>Category Depth</label>
+							<frontend_type>text</frontend_type>
+							<validate>validate-greater-than-zero validate-number</validate>
+							<comment>The number of child category levels to return.</comment>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends>
+								<select_source>catalog</select_source>
+							</depends>
+						</category_depth>
+						<featured_product translate="label">
+							<label>Featured Products</label>
+							<frontend_type>select</frontend_type>
+							<source_model>accordionslider/system_config_source_FeaturedOptions</source_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends>
+								<select_source>catalog</select_source>
+							</depends>
+						</featured_product>
+						<product_order_by translate="label">
+							<label>Product Field to Order By</label>
+							<frontend_type>select</frontend_type>
+							<source_model>accordionslider/system_config_source_OrderBy</source_model>
+							<sort_order>6</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends>
+								<select_source>catalog</select_source>
+							</depends>
+						</product_order_by>
+						<product_order_dir translate="label">
+							<label>Ordering Direction</label>
+							<frontend_type>select</frontend_type>
+							<source_model>accordionslider/system_config_source_OrderDirection</source_model>
+							<sort_order>7</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>For Order By: ID, Name, Position, Date Created, Price</comment>
+							<depends>
+								<select_source>catalog</select_source>
+							</depends>
+						</product_order_dir>
+						<product_limitation translate="label">
+							<label>Product Limitation</label>
+							<frontend_type>text</frontend_type>
+							<validate>validate-greater-than-zero required-entry validate-number</validate>
+							<sort_order>8</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends>
+								<select_source>catalog</select_source>
+							</depends>
+						</product_limitation>
+						<product_additem translate="label">
+							<label>Media Source</label>
+							<backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
+							<frontend_model>accordionslider/adminhtml_system_config_form_field_Additem</frontend_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Add Item</comment>
+							<depends>
+								<select_source>media</select_source>
+							</depends>
+						</product_additem>
+						<product_ids translate="label">
+							<label>Product IDs</label>
+							<frontend_type>text</frontend_type>
+							<validate>validate-greater-than-zero</validate>
+							<sort_order>12</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Please enter each Product ID on a new line.</comment>
+							<depends>
+								<select_source>ids</select_source>
+							</depends>
+						</product_ids>
+					</fields>
+				</source_options>
+
+				<text_options translate="label">
+					<label>Text Options</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>5</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<heading1 translate="label">
+							<label>Text Title</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</heading1>
+						<text_display_title translate="label">
+							<label>Display Title</label>
+							<frontend_type>radios</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</text_display_title>
+						<text_maxlength_title translate="label">
+							<label>Max Length</label>
+							<frontend_type>text</frontend_type>
+							<validate>validate-greater-than-zero validate-number</validate>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</text_maxlength_title>
+						<heading2 translate="label">
+							<label>Text Description</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</heading2>
+						<text_display_description translate="label">
+							<label>Display Description</label>
+							<frontend_type>radios</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>6</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</text_display_description>
+						<text_maxlength_description translate="label">
+							<label>Max Length</label>
+							<frontend_type>text</frontend_type>
+							<validate>validate-greater-than-zero validate-number</validate>
+							<sort_order>7</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</text_maxlength_description>
+						<heading4 translate="label">
+							<label>Others</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>15</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</heading4>
+						<text_price_display translate="label">
+							<label>Display Price</label>
+							<frontend_type>radios</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>16</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</text_price_display>
+						<text_reviews_count translate="label">
+							<label>Display Reviews Summary</label>
+							<frontend_type>radios</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>17</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</text_reviews_count>
+						<text_addcart_display translate="label">
+							<label>Display Add To Cart</label>
+							<frontend_type>radios</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>18</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</text_addcart_display>
+						<text_addwishlist_display translate="label">
+							<label>Display Add Wishlist</label>
+							<frontend_type>radios</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>19</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</text_addwishlist_display>
+						<text_addcompare_display translate="label">
+							<label>Display Add Compare</label>
+							<frontend_type>radios</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</text_addcompare_display>
+					</fields>
+				</text_options>
+
+				<image_options translate="label">
+					<label>Image Options</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>6</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<heading translate="label">
+							<label>Display Image Slider</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</heading>
+						<display_image translate="label">
+							<label>Display Image</label>
+							<frontend_type>radios</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</display_image>
+						<heading1 translate="label">
+							<label>Get Image from Product Image</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</heading1>
+						<img_from_product_image translate="label">
+							<label>Product Image</label>
+							<frontend_type>radios</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</img_from_product_image>
+						<heading2 translate="label">
+							<label>Get Image from Product Description</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</heading2>
+						<img_from_product_description translate="label">
+							<label>Product Description</label>
+							<frontend_type>radios</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>6</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</img_from_product_description>
+						<img_order translate="label">
+							<label>Order to Get</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>7</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</img_order>
+						<img_resize translate="label">
+							<label>Resize</label>
+							<frontend_type>radios</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>8</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</img_resize>
+						<img_constrainonly translate="label">
+							<label>Constrain Only</label>
+							<frontend_type>radios</frontend_type>
+							<source_model>accordionslider/system_config_source_TrueFalse</source_model>
+							<sort_order>9</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>If the "Constrain Only" parameter is set to true, in this case the images which are smaller than specified value will be not enlarged by Magento. Only border of such images will increase.</comment>
+						</img_constrainonly>
+						<img_keepaspectratio translate="label">
+							<label>Keep Aspect Ratio</label>
+							<frontend_type>radios</frontend_type>
+							<source_model>accordionslider/system_config_source_TrueFalse</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>If the "Keep Aspect Ratio" parameter is set to true, in this case the proportions of the image will not be modified.</comment>
+						</img_keepaspectratio>
+						<img_keepframe translate="label">
+							<label>Keep Frame</label>
+							<frontend_type>radios</frontend_type>
+							<source_model>accordionslider/system_config_source_TrueFalse</source_model>
+							<sort_order>11</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>The "Keep Frame" parameter guarantees that the image will be not cropped. When "keepAspectRatio" is false the "keepFrame" will not work.</comment>
+						</img_keepframe>
+						<img_keeptransparency translate="label">
+							<label>Keep Transparency</label>
+							<frontend_type>radios</frontend_type>
+							<source_model>accordionslider/system_config_source_TrueFalse</source_model>
+							<sort_order>12</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>The "Keep Transparency" parameter keep the transparent background of the images. </comment>
+						</img_keeptransparency>
+						<img_width translate="label">
+							<label>Image Width</label>
+							<frontend_type>text</frontend_type>
+							<validate>validate-greater-than-zero validate-number</validate>
+							<sort_order>13</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</img_width>
+						<img_height translate="label">
+							<label>Image Height</label>
+							<frontend_type>text</frontend_type>
+							<validate>validate-greater-than-zero validate-number</validate>
+							<sort_order>14</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</img_height>
+						<img_background translate="label">
+							<label>Background Color</label>
+							<frontend_type>text</frontend_type>
+							<validate>color</validate>
+							<sort_order>15</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Please Click the text box to select color</comment>
+						</img_background>
+						<img_replacement>
+							<label>Image Replacement</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>17</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Only when the product has no image, the module will take photos from placeholder to replace</comment>
+						</img_replacement>
+					</fields>
+				</image_options>
+
+				<effect_options translate="label">
+					<label>Effect Options</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>7</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<autoplay translate="label">
+							<label>Auto Play</label>
+							<frontend_type>radios</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Whether or not the slideshow should play automatically</comment>
+						</autoplay>
+						<pause_hover translate="label">
+							<label>Pause On Hover</label>
+							<frontend_type>radios</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Pause on hover</comment>
+						</pause_hover>
+						<timeout translate="label">
+							<label>Time Out</label>
+							<frontend_type>text</frontend_type>
+							<validate>validate-greater-than-zero validate-number</validate>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Time between each slide in milliseconds</comment>
+						</timeout>
+						<speed translate="label">
+							<label>Speed Transition Slide</label>
+							<frontend_type>text</frontend_type>
+							<validate>validate-greater-than-zero validate-number</validate>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Speed of the slide transition in milliseconds</comment>
+						</speed>
+						<tabwidth translate="label">
+							<label>Tab Width</label>
+							<frontend_type>text</frontend_type>
+							<validate>validate-greater-than-zero validate-number</validate>
+							<sort_order>6</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Width of each slide's "tab" (when clicked it opens the slide)</comment>
+						</tabwidth>
+						<startingslide translate="label">
+							<label>Starting Slide</label>
+							<frontend_type>text</frontend_type>
+							<validate>validate-zero-or-greater validate-number</validate>
+							<sort_order>7</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Zero-based index of which slide should be displayed</comment>
+						</startingslide>
+						<easing>
+							<label>Easing</label>
+							<frontend_type>select</frontend_type>
+							<source_model>accordionslider/system_config_source_Easing</source_model>
+							<sort_order>9</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Easing methods</comment>
+						</easing>
+						<trigger translate="label">
+							<label>Event Trigger Slide</label>
+							<frontend_type>select</frontend_type>
+							<source_model>accordionslider/system_config_source_EventTrigger</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Event type that will bind to the "tab"</comment>
+						</trigger>
+						<!--<invert translate="label">
+							<label>Invert</label>
+							<frontend_type>radios</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>13</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Whether or not to invert the slideshow, so the last slide stays in the same position, rather than the first slide</comment>
+						</invert>
+						<errors translate="label">
+							<label>Show Errors</label>
+							<frontend_type>radios</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>14</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Display zAccordion specific errors</comment>
+						</errors>-->
+					</fields>
+				</effect_options>
+
+				<advanced translate="label">
+					<label>Advanced Options</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>8</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<include_jquery translate="label">
+							<label>Include jQuery</label>
+							<frontend_type>radios</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</include_jquery>
+						<use_cache translate="label">
+							<label>Caching</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Select whether to cache the content of this module
+							</comment>
+						</use_cache>
+						<cache_time>
+							<label>Cache Time</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>5</sort_order>
+							<validate>validate-greater-than-zero validate-number</validate>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>The time (in seconds) before the module is recached.</comment>
+							<depends>
+								<use_cache>1</use_cache>
+							</depends>
+						</cache_time>
+					</fields>
+				</advanced>
+
+				<product_information translate="label">
+					<label>Product Information</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>9</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<author translate="label">
+							<label><![CDATA[<p>Author: <a target="_blank" title="Magentech" href="http://www.magentech.com">Magentech</a></p>
+											<p>Version: 1.0.0</p>
+											<p>Userguide: <a target="_blank" title="Userguide" href="http://www.magentech.com/extensions/extension-user-guides">Userguide</a></p>
+											<p>Support: <a target="_blank" href="http://www.magentech.com/forum">Forum</a></p>
+								]]>
+							</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+						</author>
+					</fields>
+				</product_information>
+			</groups>
+		</accordionslider>
+	</sections>
+</config>

@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Sm_Instagramgallery>
+			<version>1.0.1</version>
+		</Sm_Instagramgallery>
+	</modules>
+
+	<global>
+		<models>
+			<instagramgallery>
+				<class>Sm_Instagramgallery_Model</class>
+			</instagramgallery>
+		</models>
+
+		<blocks>
+			<instagramgallery>
+				<class>Sm_Instagramgallery_Block</class>
+			</instagramgallery>
+		</blocks>
+
+		<helpers>
+			<instagramgallery>
+				<class>Sm_Instagramgallery_Helper</class>
+			</instagramgallery>
+		</helpers>
+	</global>
+
+	<adminhtml>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<instagramgallery translate="title" module="instagramgallery">
+											<title>SM Image Instagram</title>
+										</instagramgallery>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</adminhtml>
+
+	<frontend>
+		<routers>
+			<instagramgallery>
+				<use>standard</use>
+				<args>
+					<module>Sm_Instagramgallery</module>
+					<frontName>instagramgallery</frontName>
+				</args>
+			</instagramgallery>
+		</routers>
+		<layout>
+			<updates>
+				<instagramgallery>
+					<file>sm/instagramgallery.xml</file>
+				</instagramgallery>
+			</updates>
+		</layout>
+	</frontend>
+
+	<default>
+		<instagramgallery>
+			<general>
+				<enabled>1</enabled>
+				<title>INSTAGRAM GALLERY</title>
+				<limit_image>9</limit_image>
+			</general>
+			<numbercols>
+				<nb_column1>3</nb_column1>
+				<nb_column2>3</nb_column2>
+				<nb_column3>2</nb_column3>
+				<nb_column4>1</nb_column4>
+			</numbercols>
+			<jquery>
+				<include_jquery>0</include_jquery>
+				<use_cache>1</use_cache>
+				<cache_time>3600</cache_time>
+			</jquery>
+		</instagramgallery>
+	</default>
+</config>

@@ -1,0 +1,227 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+	$config = Mage::helper('ballishop/config');
+?>
+
+<div class="footer-container footer-style-2">
+    <div class="footer">
+		<div class="footer-top-0">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-3 col-sm-6 about-us-footer">
+						<div class="footer-block">
+							<?php 
+								$srcLOGO = $this->getSkinUrl();
+								$logo_title = Mage::getStoreConfig('design/header/logo_alt');
+							?>
+							<h2 class="footer-logo">
+								<a href="<?php echo $this->getUrl('') ?>" title="<?php echo $logo_title ?>">
+									<img alt="<?php echo $logo_title ?>" src="<?php echo $srcLOGO;?>images/<?php echo $config->getGeneral('theme_color');?>/logo-footer.png">
+								</a>
+							</h2>
+							<div class="footer-about">
+								<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('about-us-footer')->toHtml(); ?>
+							</div>	
+							<div class="footer-social">
+							<?php echo $this->getChildHtml('social_info') ?>
+							</div>						
+						</div>
+					</div>
+					
+					<div class="col-lg-3 col-md-3 col-sm-6 intagram-footer">
+						<div class="footer-block">
+							<?php echo $this->getChildHtml('instagramgallery'); ?>
+						</div>
+					</div>
+					
+					<div class="col-lg-3 col-md-3 col-sm-6 popular-footer">
+						<div class="footer-block">
+							<?php echo $this->getChildHtml('popular-footer'); ?>
+						</div>
+					</div>
+					
+					<div class="col-lg-3 col-md-3 col-sm-6 contact-us-footer">
+						<div class="footer-block">
+							<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('contact-us-footer')->toHtml(); ?>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-2 col-md-2 col-sm-4 about-footer">
+						<div class="footer-block">
+							<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('support-footer')->toHtml(); ?>
+						</div>
+					</div>
+					
+					<div class="col-lg-2 col-md-2 col-sm-4 shopping-footer">
+						<div class="footer-block">
+							<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('my-account-footer')->toHtml(); ?>
+						</div>
+					</div>
+					
+					<div class="col-lg-2 col-md-2 col-sm-4 infomation-footer">
+						<div class="footer-block">
+							<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('why-choose-us-footer')->toHtml(); ?>
+						</div>
+					</div>
+					
+					<div class="col-lg-2 col-md-2 col-sm-4 infomation-footer">
+						<div class="footer-block">
+							<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('infomation-footer')->toHtml(); ?>
+						</div>
+					</div>
+										
+					<div class="col-lg-2 col-md-2 col-sm-4 infomation-footer">
+						<div class="footer-block">
+							<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('customer-services-footer')->toHtml(); ?>
+						</div>
+					</div>
+					
+					<div class="col-lg-2 col-md-2 col-sm-4 contact-footer">
+						<div class="footer-block">
+							<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('policy-footer')->toHtml(); ?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-bottom<?php echo ($config->getAdvanced('show_fixedfooter') == 1) ? " fixed":""; ?>">
+	
+			<div class="container">
+				<div class="footer-bottom-content">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 payment-footer">
+							<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('payment-footer')->toHtml(); ?>
+						</div>						
+						<div class="col-lg-12 col-md-12 copyright-footer">
+							<div>
+								<?php if($config->getAdvanced('custom_copyright') == 1){
+									echo $config->getAdvanced('copyright');
+								} else { ?>
+									<address><?php echo $this->getCopyright() ?></address>
+								<?php } ?>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-fixed<?php echo ($config->getAdvanced('show_fixedfooter') == 1) ? " fixed":""; ?>">
+			<div id="ffc-stylish" class="ff-content">
+				<div class="btn-close-ffc"></div>
+				<div class="inner">
+					<div class="title">Stylish</div>
+					<div class="container">
+						<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer-stylish')->toHtml(); ?>
+					</div>
+				</div>
+			</div>
+			<div id="ffc-recently-viewed" class="ff-content">
+				<div class="btn-close-ffc"></div>
+				<div class="inner">
+					<div class="title">RECENTLY VIEWED</div>
+					<div class="container">
+						<?php echo $this->getChildHtml('footer.reports.product.viewed'); ?>
+					</div>
+				</div>
+			</div>
+			<div id="ffc-wishlist" class="ff-content">
+				<div class="btn-close-ffc"></div>
+				<div class="inner">
+					<div class="title">WISHLIST</div>
+					<div class="container">
+					<?php 
+						if(!Mage::getSingleton('customer/session')->isLoggedIn()){
+							echo $this->getLayout()->createBlock('cms/block')->setBlockId('ms-no-login')->toHtml();
+						}else{
+							echo $this->getChildHtml('wishlist_sidebar');
+						}
+					?>
+					</div>
+				</div>
+			</div>
+			<div id="ffc-sign-up" class="ff-content">
+				<div class="btn-close-ffc"></div>
+				<div class="inner">
+					<div class="title">Sign Up</div>
+					<div class="container">
+						<?php echo $this->getChildHtml('customer_form_mini_login_footer'); ?>
+					</div>
+				</div>
+			</div>
+			<div class="ff-nav">
+				<div class="container">
+					<div class="row">
+						<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer-fixed-nav')->toHtml(); ?>
+					</div>
+				</div>			
+			</div>
+		</div>
+    </div>
+</div>
+
+<script type="text/javascript">
+	jQuery(document).ready(function($){  
+		$(function () {
+			$('.box-footer-fixed li a').click(function(){
+				if($(this).hasClass('active')) {
+					$('.box-footer-fixed li a').removeClass('active');
+					$('.ff-content').animate({
+						height: 0
+					}, 400);									
+				} else {
+					$('.box-footer-fixed li a').removeClass('active');				
+					$(this).addClass('active');
+					$('.ff-content').animate({
+						height: 0
+					}, 400);				
+					e_id = '#ffc-'+($(this).data("id"));
+					e_h = $(e_id + ' > .inner').outerHeight();
+					$(e_id).animate({
+						height: e_h
+					}, 400);					
+				}
+				return false;
+			});
+			$('.ff-content .btn-close-ffc').click(function(){
+				$('.ff-content').animate({
+					height: 0
+				}, 400);					
+				return false;
+			});
+		});
+	});
+</script>

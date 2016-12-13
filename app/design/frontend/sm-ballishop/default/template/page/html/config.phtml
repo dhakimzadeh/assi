@@ -1,0 +1,322 @@
+<!--THEME CONFIG-->
+<?php
+	$config = Mage::helper('ballishop/config');
+	$media = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
+?>
+
+<!--GENERAL GOOGLE FONT-->
+<?php 
+$google_font = $config->getGeneral('google_font');
+$google_font_element = $config->getGeneral('element_googlefont_code');
+$google_font_element_family = $config->getGeneral('element_googlefont_family');
+
+//var_dump($google_font_element);
+
+if( $google_font != "" && $google_font != "other"){?>
+	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=<?php echo $google_font; ?>' />
+<?php } else if($google_font == "other" && $google_font_element !=""){?>
+	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=<?php echo $google_font_element; ?>' />
+<?php } ?>
+
+<!--GENERAL MAIN GOOGLE FONT-->
+<?php 
+	$main_font = $config->getGeneral('body_font_family');
+	$google_font_main = $config->getGeneral('google_font_body');
+	
+	$google_font_code = $config->getGeneral('googlefont_code');
+	$google_font_family = $config->getGeneral('googlefont_family');
+?>
+<?php if( $main_font == 'maingooglefont' && $google_font_main != 'other'){?>
+	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=<?php echo $google_font_main; ?>' />
+<?php } else if($main_font == 'maingooglefont' && $google_font_main == 'other'){ ?>
+	 <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=<?php echo $google_font_code; ?>' />
+<?php } ?>
+
+<!--BACKGROUND IMAGE-->
+<?php
+	$use_bg = $config->getGeneral('use_background_image');
+	$bg_img = $config->getGeneral('body_background_image');
+	$custom_bg = $config->getGeneral('use_customize_image');
+	$custom_bg_img = $config->getGeneral('background_customize_image');
+?>
+
+<style>
+	
+	/*==GENERAL==*/
+	
+	body{
+		<?php if($main_font == 'maingooglefont' && $google_font_main != 'other'){?>
+			font-family:<?php $namefontmain = explode(":",str_replace("+", " ", $google_font_main));
+							echo $namefontmain[0];
+						?>;
+		<?php } else if($main_font == 'maingooglefont' && $google_font_main == 'other'){ ?>
+			
+			font-family: <?php echo $google_font_family;?>;
+			
+		<?php } else{ ?>
+			font-family: <?php echo $main_font;?>;
+		<?php } ?>
+		
+		
+		font-size: <?php echo $config->getGeneral('body_font_size');?>;
+		color: #<?php echo $config->getGeneral('body_text_color');?>;
+		background-color: #<?php echo $config->getGeneral('body_background_color');?>;
+		background-repeat: <?php echo $config->getGeneral('background_repeat');?>;
+		background-position: <?php echo $config->getGeneral('background_position');?>;
+
+		<?php if($use_bg == 1){?>
+			<?php if($custom_bg == 0){?>
+				background-image:url(<?php echo $media . 'pattern/' . $bg_img . '.png'?>);
+			<?php } else{?>
+				background-image:url(<?php echo $media . 'pattern/' . $custom_bg_img?>);
+			<?php } ?>
+		<?php } ?>
+	}
+	
+	body a{
+		color: #<?php echo $config->getGeneral('body_link_color');?>;
+	}
+	
+	body a:hover{
+		color: #<?php echo $config->getGeneral('body_link_hover_color');?>;
+	}
+	
+	/*===GOOGLE FONT ELEMENT===*/
+	
+	<?php if( $google_font != "other" && $config->getGeneral('google_font_targets') !=""){?>
+		<?php echo $config->getGeneral('google_font_targets');?>{
+			font-family:<?php $namefont = explode(":",str_replace("+", " ", $google_font));
+							echo $namefont[0];
+						?>;
+		}
+	<?php } else{?>
+		<?php echo $config->getGeneral('google_font_targets');?>{
+			font-family:<?php echo $google_font_element_family;?>;
+		}
+	<?php } ?>
+	
+	<?php if($config->getProductSetting('zoom_mode') == 'lens'){?>
+		.zoomContainer{
+			overflow:hidden;
+		}
+	<?php } ?>
+	
+	/*==HIDDEN BUTTON ADD TO CART, WISHLIST, COMPARE==*/
+	
+	<?php if($config->getAdvanced('show_addtocart') == 0){ ?>
+		.btn-cart,
+		.btn-wrapper,
+		.add-to-cart{
+			display:none!important;
+		}
+	<?php } ?>
+	
+	<?php if($config->getAdvanced('show_wishlist') == 0){ ?>
+		.link-wishlist{
+			display:none!important;
+		}
+	<?php } ?>
+	
+	<?php if($config->getAdvanced('show_compare') == 0){ ?>
+		.link-compare{
+			display:none!important;
+		}
+	<?php } ?>
+	
+	<?php if($config->getAdvanced('show_wishlist') == 0 && $config->getAdvanced('show_compare') == 0){ ?>
+		.add-to-links{
+			display:none!important;
+		}
+	<?php } ?>
+	
+	/*==CUSTOM CSS==*/
+	<?php 
+	$custom_css = $config->getAdvanced('custom_css');		
+	if ( $custom_css != '' ){		
+		echo $custom_css;
+	} ?>
+	
+</style>
+
+<?php 
+	$custom_js = $config->getAdvanced('custom_js');	
+	if ( $custom_js != '' ){ ?>	
+		<script type="text/javascript">
+			<?php echo $custom_js;?>
+		</script>	
+<?php } ?>	
+
+<!--LISTING PRODUCT-->
+
+<style>
+@media (min-width: 1200px) {
+
+	/*==1 COLUMN==*/
+	<?php
+		$one_col_device_1200 = $config->getProductListing('onecolumn_device_1200');
+		$one_class_device_1200 = 100 / $one_col_device_1200 . '%';
+	?>
+
+	.col1-layout .category-products .products-grid .item{
+		width: <?php echo $one_class_device_1200; ?>
+	}
+
+	/*==2 COLUMNS==*/
+	<?php
+		$two_col_device_1200 = $config->getProductListing('twocolumn_device_1200');
+		$two_class_device_1200 = 100 / $two_col_device_1200 . '%';
+	?>
+
+	.col2-left-layout .category-products .products-grid .item,
+	.col2-right-layout .category-products .products-grid .item{
+		width: <?php echo $two_class_device_1200; ?>
+	}
+
+	/*==3 COLUMNS==*/
+	<?php
+		$three_col_device_1200 = $config->getProductListing('threecolumn_device_1200');
+		$three_class_device_1200 = 100 / $three_col_device_1200 . '%';
+	?>
+
+	.col3-layout .category-products .products-grid .item{
+		width: <?php echo $three_class_device_1200; ?>
+	}
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+	/*==1 COLUMN==*/
+	<?php
+		$one_col_device_992 = $config->getProductListing('onecolumn_device_992');
+		$one_class_device_992 = 100 / $one_col_device_992 . '%';
+	?>
+
+	.col1-layout .category-products .products-grid .item{
+		width: <?php echo $one_class_device_992; ?>
+	}
+
+	/*==2 COLUMNS==*/
+	<?php
+		$two_col_device_992 = $config->getProductListing('twocolumn_device_992');
+		$two_class_device_992 = 100 / $two_col_device_992 . '%';
+	?>
+
+	.col2-left-layout .category-products .products-grid .item,
+	.col2-right-layout .category-products .products-grid .item{
+		width: <?php echo $two_class_device_992; ?>
+	}
+
+	/*==3 COLUMNS==*/
+	<?php
+		$three_col_device_992 = $config->getProductListing('threecolumn_device_992');
+		$three_class_device_992 = 100 / $three_col_device_992 . '%';
+	?>
+
+	.col3-layout .category-products .products-grid .item{
+		width: <?php echo $three_class_device_992; ?>
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+	/*==1 COLUMN==*/
+	<?php
+		$one_col_device_768 = $config->getProductListing('onecolumn_device_768');
+		$one_class_device_768 = 100 / $one_col_device_768 . '%';
+	?>
+
+	.col1-layout .category-products .products-grid .item{
+		width: <?php echo $one_class_device_768; ?>
+	}
+
+	/*==2 COLUMNS==*/
+	<?php
+		$two_col_device_768 = $config->getProductListing('twocolumn_device_768');
+		$two_class_device_768 = 100 / $two_col_device_768 . '%';
+	?>
+
+	.col2-left-layout .category-products .products-grid .item,
+	.col2-right-layout .category-products .products-grid .item{
+		width: <?php echo $two_class_device_768; ?>
+	}
+
+	/*==3 COLUMNS==*/
+	<?php
+	$three_col_device_768 = $config->getProductListing('threecolumn_device_768');
+	$three_class_device_768 = 100 / $three_col_device_768 . '%';
+	?>
+
+	.col3-layout .category-products .products-grid .item{
+		width: <?php echo $three_class_device_768; ?>
+	}
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+	/*==1 COLUMN==*/
+	<?php
+		$one_col_device_481 = $config->getProductListing('onecolumn_device_481');
+		$one_class_device_481 = 100 / $one_col_device_481 . '%';
+	?>
+
+	.col1-layout .category-products .products-grid .item{
+		width: <?php echo $one_class_device_481; ?>
+	}
+
+	/*==2 COLUMNS==*/
+	<?php
+	$two_col_device_481 = $config->getProductListing('twocolumn_device_481');
+	$two_class_device_481 = 100 / $two_col_device_481 . '%';
+	?>
+
+	.col2-left-layout .category-products .products-grid .item,
+	.col2-right-layout .category-products .products-grid .item{
+		width: <?php echo $two_class_device_481; ?>
+	}
+
+	/*==3 COLUMNS==*/
+	<?php
+		$three_col_device_481 = $config->getProductListing('threecolumn_device_481');
+		$three_class_device_481 = 100 / $three_col_device_481 . '%';
+	?>
+
+	.col3-layout .category-products .products-grid .item{
+		width: <?php echo $three_class_device_481; ?>
+	}
+}
+
+@media (max-width: 480px) {
+
+	/*==1 COLUMN==*/
+	<?php
+		$one_col_device_less_481 = $config->getProductListing('onecolumn_device_less_481');
+		$one_class_device_less_481 = 100 / $one_col_device_less_481 . '%';
+	?>
+
+	.col1-layout .category-products .products-grid .item{
+		width: <?php echo $one_class_device_less_481; ?>
+	}
+
+	/*==2 COLUMNS==*/
+	<?php
+	$two_col_device_less_481 = $config->getProductListing('twocolumn_device_less_481');
+	$two_class_device_less_481 = 100 / $two_col_device_less_481 . '%';
+	?>
+
+	.col2-left-layout .category-products .products-grid .item,
+	.col2-right-layout .category-products .products-grid .item{
+		width: <?php echo $two_class_device_less_481; ?>
+	}
+
+	/*==3 COLUMNS==*/
+	<?php
+	$three_col_device_less_481 = $config->getProductListing('threecolumn_device_less_481');
+	$three_class_device_less_481 = 100 / $three_col_device_less_481 . '%';
+	?>
+
+	.col3-layout .category-products .products-grid .item{
+		width: <?php echo $three_class_device_less_481; ?>
+	}
+}
+</style>

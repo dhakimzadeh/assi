@@ -1,0 +1,117 @@
+
+<?php echo $this->getChildHtml('customer_form_mini_login'); ?>
+
+<div class="header-container header-style-2">
+    <div class="header">
+		<div class="header-inner">
+			<div class="header-top">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-5 col-md-5 col-sm-6">
+							<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('hotline-hd2')->toHtml(); ?>
+						</div>
+						<div class="col-lg-7 col-md-7 col-sm-6 customer-wrapper">
+							
+							<div class="header-link-right">
+								
+								<div class="block-swith">
+									<div class="toplink-cus langue-currency">
+										<?php echo $this->getChildHtml('currency') ?>	
+										<?php echo $this->getChildHtml('store_language') ?>
+									</div>
+								</div>															
+								<div class="block-account-cusomer block-myacount">
+									<div class="toplink-cus my-account">
+										<a title="My Account" href="<?php echo $this->getUrl('customer/account')?>">My Account</a>
+										<ul class="dropdown-list">
+										<?php if(!$this->helper('customer')->isLoggedIn()){?>
+											<li><a class="login-btn login-btn-mobile" href="<?php echo $this->getUrl('customer/account/login')?>" title="<?php echo $this->__('Login');?>"><?php echo $this->__('Login');?></a></li>
+											<li><a class="login-btn" data-toggle="modal" data-target="#modal-login" title="<?php echo $this->__('Login')?>"><?php echo $this->__('Login')?></a></li>
+										<?php } else{?>
+										<li><a class="logout-btn" href="<?php echo $this->getUrl('customer/account/logout')?>" title="<?php echo $this->__('Logout');?>"><?php echo $this->__('Logout');?></a></li>
+										<?php } ?>	
+											<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('dropdown-my-account')->toHtml(); ?>
+										</ul>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="yt-menu">
+				<div class="menu-under">
+					<div class="container">
+						<div class="logo-wrapper">
+							<h1 class="logo">
+								<strong><?php echo $this->getLogoAlt() ?></strong>
+								<a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
+									<img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
+								</a>
+							</h1>
+						</div>					
+						<div class="menu-larger">
+							<div class="row">
+							<?php if( $var_yttheme->getParam('menustyle')=='mega' ){ ?>
+								<div class="col-lg-12 col-md-12">
+									<?php echo $this->getChildHtml('megaMenu'); ?>
+								</div>
+							<?php } else { ?>
+								<div class="col-lg-12 col-md-12">
+									<?php echo $this->getChildHtml('topMenu'); ?>
+								</div>
+							<?php } ?>
+							</div>
+						</div>
+						
+						<div class="mobile-menu">
+							<div class="row">
+								<div class="col-lg-12 col-md-12">
+									<?php echo $this->getChildHtml('catalog.topmobinav'); ?>
+								</div>
+							</div>
+						</div>
+						
+						<div class="searchbox-cart">
+							<div class="search-box-header hover-element">
+								<?php echo $this->getChildHtml('topSearch'); ?>
+							</div>
+							
+							<div class="static-header-minicart">
+								<div class="minicart-header">
+									<?php echo $this->getChildHtml('mini-cartpro'); ?>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+        <?php echo $this->getChildHtml('topContainer'); ?>
+    </div>
+</div>
+
+<?php if($config->getGeneral('menu_ontop') == 1){ ?>
+	<script>
+		jQuery(document).ready(function($){ 
+			$window = $(window);
+			if($('.menu-under').length){
+				menu_offset_top = $('.menu-under').offset().top;
+				function processScroll() {
+					var scrollTop = $window.scrollTop();
+					if ( scrollTop >= menu_offset_top) {
+						$('.menu-under').addClass('menu-on-top');
+					} else if (scrollTop <= menu_offset_top) {
+						$('.menu-under').removeClass('menu-on-top');
+					}
+				}
+				processScroll();
+				$window.scroll(function(){
+					processScroll();
+				});
+			}
+		});
+	</script>
+<?php } ?>

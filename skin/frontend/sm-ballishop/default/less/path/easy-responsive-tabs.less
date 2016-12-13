@@ -1,0 +1,210 @@
+﻿ul.resp-tabs-list, p {
+  margin: 0px;
+  padding: 0px;
+}
+
+ul.resp-tabs-list{
+    display: table;
+    width: 100%;
+    position: relative;
+    bottom: -1px;
+    border-bottom: 1px solid @border-color;
+    padding-left: 98px;
+}
+
+.resp-tabs-list li {
+	border: 1px solid @border-color;
+    padding: 0 25px;
+    margin: 0px 2px -2px 0px;
+    list-style: none;
+    cursor: pointer;
+    float: left;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+    border-bottom-color: #fff;
+    line-height: 42px;
+	background: #fff;
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: -1px;
+		left: -1px;
+		display: inline-block;
+		height: 1px;
+		background: #fff;
+		right: -1px;
+		z-index: 1;
+	}
+}
+
+.resp-tabs-container {
+  padding: 0px;
+  background-color: #fff;
+  clear: left;
+}
+
+h2.resp-accordion {
+  cursor: pointer;
+  padding: 5px;
+  display: none;
+}
+
+.resp-tab-content {
+  display: none;
+  padding: 15px;
+}
+.resp-tabs-list li:hover,
+.resp-tab-active {
+	color: @color_theme;
+	&:before {
+		content: "";
+		position: absolute;
+		top: -4px;
+		height: 5px;
+		background-color: @color_theme;
+		left: 0;
+		display: inline-block;
+		left: -1px;
+		right: -1px;
+	}
+}
+
+.resp-content-active, .resp-accordion-active {
+  display: block;
+}
+
+.resp-tab-content {
+  border: 1px solid @border-color;
+}
+
+h2.resp-accordion {
+  font-size: 108.33%;
+  text-transform: uppercase;
+  border:1px solid @border-color;
+  margin-top:-1px;
+  padding: 10px 15px;
+}
+
+h2.resp-tab-active {
+  border-bottom: 0px solid @border-color !important;
+  margin-bottom: 0px !important;
+  padding: 10px 15px !important;
+}
+
+h2.resp-tab-title:last-child {
+  border-bottom: 12px solid @border-color !important;
+  background: blue;
+}
+
+/*-----------Vertical tabs-----------*/
+.resp-vtabs ul.resp-tabs-list {
+  float: left;
+  width: 30%;
+}
+
+.resp-vtabs .resp-tabs-list li {
+  display: block;
+  padding: 15px 15px !important;
+  margin: 0;
+  cursor: pointer;
+  float: none;
+}
+
+.resp-vtabs .resp-tabs-container {
+  padding: 0px;
+  background-color: #fff;
+  border: 1px solid @border-color;
+  float: left;
+  width: 68%;
+  min-height: 250px;
+  border-radius: 4px;
+  clear: none;
+}
+
+.resp-vtabs .resp-tab-content {
+  border: none;
+}
+
+.resp-vtabs li.resp-tab-active {
+  border: 1px solid @border-color;
+  border-right: none;
+  background-color: #fff;
+  position: relative;
+  z-index: 1;
+  margin-right: -1px !important;
+  padding: 14px 15px 15px 14px !important;
+}
+
+.resp-arrow {
+  width: 0;
+  height: 0;
+  float: right;
+  margin-top: 3px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 12px solid @border-color;
+}
+
+h2.resp-tab-active span.resp-arrow {
+  border: none;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 12px solid @color_theme;
+}
+
+/*-----------Accordion styles-----------*/
+.resp-easy-accordion h2.resp-accordion {
+  display: block;
+}
+
+.resp-easy-accordion .resp-tab-content {
+  border: 1px solid @border-color;
+}
+
+.resp-easy-accordion .resp-tab-content:last-child {
+  border-bottom: 1px solid @border-color !important;
+}
+
+.resp-jfit {
+  width: 100%;
+  margin: 0px;
+}
+
+.resp-tab-content-active {
+  display: block;
+}
+
+/*Here your can change the breakpoint to set the accordion, when screen resolution changed*/
+@media only screen and (max-width: 768px) {
+  ul.resp-tabs-list {
+    display: none;
+  }
+
+  h2.resp-accordion {
+    display: block;
+  }
+
+  .resp-vtabs .resp-tab-content {
+    border: 1px solid @border-color;
+  }
+
+  .resp-vtabs .resp-tabs-container {
+    border: none;
+    float: none;
+    width: 100%;
+    min-height: initial;
+    clear: none;
+  }
+
+  .resp-accordion-closed {
+    display: none !important;
+  }
+
+  .resp-vtabs .resp-tab-content:last-child {
+    border-bottom: 1px solid @border-color !important;
+  }
+  h2.resp-tab-active {
+	border-bottom: 1px solid @border-color !important;
+  }
+}

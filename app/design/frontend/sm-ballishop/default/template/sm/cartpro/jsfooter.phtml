@@ -1,0 +1,50 @@
+<?php
+/*------------------------------------------------------------------------
+ # SM Cart Pro - Version 2.0.0
+ # Copyright (c) 2015 YouTech Company. All Rights Reserved.
+ # @license - Copyrighted Commercial Software
+ # Author: YouTech Company
+ # Websites: http://www.magentech.com
+-------------------------------------------------------------------------*/
+
+$_helper_compare = $this->helper('catalog/product_compare');
+$_items = $_helper_compare->getItemCount() > 0 ? $_helper_compare->getItemCount() : null;
+$cls_compare = ($_items) ? '' :' cartpro-hidden';
+$_helper_wishlist = $this->helper('wishlist');
+$_nb_wishlist = $_helper_wishlist->getItemCount() > 0 ? $_helper_wishlist->getItemCount() : null;
+$cls_wishlist = $_nb_wishlist ? '' : ' cartpro-hidden ';
+$helper = Mage::helper('cartpro/data');
+$confirm_countdown_number = (int)$helper->_getConfig('confirm_countdown_number'); 
+$cls_time = $confirm_countdown_number > 0 ? ' ' : ' cartpro-hidden';
+$_cartQty = (int)$this->getSummaryCount();
+$cls_cart = $_cartQty > 0 ? '' : ' cartpro-hidden';
+?>
+
+<div id="cartpro_process" class="cartpro-process">
+	<div class="cartpro-loadmark">
+		<div class="cartpro-imageload">
+			<img alt="<?php echo $this->__('Loading...');?>" src="<?php echo $this->getSkinUrl('sm/cartpro/images/ajax_loading.gif')?>">
+			<div class="cartpro-text">
+				<?php echo $this->__('Please wait...');?>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="cartpro_modal" class="cartpro-modal ">
+	<div class="cpmodal-wrapper">
+		<a href="javascript:void(0)" title="<?php echo $this->__('Close')?>" class="cpmodal-close cp-close"><span class="fa fa-times"></span></a>
+		<div class="cpmodal-message"></div>
+		<div class="cpmodal-iframe"></div>
+		<div class="cpmodal-action">
+			<a class="cpmodal-button cp-close" title="<?php  echo $this->__('Continue');?>"  href="#">
+				<?php  echo $this->__('Continue');?><span class="cpmodal-time <?php echo $cls_time; ?>">10</span></a>
+			<a class="cpmodal-button cp-close cpmodal-viewcart cpmodal-display <?php echo $cls_cart; ?>" title="<?php  echo $this->__('View cart & checkout');?>" href="<?php echo Mage::getUrl('checkout/cart/'); ?>">
+				<?php  echo $this->__('View cart & checkout'); ?>
+			</a>
+			<button type="button" title="<?php echo $this->__('Compare') ?>" class="cp-close cpmodal-button cartpro-compare cpmodal-display <?php echo $cls_compare; ?>" onclick="popWin('<?php echo $_helper_compare->getListUrl() ?>','compare','top:0,left:0,width=820,height=600,resizable=yes,scrollbars=yes')"><span><span><?php echo $this->__('Compare') ?></span></span></button>
+			<a  class="cpmodal-button cp-close cartpro-wishlist cpmodal-display <?php echo $cls_wishlist; ?>" href="<?php echo $_helper_wishlist->getListUrl() ?>"><?php echo $this->__('Go to Wishlist') ?></a>
+		</div>
+		<div class="cpmodal-form">
+		</div>
+	</div>
+</div>

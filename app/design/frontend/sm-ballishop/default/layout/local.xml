@@ -1,0 +1,316 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default translate="label" module="page">
+		<reference name="head">
+			
+			<!--REMOVE FILE STYLE.CSS BASE-->
+			<action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
+			<action method="removeItem"><type>skin_css</type><name>css/styles-ie.css</name></action>
+			
+			<action method="removeItem"><type>skin_js</type><name>js/ie6.js</name></action>
+			<action method="removeItem"><type>js</type><name>lib/ds-sleight.js</name></action>
+			
+			<!--JQUERY-->
+			<action method="addJs"><script>sm/jquery/jquery-2.1.3.min.js</script></action>
+			<action method="addJs"><script>sm/jquery/jquery.noconflict.js</script></action>
+			
+			<action method="addItem" ifconfig="cartpro_cfg/general/enable"><type>skin_js</type><name>sm/cartpro/js/cartpro.js</name></action>
+			<action method="addItem" ifconfig="cartpro_cfg/general/enable"><type>skin_js</type><name>sm/cartpro/js/cartpro_update.js</name></action>
+			
+			<!--OWL SLIDER-->
+			<action method="addItem"><type>skin_js</type><name>js/owl.carousel.js</name></action>
+			
+			<!--LIGHT SLIDER-->
+			<action method="addItem"><type>skin_js</type><name>js/jquery.lightSlider.js</name></action>
+			
+			<!--OWL JQUERY TAB-->
+			<action method="addItem"><type>skin_js</type><name>js/easyResponsiveTabs.js</name></action>
+			
+			<!--OWL JQUERY ELEVATEZOOM-->
+			<action method="addItem"><type>skin_js</type><name>js/jquery.elevatezoom.js</name></action>
+			
+			<!--JQUERY FANCYBOX-->
+			<action method="addItem"><type>skin_js</type><name>js/jquery.fancybox.js</name></action>
+			<action method="addItem"><type>skin_js</type><name helper="ballishop/getFancyboxJs"/></action>
+
+			<!--CONFIGUATION SWATCHES-->
+			<action method="addItem"><type>skin_js</type><name>js/configurableswatches/product-media.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/configurableswatches/swatches-list.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/configurableswatches/swatches-product.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/app.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/lib/imagesloaded.js</name></action>
+			
+			
+
+			<!--BOOTSTRAP-->
+			<action method="addItem"><type>skin_css</type><name>css/bootstrap/bootstrap.css</name></action>
+			<action method="addItem"><type>skin_css</type><name>css/bootstrap/bootstrap-theme.min.css</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/bootstrap/bootstrap.min.js</name></action>
+			
+			<!--THEME COLOR-->
+			<action method="addItem"><type>skin_css</type><name helper="ballishop/getCssColor"/></action>
+			
+			<!--HACK CSS-->
+			<action method="addItem"><type>skin_css</type><name>css/css_fix.css</name></action>
+
+			<!--JQTRANSFORM-->
+			<action method="addItem"><type>skin_js</type><name>js/jquery.uniform.js</name></action>
+			
+			<!--CPANEL-->
+			
+			<action method="addItem"><type>skin_js</type><name>js/jquery.cookie.min.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/yt-theme.js</name></action>
+			
+			<!--FONT-AWESOME-->
+			<action method="addItem"><type>skin_css</type><name>css/font-awesome/css/font-awesome.css</name><params/></action>	
+			
+			<!--IE HACK-->
+			<action method="addItem"><type>skin_css</type><name>css/ie_hack.css</name><params/><if>IE</if></action>
+			
+			
+			
+		</reference>
+		
+		<reference name="root">
+            <block type="core/text_list" name="full_top" as="full_top" translate="label">
+                <label>Full Top</label>
+            </block>
+        </reference>
+		
+		<!--HEADER-->
+		<reference name="header">
+			<!-- <action method="setTemplate">
+                <template helper="ballishop/getHeaderTemplate"/>
+            </action> -->
+			<!--ADD POPUP LOGIN-->
+			<block type="customer/form_login" name="customer_form_mini_login" template="customer/form/mini.login.phtml" />
+
+			
+			<!--ADD CURRENCY-->
+			<block type="directory/currency" name="currency" template="directory/currency.phtml"/>
+			
+			<!--ADD MEGAMENU-->
+			<block type="megamenu/list" name="megamenu.list.theme" as="megaMenu" template="sm/megamenu/megamenu.phtml"></block>
+			
+			<block type="page/html_topmenu" name="catalog.topmobinav" template="catalog/navigation/mobinav.phtml" />
+			
+			<!--ADD COMPARE BLOCK-->
+			<block type="catalog/product_compare_sidebar" name="catalog.compare.header" template="catalog/product/compare/compare-header.phtml"/>
+			
+			<!--ADD NEWSLETTER POPUP-->
+			<block type="newsletter/subscribe" name="popup.newsletter" template="newsletter/subscribe-popup.phtml"/>
+
+		</reference>
+		
+		<!--FOOTER-->
+		<reference name="footer">
+			<!-- <action method="setTemplate">
+                <template helper="ballishop/getFooterTemplate"/>
+            </action> -->
+			<block type="page/html" name="social_info" as="social_info" template="page/html/social.phtml"/>	
+			<block type="newsletter/subscribe" name="footer.newsletter" template="newsletter/subscribe-footer.phtml"/>
+			<block type="tag/popular" name="popular-footer" template="tag/popular-footer.phtml"/>
+			<block type="instagramgallery/instagramusers_viewlist" name="instagramgallery" as="instagramgallery"/>
+			<!--ADD CONTENT FIXED-->
+			<block type="customer/form_login" name="customer_form_mini_login_footer" template="customer/form/mini.footer_login.phtml" />
+			<block type="reports/product_viewed" name="footer.reports.product.viewed" template="reports/product_viewed_footer.phtml" />
+			<block type="wishlist/customer_sidebar" name="wishlist_sidebar" template="wishlist/sidebar.phtml" />			
+		</reference>
+
+		<!--COLUMN LEFT-->
+		<reference name="left">
+			<remove name="left.permanent.callout"/>
+			<action method="unsetChild"><name>tags_popular</name></action>
+			<action method="unsetChild"><name>left.newsletter</name></action>
+			<action method="unsetChild"><name>currency</name></action>
+			
+			<!-- <block type="reports/product_viewed" name="left.reports.product.viewed" template="reports/product_viewed.phtml" /> -->
+			
+			<block type="poll/activePoll" name="left.poll">
+                <action method="setPollTemplate"><template>poll/active.phtml</template><type>poll</type></action>
+                <action method="setPollTemplate"><template>poll/result.phtml</template><type>results</type></action>
+            </block>
+		</reference>
+		
+		<reference name="right">
+			<block type="cms/block" name="right.product-sidebar" after="image-sidebar"> 
+				<action method="setBlockId"><block_id>product-sidebar</block_id></action>
+			</block>					
+			<action method="unsetChild"><name>right.reports.product.viewed</name></action>
+			<action method="unsetChild"><name>catalog.compare.sidebar</name></action>
+			<action method="unsetChild"><name>wishlist</name></action>
+			<remove name="sale.reorder.sidebar"/>
+			<remove name="right.reports.product.compared"/>
+		</reference>
+		
+		<!--REMOVE MY CART - MY ACCCOUNT-->
+		<reference name="top.links"> 
+			<action method="removeLinkByUrl">
+				<url helper="checkout/url/getCartUrl" />
+			</action> 
+			
+			<action method="removeLinkByUrl">
+				<url helper="customer/getAccountUrl" />
+			</action> 
+		</reference>
+		
+		<!--ADD CLASS TO WISHLIST LINK-->
+		<reference name="wishlist_link">
+			<action method="setAParams"><params>class="my-wishlist"</params></action>
+		</reference> 
+		
+    </default>
+	<!-- CUSTOM LAYOUT BLOG -->
+    <blog_index_list>
+		<reference name="left">
+			<remove name="tags_popular" />
+			<block type="cms/block" name="image-sidebar">
+				<action method="setBlockId"><block_id>image-static-sidebar</block_id></action>
+			</block>
+			<block type="cms/block" name="product-sidebar" after="image-sidebar"> 
+				<action method="setBlockId"><block_id>product-sidebar</block_id></action>
+			</block>			
+        </reference>
+    </blog_index_list>	
+    <blog_cat_view>
+		<reference name="left">
+			<remove name="tags_popular" />
+			<block type="cms/block" name="image-sidebar">
+				<action method="setBlockId"><block_id>image-static-sidebar</block_id></action>
+			</block>
+			<block type="cms/block" name="product-sidebar" after="image-sidebar"> 
+				<action method="setBlockId"><block_id>product-sidebar</block_id></action>
+			</block>			
+        </reference>
+    </blog_cat_view>	
+    <blog_post_view>
+		<reference name="left">
+			<remove name="tags_popular" />
+			<block type="cms/block" name="image-sidebar">
+				<action method="setBlockId"><block_id>image-static-sidebar</block_id></action>
+			</block>
+			<block type="cms/block" name="product-sidebar" after="image-sidebar"> 
+				<action method="setBlockId"><block_id>product-sidebar</block_id></action>
+			</block>			
+        </reference>
+    </blog_post_view>	
+	<!--REMOVE CURRENCY FROM SIDEBAR-->
+	<catalog_category_default>
+		<reference name="left">
+			<action method="unsetChild"><name>currency</name></action>
+			<block type="cms/block" after="product-sidebar" name="image-sidebar">
+				<action method="setBlockId"><block_id>image-static-sidebar</block_id></action>
+			</block>
+		</reference>
+	</catalog_category_default>
+
+	<catalog_category_layered>
+		<reference name="left">
+			<action method="unsetChild"><name>currency</name></action>
+			<remove name="tags_popular" />
+			<block type="cms/block" name="image-sidebar">
+				<action method="setBlockId"><block_id>image-static-sidebar</block_id></action>
+			</block>
+			<block type="cms/block" name="product-sidebar" after="image-sidebar"> 
+				<action method="setBlockId"><block_id>product-sidebar</block_id></action>
+			</block>
+		</reference>
+	</catalog_category_layered>
+		
+	<catalogsearch_result_index>
+		<reference name="left">
+			<action method="unsetChild"><name>currency</name></action>
+		</reference>
+	</catalogsearch_result_index>
+	
+	<review_product_list>
+		<reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+		
+		<reference name="content">
+			<reference name="product.info">
+
+				<block type="catalog/product_view_media" name="product.info.media" as="media" template="catalog/product/view/media.phtml"></block>
+				
+				<block type="catalog/product_list_upsell" name="product.info.upsell" as="upsell_products" template="catalog/product/list/upsell.phtml"></block>
+				<block type="catalog/product_list_related" name="catalog.product.related" template="catalog/product/list/related.phtml"/>
+				
+				<block type="catalog/product_view_additional" name="product.info.additional" as="product_additional_data" />
+				
+                <block type="catalog/product_view_description" name="product.description" as="description" template="catalog/product/view/description.phtml">
+                    <action method="addToParentGroup"><group>detailed_info</group></action>
+                </block>
+                <block type="catalog/product_view_attributes" name="product.attributes" as="additional" template="catalog/product/view/attributes.phtml">
+                    <action method="addToParentGroup"><group>detailed_info</group></action>
+                </block>
+
+				<block type="page/html_pager" name="product_review_list.toolbar"/>
+				<block type="review/product_view_list" name="product.info.product_additional_data" as="product_reviews" template="review/product/view/list.phtml" />
+				<block type="review/form" name="product.review.form" as="review_form" />
+			</reference>
+		</reference>
+		
+		<reference name="product.info.additional">
+            <block type="tag/product_list" name="product_tag_list" before="-" template="tag/list.phtml">
+                <block type="page/html_wrapper" name="product.tag.list.list.before" as="list_before" translate="label">
+                    <label>Tags List Before</label>
+                    <action method="setMayBeInvisible"><value>1</value></action>
+                </block>
+            </block>
+        </reference>
+	</review_product_list>
+	
+	<!--REMOVE LOGIN LINK-->
+	<customer_logged_out>
+		<reference name="top.links">
+		  <action method="removeLinkByUrl"><url helper="customer/getLoginUrl"/></action>
+		</reference>    
+	</customer_logged_out>
+	
+	<!--REMOVE LOGOUT LINK-->
+	<customer_logged_in>
+        <reference name="top.links">
+			<action method="removeLinkByUrl"><url helper="customer/getLogoutUrl"/></action>            
+        </reference>
+    </customer_logged_in>
+	
+	<!--ACCOUNT PAGE-->
+	<customer_account translate="label">
+        <label>Customer My Account (All Pages)</label>
+
+        <reference name="left">
+            <remove name="tags_popular"/>
+            <remove name="catalog.compare.sidebar"/>
+            <remove name="left.poll"/>
+            <remove name="left.reports.product.viewed"/>
+            <remove name="sale.reorder.sidebar"/>
+        </reference>
+    </customer_account>
+	
+	<catalogsearch_result_index>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+    </catalogsearch_result_index>
+	
+	<tag_product_list>
+	    <reference name="left">
+            <block type="catalog/layer_view" name="catalog.leftnav" after="currency" template="catalog/layer/view.phtml"/>
+			<block type="cms/block" name="image-sidebar">
+				<action method="setBlockId"><block_id>image-static-sidebar</block_id></action>
+			</block>
+        </reference>	
+		<reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+	</tag_product_list>
+	<checkout-onepage-success>
+	    <reference name="right">
+			<block type="cms/block" name="product-sidebar"> 
+				<action method="setBlockId"><block_id>product-sidebar</block_id></action>
+			</block>
+        </reference>	
+	</checkout-onepage-success>
+	
+</layout>

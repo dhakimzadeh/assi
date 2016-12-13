@@ -1,0 +1,23 @@
+<?php
+/*------------------------------------------------------------------------
+ # SM Cart Pro - Version 2.0.0
+ # Copyright (c) 2015 YouTech Company. All Rights Reserved.
+ # @license - Copyrighted Commercial Software
+ # Author: YouTech Company
+ # Websites: http://www.magentech.com
+-------------------------------------------------------------------------*/
+$helper = Mage::helper('cartpro/data');
+?>
+
+<script type="text/javascript">
+//<![CDATA[
+	var enable_ajax_cart = <?php echo $helper->_getConfig('enable_ajax_cart'); ?>;
+	var enable_ajax_compare = <?php echo $helper->_getConfig('enable_ajax_compare'); ?>;
+	var enable_ajax_wishlist = <?php echo $helper->_getConfig('enable_ajax_wishlist'); ?>;
+	var confirm_countdown_number = <?php echo $helper->_getConfig('confirm_countdown_number'); ?>;
+	var effect = '<?php echo $helper->_getConfig('mini_cartpro_effect_selector'); ?>'
+	var cartpro_baseurl = '<?php echo Mage::getBaseUrl(); ?>';
+	var isLoggedIn = <?php echo  (Mage::getSingleton('customer/session')->isLoggedIn())? 1: 0; ?>;
+	var currencyCode = '<?php echo Mage::app()->getLocale()->currency(Mage::app()->getStore()->getCurrentCurrencyCode())->getSymbol(); ?>';
+//]]>    
+</script>

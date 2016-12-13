@@ -1,0 +1,174 @@
+<?php
+/*------------------------------------------------------------------------
+ # SM Cart Pro - Version 2.0.0
+ # Copyright (c) 2015 YouTech Company. All Rights Reserved.
+ # @license - Copyrighted Commercial Software
+ # Author: YouTech Company
+ # Websites: http://www.magentech.com
+-------------------------------------------------------------------------*/
+?>
+<?php $_helper = $this->helper('catalog/output'); ?>
+<?php $_product = $this->getProduct(); ?>
+<script type="text/javascript">
+    var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
+</script>
+<!--<div id="messages_product_view"><?php //echo $this->getMessagesBlock()->toHtml() ?></div>-->
+<div class="product-view cartpro-product">
+    <div class="product-essential">
+        <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+            <?php echo $this->getBlockHtml('formkey') ?>
+            <div class="no-display">
+                <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
+                <input type="hidden" name="related_product" id="related-products-field" value="" />
+            </div>
+            <div class="product-shop cf">
+                <div class="product-name">
+                   <?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
+                </div>
+
+                <div class="price-info">
+                    <?php echo $this->getPriceHtml($_product); ?>
+                    <?php echo $this->getChildHtml('bundle_prices') ?>
+                    <?php echo $this->getTierPriceHtml() ?>
+                </div>
+
+                <div class="extra-info">
+                    <?php //echo $this->getReviewsSummaryHtml($_product, 'default', false)?>
+                    <?php echo $this->getChildHtml('product_type_availability'); ?>
+                </div>
+
+                <?php echo $this->getChildHtml('alert_urls') ?>
+
+                <?php echo $this->getChildHtml('other');?>
+
+                <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+                    <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
+                <?php endif;?>
+
+            </div>
+
+            <div class="add-to-cart-wrapper">
+                <?php echo $this->getChildHtml('product_type_data') ?>
+                <?php echo $this->getChildHtml('extrahint') ?>
+
+                <?php if (!$this->hasOptions()):?>
+                    <div class="add-to-box">
+                        <?php if($_product->isSaleable()): ?>
+                            <?php echo $this->getChildHtml('addtocart') ?>
+                            <?php if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
+                                <span class="or"><?php echo $this->__('OR') ?></span>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                        <?php echo $this->getChildHtml('addto') ?>
+                    </div>
+                    <?php echo $this->getChildHtml('extra_buttons') ?>
+                <?php elseif (!$_product->isSaleable()): ?>
+                    <div class="add-to-box">
+                        <?php echo $this->getChildHtml('addto') ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+
+            <div class="clearer"></div>
+            <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+                <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
+            <?php endif;?>
+        </form>
+        <script type="text/javascript">
+        //<![CDATA[
+            productAddToCartForm = new VarienForm('product_addtocart_form');
+            productAddToCartForm.submit = function(button, url) {
+                if (this.validator.validate()) {
+                    var form = this.form;
+                    var oldUrl = form.action;
+                    if (url) {
+                       form.action = url;
+                    }
+                    var e = null;
+                    try {
+                        if(window.top !== window.self)
+							window.top.ajaxCartPro.ajaxCartSubmit(form, 'form');
+						else
+							ajaxCartPro.ajaxCartSubmit(form, 'form');
+							
+                    } catch (e) {
+                    }
+                    this.form.action = oldUrl;
+                    if (e) {
+                        throw e;
+                    }
+
+                    if (button && button != 'undefined') {
+                        button.disabled = true;
+                    }
+                }
+            }.bind(productAddToCartForm);
+
+            productAddToCartForm.submitLight = function(button, url){
+                if(this.validator) {
+                    var nv = Validation.methods;
+                    delete Validation.methods['required-entry'];
+                    delete Validation.methods['validate-one-required'];
+                    delete Validation.methods['validate-one-required-by-name'];
+                    // Remove custom datetime validators
+                    for (var methodName in Validation.methods) {
+                        if (methodName.match(/^validate-datetime-.*/i)) {
+                            delete Validation.methods[methodName];
+                        }
+                    }
+					if (this.validator.validate()) {
+						if (typeof enable_ajax_wishlist !== 'undefined' &&  enable_ajax_wishlist){
+							var form = this.form;
+							if (url) form.setAttribute('data-action', url);
+							try {
+								if (url.search('wishlist/index/updateItemOptions') != -1 || url.search('wishlist/index/add') != -1){
+									if(window.top !== window.self) {
+										window.top.ajaxCartPro.ajaxCartSubmit(this, 'wishlist_update');
+									}else{
+										ajaxCartPro.ajaxCartSubmit(this, 'wishlist_update');
+									}	
+								}else{
+									if(window.top !== window.self)
+										window.top.ajaxCartPro.ajaxCartSubmit(this, 'form');
+									else
+										ajaxCartPro.ajaxCartSubmit(this, 'form');
+								}
+								return false;
+							} catch (e) {
+							}	
+						}else{
+							if (url) {
+								this.form.action = url;
+							}
+							if(window.top !== window.self) {
+								window.top.ajaxCartPro.resetModal();
+								window.top.location.href = url;
+							}	
+							this.form.submit();
+						}
+                    }
+                    Object.extend(Validation.methods, nv);
+                }
+            }.bind(productAddToCartForm);
+			/* For Compare */
+			if(typeof enable_ajax_compare !== 'undefined' &&  enable_ajax_compare){
+			}else {
+				var _compare_btn = 	$$('.link-compare');
+				if (typeof _compare_btn !== 'undefined' && _compare_btn !== null){
+					_compare_btn.each(function (e){
+						var _w_href = $(e).readAttribute('href');
+						$(e).observe('click', function(event) {
+							if(window.top !== window.self) {
+								window.top.ajaxCartPro.resetModal();
+								window.self.location.href = _w_href;  
+								window.top.location.reload();
+							}
+						});
+					});
+				}
+			}
+			
+        //]]>
+        </script>
+    </div>
+</div>

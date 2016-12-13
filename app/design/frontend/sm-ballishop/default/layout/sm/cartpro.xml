@@ -1,0 +1,272 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>	
+		<reference name="head">
+			<action method="addJs" ifconfig="cartpro_cfg/general/enable"><script>varien/product.js</script></action>
+			<action method="addJs" ifconfig="cartpro_cfg/general/enable"><script>calendar/calendar.js</script></action>
+			<action method="addJs" ifconfig="cartpro_cfg/general/enable"><script>calendar/calendar-setup.js</script></action>
+			<action method="addItem" ifconfig="cartpro_cfg/general/enable"><type>skin_js</type><name>js/bundle.js</name></action>
+			<action method="addJs"><script>varien/product.js</script></action>
+            <action method="addJs"><script>varien/configurable.js</script></action>
+
+            <action method="addItem"><type>js_css</type><name>calendar/calendar-win2k-1.css</name><params/><!--<if/><condition>can_load_calendar_js</condition>--></action>
+            <action method="addItem"><type>js</type><name>calendar/calendar.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
+            <action method="addItem"><type>js</type><name>calendar/calendar-setup.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
+
+			<block type="core/template"  name="cartpro.head" as="cartpro.head">
+				<action ifconfig="cartpro_cfg/general/enable" method="setTemplate">
+					<template>sm/cartpro/top.phtml</template>
+				</action>
+			</block>
+		</reference>
+		<reference name="before_body_end">
+			<block type="core/template" name="jsfooter" before="-">
+				<action ifconfig="cartpro_cfg/general/enable" method="setTemplate">
+					<template>sm/cartpro/jsfooter.phtml</template>
+				</action>
+			</block>
+		</reference>
+		<reference name="header">
+			<block type="checkout/cart_sidebar" name="mini-cartpro" as="mini-cartpro" template="sm/cartpro/checkout/cart/mini-cartpro.phtml" before="-">
+			   	<block type="checkout/cart_sidebar" name="mini_cartpro_content" template="sm/cartpro/checkout/cart/mini-cartpro/items.phtml" before="-">
+					<action method="addItemRender">
+						<type>default</type>
+						<block>checkout/cart_item_renderer</block>
+						<template>sm/cartpro/checkout/cart/mini-cartpro/default.phtml</template>
+					</action>
+					<action method="addItemRender">
+						<type>simple</type>
+						<block>checkout/cart_item_renderer</block>
+						<template>sm/cartpro/checkout/cart/mini-cartpro/default.phtml</template>
+					</action>
+					<action method="addItemRender">
+						<type>grouped</type>
+						<block>checkout/cart_item_renderer_grouped</block>
+						<template>sm/cartpro/checkout/cart/mini-cartpro/default.phtml</template>
+					</action>
+					<action method="addItemRender">
+						<type>configurable</type>
+						<block>checkout/cart_item_renderer_configurable</block>
+						<template>sm/cartpro/checkout/cart/mini-cartpro/default.phtml</template>
+					</action> 
+			   </block>
+			</block>
+		</reference>
+		
+		
+		<remove name="cart_sidebar"/>
+		<remove name="minicart_head"/> 
+
+    </default>
+	
+	<cartpro_checkout_cart_add>
+		<block type="checkout/cart_sidebar" name="cart_sidebar" template="sm/cartpro/checkout/cart/mini-cartpro/items.phtml">
+			<action method="addItemRender">
+				<type>simple</type>
+				<block>checkout/cart_item_renderer</block>
+				<template>checkout/cart/sidebar/default.phtml</template>
+			</action>
+			<action method="addItemRender">
+				<type>grouped</type>
+				<block>checkout/cart_item_renderer_grouped</block>
+				<template>checkout/cart/sidebar/default.phtml</template>
+			</action>
+			<action method="addItemRender">
+				<type>configurable</type>
+				<block>checkout/cart_item_renderer_configurable</block>
+				<template>checkout/cart/sidebar/default.phtml</template>
+			</action>
+		</block>
+		<update handle="checkout_cart_index" />
+	</cartpro_checkout_cart_add>
+	
+	<cartpro_checkout_cart_ajaxupdate>
+		<block type="checkout/cart_sidebar" name="cart_sidebar" template="sm/cartpro/checkout/cart/mini-cartpro/items.phtml">
+			<action method="addItemRender">
+				<type>simple</type>
+				<block>checkout/cart_item_renderer</block>
+				<template>checkout/cart/sidebar/default.phtml</template>
+			</action>
+			<action method="addItemRender">
+				<type>grouped</type>
+				<block>checkout/cart_item_renderer_grouped</block>
+				<template>checkout/cart/sidebar/default.phtml</template>
+			</action>
+			<action method="addItemRender">
+				<type>configurable</type>
+				<block>checkout/cart_item_renderer_configurable</block>
+				<template>checkout/cart/sidebar/default.phtml</template>
+			</action>
+		</block>
+		<update handle="checkout_cart_index" />
+	</cartpro_checkout_cart_ajaxupdate>
+	
+	<cartpro_checkout_cart_ajaxdelete>
+		<block type="checkout/cart_sidebar" name="cart_sidebar" template="sm/cartpro/checkout/cart/mini-cartpro/items.phtml">
+			<action method="addItemRender">
+				<type>simple</type>
+				<block>checkout/cart_item_renderer</block>
+				<template>checkout/cart/sidebar/default.phtml</template>
+			</action>
+			<action method="addItemRender">
+				<type>grouped</type>
+				<block>checkout/cart_item_renderer_grouped</block>
+				<template>checkout/cart/sidebar/default.phtml</template>
+			</action>
+			<action method="addItemRender">
+				<type>configurable</type>
+				<block>checkout/cart_item_renderer_configurable</block>
+				<template>checkout/cart/sidebar/default.phtml</template>
+			</action>
+		</block>
+		<update handle="checkout_cart_index" />
+	</cartpro_checkout_cart_ajaxdelete>
+	
+	<cartprooptoins_index_product>
+        <reference name="root">
+            <action method="setTemplate"><template>page/empty.phtml</template></action>
+            <!-- Mark root page block that template is applied -->
+            <action method="setIsHandle"><applied>1</applied></action>
+            <action method="setLayoutCode"><name>empty</name></action>
+        </reference>
+        <reference name="head">
+            <action method="addJs"><script>varien/product.js</script></action>
+            <action method="addJs"><script>varien/configurable.js</script></action>
+            <action method="addItem"><type>js_css</type><name>calendar/calendar-win2k-1.css</name><params/></action>
+            <action method="addItem"><type>js</type><name>calendar/calendar.js</name></action>
+            <action method="addItem"><type>js</type><name>calendar/calendar-setup.js</name></action>
+        </reference>
+       <reference name="content">
+            <block type="catalog/product_view" name="product.info" template="sm/cartpro/catalog/product/view.phtml">
+                <block type="catalog/product_view" name="product.info.addto" as="addto" template="catalog/product/view/addto.phtml"/>
+                <block type="catalog/product_view" name="product.info.addtocart" as="addtocart" template="catalog/product/view/addtocart.phtml"/>
+                <block type="core/text_list" name="product.info.extrahint" as="extrahint" translate="label">
+                    <label>Product View Extra Hint</label>
+                </block>
+                <block type="catalog/product_view" name="product.info.options.wrapper" as="product_options_wrapper" template="catalog/product/view/options/wrapper.phtml" translate="label">
+                    <label>Info Column Options Wrapper</label>
+                    <block type="core/template" name="options_js" template="catalog/product/view/options/js.phtml"/>
+                    <block type="catalog/product_view_options" name="product.info.options" as="product_options" template="catalog/product/view/options.phtml">
+                        <action method="addOptionRenderer"><type>text</type><block>catalog/product_view_options_type_text</block><template>catalog/product/view/options/type/text.phtml</template></action>
+                        <action method="addOptionRenderer"><type>file</type><block>catalog/product_view_options_type_file</block><template>catalog/product/view/options/type/file.phtml</template></action>
+                        <action method="addOptionRenderer"><type>select</type><block>catalog/product_view_options_type_select</block><template>catalog/product/view/options/type/select.phtml</template></action>
+                        <action method="addOptionRenderer"><type>date</type><block>catalog/product_view_options_type_date</block><template>catalog/product/view/options/type/date.phtml</template></action>
+                </block>
+                        <block type="core/html_calendar" name="html_calendar" as="html_calendar" template="page/js/calendar.phtml"/>
+                    </block>
+                <block type="catalog/product_view" name="product.info.options.wrapper.bottom" as="product_options_wrapper_bottom" template="catalog/product/view/options/wrapper/bottom.phtml" translate="label">
+                    <label>Bottom Block Options Wrapper</label>
+                    <action method="insert"><block>product.tierprices</block></action>
+                    <block type="catalog/product_view" name="product.clone_prices" as="prices" template="catalog/product/view/price_clone.phtml"/>
+                    <action method="append"><block>product.info.addtocart</block></action>
+                    <action method="append"><block>product.info.addto</block></action>
+                    <action method="append"><block>product.info.sharing</block></action>
+                </block>
+
+                <block type="core/template_facade" name="product.info.container1" as="container1">
+                    <action method="setDataByKey"><key>alias_in_layout</key><value>container1</value></action>
+                    <action method="setDataByKeyFromRegistry"><key>options_container</key><key_in_registry>product</key_in_registry></action>
+                    <action method="append"><block>product.info.options.wrapper</block></action>
+                    <action method="append"><block>product.info.options.wrapper.bottom</block></action>
+                </block>
+                <block type="core/template_facade" name="product.info.container2" as="container2">
+                    <action method="setDataByKey"><key>alias_in_layout</key><value>container2</value></action>
+                    <action method="setDataByKeyFromRegistry"><key>options_container</key><key_in_registry>product</key_in_registry></action>
+                    <action method="append"><block>product.info.options.wrapper</block></action>
+                    <action method="append"><block>product.info.options.wrapper.bottom</block></action>
+                </block>
+                <action method="unsetCallChild"><child>container1</child><call>ifEquals</call><if>0</if><key>alias_in_layout</key><key>options_container</key></action>
+                <action method="unsetCallChild"><child>container2</child><call>ifEquals</call><if>0</if><key>alias_in_layout</key><key>options_container</key></action>
+            </block>
+			<remove name="product.tooltip"/>
+			<remove name="jsfooter"/>
+			<remove name="mgt_developertoolbar"/>
+        </reference>
+	</cartprooptoins_index_product>
+  
+	<cartpro_catalog_product_compare_add>
+		<block type="catalog/product_compare_sidebar" name="cartpro_compare_sidebar" template="catalog/product/compare/sidebar.phtml"/>
+	</cartpro_catalog_product_compare_add>
+	
+	<cartpro_catalog_product_compare_remove>
+		<block type="catalog/product_compare_sidebar" name="cartpro_compare_sidebar" template="catalog/product/compare/sidebar.phtml"/>
+	</cartpro_catalog_product_compare_remove>
+	
+	<cartpro_catalog_product_compare_clear>
+		<block type="catalog/product_compare_sidebar" name="cartpro_compare_sidebar" template="catalog/product/compare/sidebar.phtml"/>
+	</cartpro_catalog_product_compare_clear>
+	<cartpro_wishlist_cart>
+		<reference name="my.account.wrapper">
+            <block type="wishlist/customer_wishlist" name="customer.wishlist" template="sm/cartpro/wishlist/view.phtml">
+                <action method="setTitle" translate="title">
+                    <title>My Wishlist</title>
+                </action>
+                <block type="wishlist/customer_wishlist_items" name="customer.wishlist.items" as="items" template="wishlist/item/list.phtml">
+                    <block type="wishlist/customer_wishlist_item_column_image" name="customer.wishlist.item.image" template="wishlist/item/column/image.phtml" />
+                    <block type="wishlist/customer_wishlist_item_column_comment" name="customer.wishlist.item.info" template="wishlist/item/column/info.phtml">
+                        <block type="wishlist/customer_wishlist_button" name="customer.wishlist.button.update" template="wishlist/button/update.phtml" />
+                    </block>
+                    <block type="wishlist/customer_wishlist_item_column_cart" name="customer.wishlist.item.quantity" template="wishlist/item/column/quantity.phtml">
+                        <action method="setTitle" translate="title">
+                            <title>Qty</title>
+                        </action>
+                        <block type="wishlist/customer_wishlist_item_options" name="customer.wishlist.item.options" />
+                    </block>
+                    <block type="wishlist/customer_wishlist_item_column_cart" name="customer.wishlist.item.price" template="wishlist/item/column/price.phtml">
+                        <action method="setTitle" translate="title">
+                            <title>Price</title>
+                        </action>
+                        <block type="wishlist/customer_wishlist_item_options" name="customer.wishlist.item.options" />
+                    </block>
+                    <block type="wishlist/customer_wishlist_item_column_cart" name="customer.wishlist.item.cart" template="wishlist/item/column/cart.phtml">
+                        <block type="wishlist/customer_wishlist_item_options" name="customer.wishlist.item.options" />
+                    </block>
+                    <block type="wishlist/customer_wishlist_item_column_remove" name="customer.wishlist.item.remove" template="wishlist/item/column/remove.phtml" />
+                </block>
+                <block type="core/text_list" name="customer.wishlist.buttons" as="control_buttons">
+                    <block type="wishlist/customer_wishlist_button" name="customer.wishlist.button.share" template="wishlist/button/share.phtml" />
+                    <block type="wishlist/customer_wishlist_button" name="customer.wishlist.button.toCart" template="wishlist/button/tocart.phtml" />
+                    <block type="wishlist/customer_wishlist_button" name="customer.wishlist.button.update" template="wishlist/button/update.phtml" />
+                </block>
+            </block>
+        </reference>
+
+	</cartpro_wishlist_cart>
+	<cartpro_wishlist_remove>
+		<reference name="my.account.wrapper">
+            <block type="wishlist/customer_wishlist" name="customer.wishlist" template="sm/cartpro/wishlist/view.phtml">
+                <action method="setTitle" translate="title">
+                    <title>My Wishlist</title>
+                </action>
+                <block type="wishlist/customer_wishlist_items" name="customer.wishlist.items" as="items" template="wishlist/item/list.phtml">
+                    <block type="wishlist/customer_wishlist_item_column_image" name="customer.wishlist.item.image" template="wishlist/item/column/image.phtml" />
+                    <block type="wishlist/customer_wishlist_item_column_comment" name="customer.wishlist.item.info" template="wishlist/item/column/info.phtml">
+                        <block type="wishlist/customer_wishlist_button" name="customer.wishlist.button.update" template="wishlist/button/update.phtml" />
+                    </block>
+                    <block type="wishlist/customer_wishlist_item_column_cart" name="customer.wishlist.item.quantity" template="wishlist/item/column/quantity.phtml">
+                        <action method="setTitle" translate="title">
+                            <title>Qty</title>
+                        </action>
+                        <block type="wishlist/customer_wishlist_item_options" name="customer.wishlist.item.options" />
+                    </block>
+                    <block type="wishlist/customer_wishlist_item_column_cart" name="customer.wishlist.item.price" template="wishlist/item/column/price.phtml">
+                        <action method="setTitle" translate="title">
+                            <title>Price</title>
+                        </action>
+                        <block type="wishlist/customer_wishlist_item_options" name="customer.wishlist.item.options" />
+                    </block>
+                    <block type="wishlist/customer_wishlist_item_column_cart" name="customer.wishlist.item.cart" template="wishlist/item/column/cart.phtml">
+                        <block type="wishlist/customer_wishlist_item_options" name="customer.wishlist.item.options" />
+                    </block>
+                    <block type="wishlist/customer_wishlist_item_column_remove" name="customer.wishlist.item.remove" template="wishlist/item/column/remove.phtml" />
+                </block>
+                <block type="core/text_list" name="customer.wishlist.buttons" as="control_buttons">
+                    <block type="wishlist/customer_wishlist_button" name="customer.wishlist.button.share" template="wishlist/button/share.phtml" />
+                    <block type="wishlist/customer_wishlist_button" name="customer.wishlist.button.toCart" template="wishlist/button/tocart.phtml" />
+                    <block type="wishlist/customer_wishlist_button" name="customer.wishlist.button.update" template="wishlist/button/update.phtml" />
+                </block>
+            </block>
+        </reference>
+
+	</cartpro_wishlist_remove>
+</layout> 

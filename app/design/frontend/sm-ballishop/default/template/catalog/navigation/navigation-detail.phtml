@@ -1,0 +1,57 @@
+
+<?php
+/*
+ * https://jpsolution.wordpress.com - Magento Tutorials
+ *
+ * Display top level categories
+ *
+**/
+?>
+<?php $_helper = Mage::helper('catalog/category') ?>
+<?php
+$categories = Mage::getModel('catalog/category')->getCollection()
+    ->addAttributeToSelect('*')//or you can just add some attributes
+    ->addAttributeToFilter('level', 2)//2 is actually the first level
+    ->addAttributeToFilter('is_active', 1);
+?>
+
+<div class="block block-categories">
+	<div class="block-title">
+		<strong>
+			<span><?php echo $this->__('Categories')?></span>
+		</strong>
+	</div>
+	
+	<div class="block-content">
+		<ul class="list-categories">
+			<?php foreach($categories as $_category): ?>
+				<li>
+					<a href="<?php echo $_helper->getCategoryUrl($_category) ?>">
+						<?php echo $_category->getName() ?>
+					</a>
+				</li>
+			<?php endforeach; ?>
+			
+		</ul>
+		
+		<div class="btn-showmore"><a href="javascript:void(0)" title="<?php echo $this->__('Show More')?>"><?php echo $this->__('Show More')?></a></div>
+		
+		<script>
+			jQuery(document).ready(function ($) {
+				$(".list-categories li:gt(7)").addClass('item-hidden');
+				
+				$( ".btn-showmore a" ).click(function() {
+					$(this).toggleClass('btn-active');
+					
+					if($(this).hasClass('btn-active')){
+						$(this).text("<?php echo $this->__('Show Less')?>");
+					} else {
+						$(this).text("<?php echo $this->__('Show More')?>");
+					}
+
+					$(".list-categories li:gt(7)").toggleClass('active');
+				});
+			});
+		</script>
+	</div>
+</div>

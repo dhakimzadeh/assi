@@ -1,0 +1,38 @@
+<?php
+/*------------------------------------------------------------------------
+ # SM Cart Pro - Version 2.0.0
+ # Copyright (c) 2015 YouTech Company. All Rights Reserved.
+ # @license - Copyrighted Commercial Software
+ # Author: YouTech Company
+ # Websites: http://www.magentech.com
+-------------------------------------------------------------------------*/
+$helper = Mage::helper('cartpro/data');
+if (!$helper->_getConfig('enable'))
+	return;
+	
+$_cartQty = $this->getSummaryCount();
+if(empty($_cartQty)) 
+	$_cartQty = 0;
+
+$config = Mage::helper('ballishop/config');
+$hdStyle = $config->getThemeLayout('header_style');
+
+?>
+
+<div id="sm_cartpro" class="sm-cartpro">
+	<div class="cartpro-title <?php if($_cartQty <= 0): ?> cartpro-empty<?php endif; ?> ">
+		<div class="info-minicart">
+			<h2 class="cartpro-label"><?php echo $this->__('Cart'); ?></h2>
+			<div class="item-info">
+				<span class="cartpro-count"><?php echo $_cartQty; ?></span>
+				<span class="total-price"><?php echo Mage::helper('checkout')->formatPrice($this->getSubtotal()) ?></span>
+			</div>
+		</div>
+		<div class="icon-mini-cart">
+			<span class="text-hidden"><?php echo $this->__('Cart'); ?></span>
+		</div>		
+	</div>
+	<div class="cartpro-content">
+		<?php echo $this->getChildHtml('mini_cartpro_content'); ?>
+	</div>
+</div>

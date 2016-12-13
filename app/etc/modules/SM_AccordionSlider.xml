@@ -1,0 +1,11 @@
+<config>
+	<modules>
+		<SM_AccordionSlider>
+			<active>true</active>
+			<codePool>local</codePool>
+			<depends>
+				<Mage_Catalog />
+			</depends>
+		</SM_AccordionSlider>
+	</modules>
+</config>

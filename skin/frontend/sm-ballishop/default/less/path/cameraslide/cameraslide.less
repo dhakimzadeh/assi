@@ -1,0 +1,281 @@
+/**************************
+*
+*	GENERAL
+*
+**************************/
+
+.clearfix_cameraslide, .cameraslide {
+  clear: both;
+}
+
+.filmore_loader{
+  display: none;
+}
+
+.filmore_commands{
+  opacity: 0;
+  .transition(.2s);
+}
+
+.pix_slideshow{
+  &:hover{
+    .filmore_commands{
+      opacity: 1;
+    }
+  }
+}
+
+.text-shadow{
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+  -webkit-text-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+}
+
+.btn-slideshow{
+  display: block;
+  padding:7px 10px 10px;
+
+  &.bg-btn1{
+    background-color: @color_theme;
+    color: inherit;
+
+    &:hover{
+      background-color: #fff;
+      color: @color_theme;
+    }
+  }
+
+  &.bg-btn2{
+    background-color: #fff;
+    color: inherit;
+
+    &:hover{
+      background-color: @color_theme;
+      color: #fff;
+    }
+  }
+
+  &.bg-btn3{
+    padding:7px 0 8px;
+    border-radius: 3px;
+
+    &:hover{
+      background-color: @color_theme;
+      color: #fff;
+    }
+  }
+
+  &.bg-btn4{
+    padding:7px 0 8px;
+    border-radius: 3px;
+    background-color: @color_theme;
+    color: #fff;
+
+    &:hover{
+      background-color: #fff;
+      color: @color_theme
+    }
+  }
+
+  &.bg-btn4-red{
+    background-color: #f65d5d;
+  }
+
+  &.bg-btn5{
+    border:1px solid #444444;
+
+    &:hover{
+      border-color: @color_theme;
+      background-color: @color_theme;
+      color: #fff;
+    }
+  }
+}
+
+/* Css of js enfinity*/
+
+.pix_slideshow {
+  float: left;
+  width: 100%;
+  position: relative;
+}
+
+.pix_slideshow img {
+  max-width: none !important;
+}
+
+.pix_slideshow [data-use="simple"] img,
+.pix_slideshow [data-use="simple"] .filmore_rotate_wrap {
+  max-width: 100% !important;
+}
+
+.pix_slideshow_until_image {
+  display: none;
+}
+
+.pix_slideshow_target {
+  display: block;
+}
+
+.pix_slideshow_target {
+  overflow: hidden;
+  position: relative;
+  visibility: hidden;
+}
+
+.film_slide {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+.filmoreSlide {
+  bottom: 0;
+  display: none;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+.filmoreSlide > div {
+  position: absolute;
+}
+
+.filmoreBgs {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+.filmore_loader {
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+
+.filmore_control{
+  position: absolute;
+  top:56px;
+  right: 20px;
+
+  span{
+    display: none;
+  }
+
+  &:before{
+    font-family: fontawesome;
+    font-size: 16px;
+  }
+
+  &.filmore_play{
+    &:before{
+      content: "\f04b";
+    }
+  }
+
+  &.filmore_pause{
+    &:before{
+      content: "\f04d";
+    }
+  }
+}
+
+
+.filmore_command {
+    display: inline-block;
+    cursor: pointer;
+    height: 43px;
+    line-height: 43px;
+    overflow: hidden;
+    width: 41px;
+    background: #000 url('../../../images/icon-control-camera.png') no-repeat center center;
+    color: #fff !important;
+    position: absolute;
+    top: 50%;
+    margin-top: 20px;
+    text-align: center;
+	opacity: 0.6 !important;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+  span{
+    display: none;
+  }
+
+  &:hover {
+    background-color: @color_theme;
+  }
+}
+
+.filmore_autoadv .filmore_play {
+  display: none;
+}
+
+.filmore_autoadv .filmore_pause {
+  display: block;
+}
+
+.filmore_prev {
+  left:0;
+  -webkit-transform:rotate(180deg);
+  -moz-transform:rotate(180deg);
+}
+
+.filmore_next {
+  right:0;
+}
+
+.filmore_next:hover,
+.filmore_prev:hover,
+.filmore_pag:hover,
+.filmore_pause:hover,
+.filmore_play:hover {
+  opacity: 1;
+}
+
+.filmore_pagination {
+  display: inline-block;
+  overflow: hidden;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.filmore_pag {
+  background-color: #fff;
+  display: inline-block;
+  height: 18px;
+  text-indent: -9999px;
+  width: 18px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  margin:0 5px;
+
+  &:hover{
+    background-color: @color_theme;
+  }
+}
+
+.filmore_pag.filmore_current_pag {
+  background-color: @color_theme;
+  cursor: default;
+  opacity: 1 !important;
+}
+
+.pix_slideshow [data-use="simple"] img,
+.pix_slideshow [data-use="simple"] .filmore_rotate_wrap {
+  max-width: 100% !important;
+}

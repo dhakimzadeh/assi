@@ -1,0 +1,50 @@
+<?php
+/*------------------------------------------------------------------------
+ # SM Shop By - Version 1.0
+ # Copyright (c) 2014 YouTech Company. All Rights Reserved.
+ # @license - Copyrighted Commercial Software
+ # Author: YouTech Company
+ # Websites: http://www.magentech.com
+-------------------------------------------------------------------------*/?>
+
+<ol>
+    <?php foreach ($this->getItems() as $_item): 
+		$item_count = $_item->getCount();
+		$item_label = $_item->getLabel();
+	?>
+        <li class="<?php echo str_replace(' ','_',$item_label);?> <?php if ($_item->isSelected()) echo $this->__('active'); ?>">
+            <?php if ($item_count > 0): ?>
+                <input class="check-shopby" type="checkbox"<?php if ($_item->isSelected()): ?> checked="checked" <?php endif; ?>
+                <?php if ($this->helper('sm_shopby')->isAjaxEnabled()): ?>
+                           onclick="$(this).next().click()"
+                       <?php else: ?>
+                           onclick="setLocation('<?php echo ($_item->isSelected()) ? $this->urlEscape($_item->getRemoveUrl()) : $this->urlEscape($_item->getUrl()) ?>')"
+                       <?php endif; ?>
+                       />
+                <a title="<?php echo $item_label; ?>" class="<?php if ($_item->isSelected()) echo $this->__('checked'); ?>" 
+                <?php if ($_item->isSelected()): ?>
+                        onclick="$(this).previous().checked = false;" 
+                    <?php else: ?>
+                        onclick="$(this).previous().checked = true;" 
+                    <?php endif; ?>                            
+                    href="<?php echo ($_item->isSelected()) ? $_item->getRemoveUrl() : $_item->getUrl() ?>"
+                    ><?php echo $item_label; ?>
+					<?php if ($this->shouldDisplayProductCount()): ?>
+					<span class="item-count"><?php if($item_count < 10) echo '0'?><?php echo $item_count; ?></span>
+					<?php endif; ?>
+					</a>
+                <?php else: ?>
+                    <?php echo $item_label; ?>
+                <?php endif; ?>
+            
+        </li>
+    <?php endforeach ?>
+</ol>
+
+<script>
+	jQuery(document).ready(function($){
+		$("#narrow-by-list ol li a").click(function() {
+			$(this).toggleClass('checked');
+		});
+	});
+</script>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<layout version="1.0">
+	<default>
+		<reference name="head">
+			<action method="addItem">
+				<type>skin_js</type>
+				<name helper="accordionslider/data/accordionsliderInlucdeJQquery"></name>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name helper="accordionslider/data/accordionsliderInlucdeNoconflict"></name>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name helper="accordionslider/data/accordionsliderInlucdeMigrate"></name>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name helper="accordionslider/data/addJqueryEasing"></name>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name helper="accordionslider/data/addJsAccordionSlider"></name>
+			</action>
+			<!--
+			<action method="addItem">
+				<type>skin_css</type>
+				<name helper="accordionslider/data/addCssAccordionSlider"></name>
+			</action>
+			-->
+		</reference>
+	</default>
+	<accordionslider_index_index>
+		<reference name="content">
+			<block type="accordionslider/slider_view" name="accordionslider.view.default" template="sm/accordionslider/default.phtml">
+			</block>
+		</reference>
+	</accordionslider_index_index>
+</layout>

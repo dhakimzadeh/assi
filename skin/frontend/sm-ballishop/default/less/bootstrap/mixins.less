@@ -1,0 +1,33 @@
+.transform_scale(@scale:1){
+  transform:scale(@scale);
+  -moz-transform:scale(@scale);
+  -webkit-transform:scale(@scale);
+  -ms-transform:scale(@scale);
+}
+
+.transition(@transition:.3s){
+  transition:@transition ease-in-out 0s;
+  -moz-transition:@transition ease-in-out 0s;
+  -webkit-transition:@transition ease-in-out 0s;
+}
+
+.transform_origin(@var1:top,@var2:center){
+  transform-origin: @var1 @var2;
+  -moz-transform-origin: @var1 @var2;
+  -webkit-transform-origin: @var1 @var2;
+  -ms-transform-origin: @var1 @var2;
+}
+
+.border_radius(@radius:3px){
+  border-radius:@radius;
+  -moz-border-radius:@radius;
+  -webkit-border-radius:@radius;
+}
+
+.filter_frayscale(@value:1){
+	-o-filter: grayscale(@value);
+	-webkit-filter: grayscale(@value);
+	-moz-filter: grayscale(@value);
+	-ms-filter: grayscale(@value);
+	filter: grayscale(@value);
+}

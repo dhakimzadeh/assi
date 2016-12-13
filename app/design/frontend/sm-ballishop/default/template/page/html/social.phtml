@@ -1,0 +1,56 @@
+<?php 
+	$config = Mage::helper('ballishop/config');
+?>
+<div class="socials-wrap">
+	<div class="title-follow">
+		<?php echo $this->__('Follow Us')?>
+	</div>
+	
+	<ul>
+		<?php if( $config->getSocialSetting('show_facebook') == 1 ){ ?>
+			<li class="li-social facebook-social">
+				<a title="<?php echo $config->getSocialSetting('facebook_name')?>" href="<?php echo $config->getSocialSetting('facebook_url')?>" target="_blank">
+					<span class="fa fa-facebook icon-social"></span>
+					<span class="name-social"><?php echo $config->getSocialSetting('facebook_name')?></span>
+				</a>
+			</li>
+		<?php } ?>
+		
+		<?php if( $config->getSocialSetting('show_twitter') == 1 ){ ?>
+			<li class="li-social twitter-social">
+				<a title="<?php echo $config->getSocialSetting('twitter_name')?>" href="<?php echo $config->getSocialSetting('twitter_url')?>" target="_blank">
+					<span class="fa fa-twitter icon-social"></span>
+					<span class="name-social"><?php echo $config->getSocialSetting('twitter_name')?></span>
+				</a>
+			</li>
+		<?php } ?>
+		
+		<?php if( $config->getSocialSetting('show_google') == 1 ){ ?>
+			<li class="li-social google-social">
+				<a title="<?php echo $config->getSocialSetting('google_name')?>" href="<?php echo $config->getSocialSetting('google_url')?>" target="_blank">
+					<span class="fa fa-google-plus icon-social"></span>
+					<span class="name-social"><?php echo $config->getSocialSetting('google_name')?></span>
+				</a>
+			</li>
+		<?php } ?>
+		
+		<?php if( $config->getSocialSetting('show_linkedin') == 1 ){ ?>
+			<li class="li-social linkedin-social">
+				<a title="<?php echo $config->getSocialSetting('linkedin_name')?>" href="<?php echo $config->getSocialSetting('linkedin_url')?>" target="_blank">
+					<span class="fa fa-linkedin icon-social"></span>
+					<span class="name-social"><?php echo $config->getSocialSetting('linkedin_name')?></span>
+				</a>
+			</li>
+		<?php } ?>
+		
+		<?php if( $config->getSocialSetting('show_pinterest') == 1 ){ ?>
+			<li class="li-social pinterest-social">
+				<a title="<?php echo $config->getSocialSetting('pinterest_name')?>" href="<?php echo $config->getSocialSetting('pinterest_url')?>" target="_blank">
+					<span class="fa fa-pinterest icon-social"></span>
+					<span class="name-social"><?php echo $config->getSocialSetting('pinterest_name')?></span>
+				</a>
+			</li>
+		<?php } ?>
+	</ul>
+</div>    
+			

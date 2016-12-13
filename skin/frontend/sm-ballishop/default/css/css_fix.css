@@ -1,0 +1,11 @@
+/* HOME PAGE 6 */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .homestyle6 .service-top .service-item{
+		margin-top:0;
+	}
+	
+	.products-list .item .item-inner .box-info-list .actions .add-to-links{
+		position: relative;
+		top:-1px;
+	}
+}

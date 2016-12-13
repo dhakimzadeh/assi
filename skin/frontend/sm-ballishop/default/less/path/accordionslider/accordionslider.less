@@ -1,0 +1,274 @@
+.title_accor_header
+{
+	width: 100%;
+	margin: 10px;
+	text-align: center;
+	font-weight: bolder;
+	font-family: "Helvetica Neue", Verdana, Arial, sans-serif;
+}
+
+.accor
+{
+	bottom:0;
+	height:100px;
+	left:0;
+	position:absolute;
+	width:100%;
+	z-index:10;
+}
+.accor-closed, .accor-advan2-closed
+{
+	position: relative;
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 1px;
+		height: 100%;
+		background-color: #fff;
+		z-index: 1;
+	}
+	&:first-child {
+		&:before {
+			display: none;
+		}
+	}		
+}
+li.accor.accor-open {
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 1px;
+		height: 100%;
+		background-color: #fff;
+		z-index: 1;
+	}
+	&:first-child {
+		&:before {
+			display: none;
+		}
+	}	
+}
+
+.accor-closed img, .accor-advan2-closed img
+{
+    .filter_frayscale(1);
+	/*.transition(.3s);*/
+	&:hover {
+		.filter_frayscale(0);
+		/*.transition(.3s);*/
+	}
+}
+.accor strong
+{
+	color:#fff;
+	display:block;
+	margin-bottom:5px;
+	padding:10px 10px 0;
+	text-shadow:none;
+}
+
+.accor p
+{
+	color:#fff;
+	display:block;
+	font-size:14px;
+	padding:0 10px;
+	text-shadow:none;
+}
+
+.accor-closed {
+	.title_accor {
+		strong {
+			color: #fff;
+			font-size: 133%;
+			margin-bottom: 5px;
+			text-transform: uppercase;
+			font-weight: bold;		
+			.transition(.3s);
+			&:hover {
+				color: @color_theme;
+			}
+		}
+		p {
+			color: #fff;
+			font-style: italic;
+		}
+	}
+}
+
+.accor-open strong
+{
+	font-size: 333.33%;
+    text-transform: uppercase;
+	.transition(.3s);
+	&:hover {
+		color: @color_theme;
+	}	
+}
+.accor-open .title_accor p {
+	font-size: 116.67%;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.accor-advan2-closed p
+{
+	display:none;
+}
+
+.accor div.title_accor
+{
+	bottom:0;
+	left:0;
+	position:absolute;
+	width:100%;
+	z-index:10;
+}
+.accor.accor-open div.title_accor {
+    bottom: 34.3%;
+    left: 33.5%;
+}
+
+div.title_accor a
+{
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.accor-closed div.title_accor a, .accor-advan2-closed div.title_accor a
+{
+	text-decoration: none;
+}
+
+.accor .item-price
+{
+	margin: 0 10px;
+}
+
+.accor .price-box {
+	margin: 7px 0;
+	font-family: "Helvetica Neue", Verdana, Arial, sans-serif;
+}
+
+.accor .price-box .price {
+	color: #3399cc;
+	font-size: 16px;
+}
+
+.accor-advan2 div
+{
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	/*background-color:rgba(255,255,255,0.7);*/
+	border-radius:5px;
+	bottom:0;
+	margin:20px;
+	position:relative;
+	z-index:10;
+}
+.accor-advan2 h2
+{
+	font-size:14px;
+	margin-bottom:5px;
+}
+.accor-advan2 strong
+{
+	color:#FFFFFF;
+	font-size:11px;
+	text-shadow:none;
+}
+
+.accor-advan2-closed strong
+{
+	color:#000;
+	font-size:11px;
+	text-shadow:none;
+}
+.accor-advan2 p
+{
+	color:#000;
+	font-size:11px;
+	line-height:14px;
+	margin:0!important;
+	text-shadow:none;
+}
+
+@media (max-width: 1500px) {
+	.accor-open strong {
+		font-size: 474.07%;
+	}
+	.accor-open .title_accor p {
+		font-size: 165.93%;
+	}
+	.accor-closed, .accor-advan2-closed {
+		&:before {
+			width: 1.5px;
+			left: -0.2px;
+		}
+	}
+	.accor-closed .title_accor strong {
+		font-size: 170.67%;
+	}
+	.accor-closed .title_accor p {
+		font-size: 128%;
+		max-width: 273px;
+	}
+}
+@media (max-width: 1024px) {
+	.accor-open strong {
+		font-size: 524.07%;
+	}
+	.accor-open .title_accor p {
+		font-size: 205.93%;
+	}
+	.accor-closed, .accor-advan2-closed {
+		&:before {
+			width: 2px;
+		}
+	}
+	.accor-closed .title_accor strong {
+		font-size: 180.67%;
+	}
+	.accor-closed .title_accor p {
+		font-size: 148%;
+		max-width: 273px;
+	}
+}
+@media (max-width: 767px) {
+	.accor.accor-open div.title_accor {
+		left: 10%;
+	}
+	.accor-open strong {
+		font-size: 554.07%;
+	}
+	.accor-open .title_accor p {
+		font-size: 255.93%;
+	}
+	.accor-closed, .accor-advan2-closed {
+		&:before {
+			width: 3px;
+		}
+	}
+	.accor div.title_accor {
+		bottom: 120px;
+	}
+	.accor-closed .title_accor strong {
+		font-size: 250.67%;
+		max-width: 273px;
+	}
+	.accor-closed .title_accor p {
+		font-size: 258%;
+		max-width: 273px;
+	}
+}
+@media (max-width: 567px) {
+	.accor-closed, .accor-advan2-closed {
+		&:before {
+			width: 5px;
+		}
+	}
+}

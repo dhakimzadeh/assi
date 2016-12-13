@@ -1,0 +1,58 @@
+<?php
+/*------------------------------------------------------------------------
+ # Copyright (c) 2015 YouTech Company. All Rights Reserved.
+ # @license - Copyrighted Commercial Software
+ # Author: YouTech Company
+ # Websites: http://www.magentech.com
+-------------------------------------------------------------------------*/
+
+global $var_yttheme; 
+$config = Mage::helper('ballishop/config');
+?>
+<div id="cpanel_wrapper">
+	<div class="cpanel-head">
+		<span>Theme setting</span>
+		<div class="action cpanel-reset">
+			<a class="btn" href="#" onclick="javascript: onCPResetDefault(TMPL_COOKIE);">Reset</a>
+		</div>		
+	</div>
+	<div class="cpanel-content">
+		<!--Theme-->
+        <div class="item-cpanel-group cpanel-theme-color">
+            <div class="item-cpanel-heading">Theme Color</div>
+        	<div class="item-cpanel-theme">
+                <div class="item-cpanel-inner clearfix">
+					<div class="color-theme">
+						<a href="<?php echo $this->getUrl('?___store=default&amp;___from_store=french')?>" title="Red" class="theme-color red<?php echo ($config->getGeneral('theme_color')=='red')?' active':'';?>">Red</a>
+						<a href="<?php echo $this->getUrl('?___store=french&amp;___from_store=default')?>" title="Blue" class="theme-color blue<?php echo ($config->getGeneral('theme_color')=='blue')?' active':'';?>">Blue</a>
+						<a href="<?php echo $this->getUrl('?___store=german&amp;___from_store=default')?>" title="Green" class="theme-color green<?php echo ($config->getGeneral('theme_color')=='green')?' active':'';?>">Green</a>
+						<a href="<?php echo $this->getUrl('?___store=bolivia&amp;___from_store=default')?>" title="Pink" class="theme-color pink<?php echo ($config->getGeneral('theme_color')=='pink')?' active':'';?>">Pink</a>
+						<a href="<?php echo $this->getUrl('?___store=barbados&amp;___from_store=default')?>" title="Violet" class="theme-color violet<?php echo ($config->getGeneral('theme_color')=='violet')?' active':'';?>">Violet</a>
+					</div>
+				</div>
+			</div>
+        </div>
+		<!-- Menu -->
+		<div class="item-cpanel-group cpanel-menu">
+			<div class="item-cpanel-heading">Menu style</div>
+			<div class="item-cpanel-menu">
+				<div class="item-cpanel-inner clearfix">
+					<select onchange="javascript: onCPApply();" name="ytcpanel_menustyle" class="cp_select">
+						<option value="mega" <?php echo ($var_yttheme->getParam('menustyle')=='mega')?' selected="selected"':'';?>>Mega</option>
+						<option value="css" <?php echo ($var_yttheme->getParam('menustyle')=='css')?' selected="selected"':'';?>>Css</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="cpanel_btn" class="normal">
+		<i class="fa fa-hand-o-left"></i>
+	</div>
+</div>
+<script type="text/javascript">
+	jQuery(document).ready(function($){
+		$('.theme-color').click(function(){
+			$($(this).parent().find('.active')).removeClass('active'); $(this).addClass('active');
+		});
+	});
+</script>

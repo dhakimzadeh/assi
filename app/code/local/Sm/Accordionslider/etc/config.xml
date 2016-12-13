@@ -1,0 +1,174 @@
+<config>
+	<modules>
+		<Sm_Accordionslider>
+			<version>1.0.0</version>
+		</Sm_Accordionslider>
+	</modules>
+
+	<global>
+		<models>
+			<accordionslider>
+				<class>Sm_Accordionslider_Model</class>
+			</accordionslider>
+		</models>
+		<helpers>
+			<accordionslider>
+				<class>Sm_Accordionslider_Helper</class>
+			</accordionslider>
+		</helpers>
+		<blocks>
+			<accordionslider>
+				<class>Sm_Accordionslider_Block</class>
+			</accordionslider>
+		</blocks>
+	</global>
+
+	<frontend>
+		<routers>
+			<accordionslider>
+				<use>standard</use>
+				<args>
+					<module>Sm_Accordionslider</module>
+					<frontName>accordionslider</frontName>
+				</args>
+			</accordionslider>
+		</routers>
+		<layout>
+			<updates>
+				<accordionslider module="Sm_Accordionslider">
+					<file>sm/accordionslider.xml</file>
+				</accordionslider>
+			</updates>
+		</layout>
+	</frontend>
+
+	<adminhtml>
+		<events>
+			<core_block_abstract_to_html_after>
+				<observers>
+					<sm_accordionslider>
+						<type>singleton</type>
+						<class>accordionslider/observer</class>
+						<method>injectHtml</method>
+					</sm_accordionslider>
+				</observers>
+			</core_block_abstract_to_html_after>
+		</events>
+		<layout>
+			<updates>
+				<accordionslider module="Sm_Accordionslider">
+					<file>sm/accordionslider.xml</file>
+				</accordionslider>
+			</updates>
+		</layout>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<accordionslider translate="title" module="accordionslider">
+											<title>SM Accordion Slider</title>
+										</accordionslider>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</adminhtml>
+
+	<admin>
+		<routers>
+			<accordionslider>
+				<use>admin</use>
+				<args>
+					<module>Sm_Accordionslider</module>
+					<frontName>accordionslider</frontName>
+				</args>
+			</accordionslider>
+			<adminhtml>
+				<args>
+					<modules>
+						<Sm_Accordionslider before="Mage_Adminhtml">Sm_Accordionslider_Adminhtml</Sm_Accordionslider>
+					</modules>
+				</args>
+			</adminhtml>
+		</routers>
+	</admin>
+
+	<default>
+		<accordionslider>
+			<general>
+				<enabled>1</enabled>
+				<display_title_header>1</display_title_header>
+				<title>SM Accordion Slider</title>
+				<link_target>_self</link_target>
+				<select_type_slider>advanced1</select_type_slider>
+			</general>
+
+			<source_options>
+				<select_source>catalog</select_source>
+				<select_category></select_category>
+				<child_category>1</child_category>
+				<category_depth>1</category_depth>
+				<featured_product>0</featured_product>
+				<product_order_by>name</product_order_by>
+				<product_order_dir>ASC</product_order_dir>
+				<product_limitation>5</product_limitation>
+				<product_additem></product_additem>
+				<product_ids></product_ids>
+			</source_options>
+
+			<text_options>
+				<text_display_title>1</text_display_title>
+				<text_maxlength_title>25</text_maxlength_title>
+				<text_display_description>1</text_display_description>
+				<text_maxlength_description>150</text_maxlength_description>
+				<background_text>FFFFFF</background_text>
+				<text_price_display>1</text_price_display>
+				<text_reviews_count>1</text_reviews_count>
+				<text_addcart_display>1</text_addcart_display>
+				<text_addwishlist_display>1</text_addwishlist_display>
+				<text_addcompare_display>1</text_addcompare_display>
+			</text_options>
+
+			<image_options>
+				<display_image>1</display_image>
+				<img_from_product_image>1</img_from_product_image>
+				<img_from_product_description>1</img_from_product_description>
+				<img_order>product_image, product_description</img_order>
+				<img_resize>1</img_resize>
+				<img_width>1200</img_width>
+				<img_height>560</img_height>
+				<img_constrainonly>false</img_constrainonly>
+				<img_keepaspectratio>true</img_keepaspectratio>
+				<img_keepframe>true</img_keepframe>
+				<img_keeptransparency>true</img_keeptransparency>
+				<img_background>FFFFFF</img_background>
+				<img_replacement>sm/accordionslider/images/nophoto.jpg</img_replacement>
+			</image_options>
+
+			<effect_options>
+				<autoplay>1</autoplay>
+				<timeout>6000</timeout>
+				<tabwidth>100</tabwidth>
+				<startingslide>0</startingslide>
+				<speed>1200</speed>
+				<trigger>click</trigger>
+				<pause_hover>1</pause_hover>
+				<easing>swing</easing>
+			</effect_options>
+
+			<advanced>
+				<include_jquery>1</include_jquery>
+				<use_cache>1</use_cache>
+				<cache_time>3600</cache_time>
+			</advanced>
+		</accordionslider>
+	</default>
+</config>

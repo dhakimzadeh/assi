@@ -1,0 +1,248 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Vu Van Phan
+ * Date: 29-09-2015
+ * Time: 17:45
+ */
+$data_source = $this->_getSelectSource();
+
+if (!empty($data_source)) {
+	$count_item = count($data_source);
+
+	$helper = Mage::helper('accordionslider/data');
+
+	$display_title_header = $this->_getConfig('display_title_header', 1);
+	$display_title_header = $display_title_header ? true : false;
+	$title = $this->_getConfig('title');
+	$target = $this->_getConfig('link_target', '_self');
+	$type_slider = $this->_getConfig('select_type_slider', 'advanced1');
+
+	/* Config effect for accordionslide */
+	$pageID = Mage::getBlockSingleton('cms/page')->getPage()->getIdentifier();
+	$container = 'sm_accordionslider';
+	$slider_id = 'sm_accordionslider_'.$pageID.'_'.rand().'_'.time();
+	if($type_slider == 'advanced2')
+	{
+		$class = 'accor accor-advan2';
+	}
+	else
+	{
+		$class = 'accor';
+	}
+	$class_header_title = 'title_accor_header';
+	$class_bg_title = 'title_accor';
+
+	$slide_speed = $this->_getConfig('speed', 2000);
+	$width = $this->_getConfig('img_width');
+	$width = $width ? $width : null;
+	$height = $this->_getConfig('img_height');
+	$height = $height ? $height : null;
+
+	$auto_play = $this->_getConfig('autoplay', 1);
+	$auto_play = $auto_play ? 'true' : 'false';
+	$timeout = $this->_getConfig('timeout', 6000);
+
+	$tabwidth = $this->_getConfig('tabwidth', 100);
+	$tabwidth = $tabwidth ? $tabwidth : null;
+	$startingslide = (int)$this->_getConfig('startingslide', 0);
+	$startingslide = $startingslide ? $startingslide : 0;
+	$trigger = $this->_getConfig('trigger', 'click');
+
+	$pause_on_hover = $this->_getConfig('pause_hover', 1);
+	$pause_on_hover = $pause_on_hover ? 'true' : 'false';
+	/*$invert = $this->_getConfig('invert', 0);
+	$invert = $invert ? 'true' : 'false';
+	$errors = $this->_getConfig('errors', 0);
+	$errors = $errors ? 'true' : 'false';*/
+
+	$select_source = $this->_getConfig('select_source', 'catalog');
+
+	$display_title = $this->_getConfig('text_display_title', 1);
+	$leng_title = $this->_getConfig('text_maxlength_title', 25);
+	$color_title = $this->_getConfig('text_title_color', 'FFFFFF');
+	$color_title = $color_title ? 'color:#'.$color_title.';' : 'color:#FFFFFF;';
+	$style_title = "{$color_title}";
+
+	$display_description = $this->_getConfig('text_display_description', 1);
+	$leng_description = $this->_getConfig('text_maxlength_description', 150);
+	$color_description = $this->_getConfig('text_description_color', 'FFFFFF');
+	$color_description = $color_description ? 'color:#'.$color_description.';' : 'color:#FFFFFF;';
+	$style_description = "{$color_description}";
+
+	$background_text = $this->_getConfig('background_text', 'FFFFFF');
+	$background_text = $background_text ? 'background:#'.$background_text.';' : 'background:transparent;';
+	$easing = $this->_getConfig('easing', 'swing');
+
+	$display_image = $this->_getConfig('display_image', 1);
+
+	$height_background = $this->_getConfig('height_background', 100);
+	$height_background = $height_background ? $height_background : 100;
+	?>
+	<div id="<?php echo $slider_id; ?>" class="<?php echo $container; ?>">
+		<?php if($display_title_header){?>
+			<h3 class="<?php echo $class_header_title; ?>"><?php echo $title ?></h3>
+		<?php } ?>
+		<ul class="<?php echo $class; ?>">
+		<?php
+		switch($select_source)
+		{
+			case 'media':
+				foreach ($data_source as $ds)
+				{
+					?>
+					<li>
+						<?php if ($display_image){ ?>
+							<img src="<?php echo $ds->image ?>" alt="<?php echo $ds->title ?>" />
+						<?php } ?>
+						<?php if($type_slider != 'simple') { ?>
+							<div class="<?php echo $class_bg_title; ?>">
+								<?php if ($display_title){ ?>
+								<a href="<?php echo $ds->link ?>" title="<?php echo $ds->title ?>" <?php echo $helper->parseTarget($target); ?>><strong><?php echo $helper->truncate($ds->title, $leng_title); ?></strong></a>
+								<?php } ?>
+								<?php if ($display_description){ ?>
+									<p><a href="<?php echo $ds->link ?>" title="<?php echo $ds->title ?>" <?php echo $helper->parseTarget($target); ?>><?php echo $helper->truncate($ds->_description, $leng_description); ?></a></p>
+								<?php } ?>
+							</div>
+						<?php } ?>
+					</li>
+				<?php
+				}
+				break;
+			case 'catalog':
+			case 'ids':
+				foreach ($data_source as $ds)
+				{
+					?>
+					<li>
+						<?php if ($display_image){ ?>
+							<img src="<?php echo $ds->_image ?>" alt="" />
+						<?php } ?>
+						<?php if($type_slider != 'simple') { ?>
+							<div class="<?php echo $class_bg_title; ?>">
+								<?php if ($display_title){ ?>
+								<a href="<?php echo $ds->link ?>" title="<?php echo $ds->title ?>" <?php echo $helper->parseTarget($target); ?>><strong><?php echo $helper->truncate($ds->title, $leng_title); ?></strong></a>
+								<?php } ?>
+								<?php if ($display_description){ ?>
+									<p><a href="<?php echo $ds->link ?>" title="<?php echo $ds->title ?>" <?php echo $helper->parseTarget($target); ?>><?php echo $helper->truncate($ds->_description, $leng_description); ?></a></p>
+								<?php } ?>
+
+								<?php if ((int)$this->_getConfig('text_reviews_count', 1) && $ds->num_rating_summary != null ) { ?>
+									<div class="item-review">
+											<?php
+											$this->addReviewSummaryTemplate('sm', 'sm/accordionslider/default_summary.phtml');
+											echo $this->getReviewsSummaryHtml($ds, 'sm', false);
+											?>
+									</div>
+								<?php } ?>
+								<?php if ((int)$this->_getConfig('text_price_display', 1)) { ?>
+									<div class="item-price">
+										<div class="sale-price">
+												<?php echo $this->getPriceHtml($ds, true); ?>
+										</div>
+									</div>
+								<?php } ?>
+								<?php if ((int)$this->_getConfig('text_addcart_display', 1)) { ?>
+									<?php if ($ds->isSaleable()) { ?>
+										<p class="item-addcart">
+											<button type="button" title="<?php echo $this->__('Add to Cart') ?>"
+											        class="button btn-cart"
+											        onclick="setLocation('<?php echo $this->getAddToCartUrl($ds) ?>')">
+		                                            <span>
+		                                                <span>
+		                                                    <?php echo $this->__('Add to Cart') ?>
+		                                                </span>
+	                                                </span>
+											</button>
+										</p>
+									<?php } else { ?>
+										<p class="availability out-of-stock">
+	                                            <span>
+	                                                <?php echo $this->__('Out of stock') ?>
+	                                            </span>
+										</p>
+									<?php } ?>
+								<?php } ?>
+								<?php if ((int)$this->_getConfig('text_addwishlist_display', 1) || (int)$this->_getConfig('text_addcompare_display', 1)) { ?>
+									<ul class="add-to-links">
+										<?php if ((int)$this->_getConfig('text_addwishlist_display', 1)) { ?>
+											<?php if ($this->helper('wishlist')->isAllow()) { ?>
+												<li>
+													<p>
+														<a href="<?php echo $this->helper('wishlist')->getAddUrl($ds) ?>"
+														   class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?>
+														</a>
+													</p>
+												</li>
+											<?php } ?>
+										<?php } ?>
+										<?php if ((int)$this->_getConfig('text_addcompare_display', 1)) { ?>
+											<?php if ($_compareUrl = $this->getAddToCompareUrl($ds)) { ?>
+												<li>
+													<span class="separator">|</span>
+													<p>
+														<a href="<?php echo $_compareUrl ?>"
+														   class="link-compare"><?php echo $this->__('Add to Compare') ?>
+														</a>
+													</p>
+												</li>
+											<?php } ?>
+										<?php } ?>
+									</ul>
+								<?php } ?>
+
+							</div>
+						<?php } ?>
+					</li>
+				<?php
+				}
+				break;
+		}
+
+		?>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		//<![CDATA[
+		jQuery(document).ready(function ($) {
+			var id = $("#<?php echo $slider_id; ?>");
+			var accor = $('ul.accor', id);
+			accor.zAccordion({
+				auto: <?php echo $auto_play; ?>,
+				pause: <?php echo $pause_on_hover; ?>,
+				timeout: <?php echo $timeout; ?>,
+				easing: '<?php echo $easing; ?>',
+				tabWidth: <?php echo $tabwidth; ?>,
+				startingSlide: <?php echo $startingslide; ?>,
+				speed: <?php echo $slide_speed; ?>,
+				trigger: "<?php echo $trigger; ?>",
+				slideClass: '<?php echo $class; ?>',
+				animationStart: function () {
+					id.find('li.<?php echo $class; ?>-previous div.<?php echo $class_bg_title; ?>').fadeOut();
+
+					id.find('li.<?php echo $class; ?>-open div.<?php echo $class_bg_title; ?>').css('display', 'none');
+					id.find('li.<?php echo $class; ?>-previous div.<?php echo $class_bg_title; ?>').css('display', 'none');
+				},
+				animationComplete: function () {
+					id.find('li.<?php echo $class; ?>-open div.<?php echo $class_bg_title; ?>').fadeIn();
+
+					id.find('li div.<?php echo $class_bg_title; ?>').fadeIn(600);
+				},
+				buildComplete: function () {
+					id.find('li.<?php echo $class; ?>-open div.<?php echo $class_bg_title; ?>').fadeIn();
+				},
+				width: <?php echo $width; ?>,
+				height: <?php echo $height; ?>,
+				container: '<?php echo $slider_id; ?>',
+				classBgTitle: '<?php echo $class_bg_title; ?>',
+				heightTitle: <?php echo $height_background; ?>
+			});
+		});
+		//]]>
+	</script>
+	<?php
+}
+else
+{
+	echo $this->__('Has no item to show!');
+}

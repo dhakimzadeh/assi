@@ -1,0 +1,105 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+?>
+
+<?php
+	$config = Mage::helper('ballishop/config');
+	$show_newsletter = $config->getAdvanced('show_newsletter');
+	global $var_yttheme;
+?>
+
+<!--SHOW NEWSLETTER POPUP-->
+<?php 
+	if($show_newsletter){
+		echo $this->getChildHtml('popup.newsletter');
+	}
+?>
+
+<!--GO TO TOP-->
+<?php if($config->getAdvanced('show_ontop') == 1){ ?>
+	<?php if($config->getThemeLayout('footer_style') != 1){ ?>
+		<a id="yt-totop" href="javascript:void(0)" title="Go to Top"></a>
+		<script type="text/javascript">
+			jQuery(document).ready(function($){  
+				$("#yt-totop").hide();
+				$(function () {
+					var wh = $(window).height();
+					var whtml =  $(document).height();
+					$(window).scroll(function () {
+						if ($(this).scrollTop() > whtml/10) {
+							$('#yt-totop').fadeIn();
+						} else {
+							$('#yt-totop').fadeOut();
+						}
+					});
+					$('#yt-totop').click(function () {
+						$('body,html').animate({
+							scrollTop: 0
+						}, 800);
+						return false;
+					});
+				});
+			});
+		</script>
+	<?php } ?>
+<?php } ?>
+
+<!--CPANEL-->
+<?php if($config->getAdvanced('show_cpanel') == 1){
+	include (dirname(__FILE__).'/new_cpanel.phtml');
+} ?>
+
+<!--REMOVE PADDING TOP-->
+<script type="text/javascript">
+	jQuery(document).ready(function($){  
+		if($('.breadcrumbs').length > 0){
+			$('.sidebar, .col-main').css({'padding-top':'0'});
+		}
+	});
+</script>
+
+<?php
+	/* if($_COOKIE['color']==null){
+		$logoSrc = $this->getLogoSrc();
+	} else{
+		$skinUrl = $this->getSkinUrl();
+		$logoSrc = $skinUrl . 'images/' . $_COOKIE['color'] . '/logo.png';
+	}
+	
+	var_dump($logoSrc); */
+?>
+
+<?php
+	$headerStyle = $config->getThemeLayout('header_style');
+	include (dirname(__FILE__).'/header-style/header-' . $headerStyle . '.phtml');
+?>
+
+
+
+
