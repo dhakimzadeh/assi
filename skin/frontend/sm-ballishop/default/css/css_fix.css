@@ -240,7 +240,8 @@
 	text-align: center;
 	margin-bottom: 2em;
 	font-size: 1.4em;
-	transition: 0.5s all ease;
+	transition: 0.25s all ease;
+	font-weight: bold;
 }
 .dabawmb .video-buttons a:hover {
 	background: rgba(0,0,0,0.7);
@@ -255,10 +256,40 @@
 	display: block;
 
 }
-
+/* Deals wrapper */
 .full-wrapper.full-block-deals-wrapper {
 	background: url(../images/poddeals.jpg) no-repeat center top;
 }
+
+/* MegaMenu */
+.header-style-2 {
+	min-height: 160px;
+	border-bottom: 1px solid rgba(228,73,53,0.4);
+}
+
+.menu-under .menu-larger .sm_megamenu_wrapper_horizontal_menu {
+	font-family: Arial, Helvetica, Sans-serif;
+}
+.menu-under .menu-larger {
+	position: absolute;
+    right: 0;
+    top: 33px;
+}
+.menu-under .menu-larger .sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu > li.sm_megamenu_drop.parent > a {
+	padding: 0px 15px;
+}
+.sm_megamenu_wrapper_horizontal_menu ul.sm_megamenu_menu {
+}
+.menu-under .menu-larger .sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu.sm-megamenu-hover.css_effect > li:hover > div {
+	top: 48px;
+}
+
+.header-style-2 .searchbox-cart {
+	position: absolute;
+	right: 0;
+	top: -15px;
+}
+
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     .homestyle6 .service-top .service-item{
