@@ -283,13 +283,21 @@
 .menu-under .menu-larger .sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu.sm-megamenu-hover.css_effect > li:hover > div {
 	top: 48px;
 }
-
+.sambar .sm-megamenu-child .sm_megamenu_firstcolumn .sm_megamenu_firstcolumn {
+	clear: left;
+}
+.sambar .sm-megamenu-child .sm_megamenu_right {
+	padding-left: 5em;
+}
 .header-style-2 .searchbox-cart {
 	position: absolute;
 	right: 0;
 	top: -15px;
 }
 
+.menu-under .menu-larger .sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu > li.sm_megamenu_actived > a, .menu-under .menu-larger .sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu > li:hover > a {
+	color: #ff7300;
+}
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     .homestyle6 .service-top .service-item{
