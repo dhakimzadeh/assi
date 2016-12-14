@@ -218,6 +218,48 @@
   display: none;
 }
 
+.cms-index-index .main-container .container .col-lg-12 {
+	padding: 0 0 0 0;
+}
+
+.dabawmb {
+	position: relative;
+	border-bottom: 1px solid #fff;
+}
+.dabawmb .video-buttons {
+	position: absolute;
+	top: 40%;
+	left: 20%;
+}
+.dabawmb .video-buttons a {
+	background: rgba(0,0,0,0.3);
+	border: 3px solid #999;
+	border-radius: 20px;
+	padding: 1em 1.5em;
+	color: #fff;
+	text-align: center;
+	margin-bottom: 2em;
+	font-size: 1.4em;
+	transition: 0.5s all ease;
+}
+.dabawmb .video-buttons a:hover {
+	background: rgba(0,0,0,0.7);
+	color: #FF8C00;
+	border: 3px solid #FF8C00;
+}
+.dabawmb a.watch {
+	display: block;
+
+}
+.dabawmb a.buy {
+	display: block;
+
+}
+
+.full-wrapper.full-block-deals-wrapper {
+	background: url(../images/poddeals.jpg) no-repeat center top;
+}
+
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     .homestyle6 .service-top .service-item{
         margin-top:0;
@@ -227,3 +269,15 @@
         top:-1px;
     }
 }
+
+@media (min-width: 1200px) {
+	.wrapper {
+		left: 0 !important;
+    }
+    
+    .col-main .container {
+     	width: 100vw !important;
+      	max-width: 2800px !important;
+	}
+}
+	  	          	              	                
