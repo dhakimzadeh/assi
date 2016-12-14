@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @category    design
+ * @package     default_default
+ * @author      Zestard Magento Team
+ */
+-->
+
+<layout version="0.1.0">
+    <adminhtml_customerattribute_index>
+        <reference name="content">
+            <block type="zestard_customerattribute/adminhtml_customerattribute" name="customerattribute.grid.container" />
+        </reference>
+    </adminhtml_customerattribute_index>
+
+    <adminhtml_customerattribute_edit>
+       <reference name="js">
+            <block type="adminhtml/template" name="zestard_customerattribute_edit_js" template="zestard_customerattribute/attribute/js.phtml"></block>
+        </reference>
+    </adminhtml_customerattribute_edit>
+</layout>

@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Customer Attribute frontend layout file
+ *
+ * @category    design
+ * @package     base_default
+ * @author      Zestard Magento Team
+ */
+-->
+<layout version="0.1.0">
+
+    <customer_account_create translate="label">
+        <reference name="head">
+            <action method="addItem"><type>js_css</type><name>calendar/calendar-win2k-1.css</name><params/></action>
+            <action method="addItem"><type>js</type><name>calendar/calendar.js</name></action>
+            <action method="addItem"><type>js</type><name>calendar/calendar-setup.js</name></action>
+        </reference>
+
+        <reference name="customer_form_register">
+            <action method="setTemplate" ifconfig="zestard_customerattribute/customerattribute_group/enable">
+                <template>zestard/customerattribute/form/register.phtml</template>
+            </action>
+        </reference>
+
+        <reference name="before_body_end">
+            <block type="core/html_calendar" name="html_calendar" as="html_calendar" template="page/js/calendar.phtml" ifconfig="zestard_customerattribute/customerattribute_group/enable"/>
+        </reference>
+    </customer_account_create>
+
+    <customer_account_edit translate="label">
+        <reference name="head">
+            <action method="addItem"><type>js_css</type><name>calendar/calendar-win2k-1.css</name><params/></action>
+            <action method="addItem"><type>js</type><name>calendar/calendar.js</name></action>
+            <action method="addItem"><type>js</type><name>calendar/calendar-setup.js</name></action>
+        </reference>
+
+        <block name="customer_edit">
+            <action method="setTemplate" ifconfig="zestard_customerattribute/customerattribute_group/enable">
+                <template>zestard/customerattribute/form/edit.phtml</template>
+            </action>
+        </block>
+
+        <reference name="before_body_end">
+            <block type="core/html_calendar" name="html_calendar" as="html_calendar" template="page/js/calendar.phtml" ifconfig="zestard_customerattribute/customerattribute_group/enable"/>
+        </reference>
+    </customer_account_edit>
+    <checkout_onepage_index>
+        <reference name="checkout.onepage.billing">
+            <action method="setTemplate" ifconfig="zestard_customerattribute/customerattribute_group/enable">
+                <template>zestard/customerattribute/checkout/onepage/billing.phtml</template>
+            </action>
+        </reference>
+    </checkout_onepage_index>
+</layout>

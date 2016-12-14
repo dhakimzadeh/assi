@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    Zestard
+ * @package     Zestard_Customerattribute
+ * @author      Zestard Magento Team
+ */
+-->
+<config>
+    <modules>
+        <Zestard_Customerattribute>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Checkout />
+            </depends>
+        </Zestard_Customerattribute>
+    </modules>
+</config>

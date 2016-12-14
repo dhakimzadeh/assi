@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <tabs>
+        <zestard translate="label" module="zestard_customerattribute">
+            <label>
+                <![CDATA[
+                    <div style="margin-left: -10px;position: absolute;width: 200px;display: inline-block;">
+                        <a style="background:transparent;text-align:left;" onclick="redirectSite(event,this)"><img id="zestard_block" src="" alt="ZESTARD" style="float:left;height: 25px;margin-top: -5px;width: 55%;" border="0"/> &nbsp;Extensions</a>
+                    </div>&nbsp;
+                    <script>
+                        function redirectSite(event,obj){
+                        event.preventDefault();
+                        event.stopPropagation();
+                        window.open("http://www.zestard.com/", '_blank');
+                       }
+                       document.observe('dom:loaded', function() {
+                            var n = SKIN_URL.indexOf("adminhtml");
+                            $('zestard_block').src = SKIN_URL.substring(0, n) + "adminhtml/default/default/images/customerattribute/zestard-logo.png";
+                        });
+                    </script>
+                ]]>
+            </label>
+            <sort_order>0</sort_order>
+        </zestard>
+    </tabs>
+    <sections>
+        <zestard_customerattribute translate="label" module="zestard_customerattribute">
+            <label>Customer Attribute</label>
+            <tab>zestard</tab>
+            <sort_order>120</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <customerattribute_group translate="label" module="zestard_customerattribute">
+                    <label>General</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enable translate="label">
+                            <label>Enabled </label>
+                            <comment>Module Enable or Disable</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                                            
+                        </enable>
+                        <add_in_customer_registration translate="label">
+                            <label>Add Extra Attributes under Customer Registration Email </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </add_in_customer_registration>
+                        <add_in_order_confirmation translate="label">
+                            <label>Add Extra Attributes under Order Confirmation Email </label>                            
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </add_in_order_confirmation>
+                        <note translate="label">
+                            <label>Note </label>                            
+                            <frontend_type>label</frontend_type> 
+                            <comment>Place this shortcode in your custom email template</comment>                           
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </note>
+                    </fields>
+                </customerattribute_group>
+            </groups>
+        </zestard_customerattribute>
+    </sections>
+</config>
