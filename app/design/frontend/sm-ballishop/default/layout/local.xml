@@ -312,5 +312,14 @@
 			</block>
         </reference>	
 	</checkout-onepage-success>
+
+
+	<!-- HOMEPAGE UPDATES -->
+
+	<cms_index_index>
+		<reference name="head">
+			<action method="addItem"><type>skin_js</type><name>js/jquery.elevatezoom.js</name></action>
+		</reference>
+	</cms_index_index>
 	
 </layout>
