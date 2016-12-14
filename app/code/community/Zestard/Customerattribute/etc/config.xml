@@ -48,6 +48,7 @@
             </customer_company_url>
             <customer_pay_email/>
             <customer_how_promote/>
+            <customer_middlename/>
          </checkout_onepage_quote>
          <customer_account>
             <referral>
@@ -58,6 +59,7 @@
             </company_url>
             <pay_email/>
             <how_promote/>
+            <middlename/>
          </customer_account>
       </fieldsets>
    </global>

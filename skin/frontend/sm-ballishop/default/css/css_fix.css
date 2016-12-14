@@ -298,6 +298,32 @@
 .menu-under .menu-larger .sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu > li.sm_megamenu_actived > a, .menu-under .menu-larger .sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu > li:hover > a {
 	color: #ff7300;
 }
+.bd-header-2 .main-container .main > .container > .row > div .page-title.category-title {
+	background: rgba(0,0,0,0.8);
+	padding: 0.5em 1em;
+	border: 1px solid #000;
+	border-radius: 5px;
+	float: left;
+	width: auto;
+}
+.bd-header-2 .main-container .main > .container > .row > div .page-title.category-title h1 {
+	color: #ff7300;
+	font-family: Arial, Helvetica, Sans-serif;
+	font-weight: bold;
+}
+.bd-header-2 .main-container .col-main .product-view .product-essential .product-name {
+	background: rgba(0,0,0,0.8);
+	padding: 0.5em 1em;
+	border: 1px solid #000;
+	border-radius: 5px;
+	left: 0%;
+}
+.bd-header-2 .main-container .col-main .product-view .product-essential .product-name h2 {
+	color: #ff7300;
+	font-family: Arial, Helvetica, Sans-serif;
+	font-weight: bold;
+}
+
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     .homestyle6 .service-top .service-item{
