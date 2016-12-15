@@ -489,6 +489,9 @@ ol {
 .home-menu-dropdown .item-home-store.theme-color li.pink a:before {
   background-color: #eb58ca;
 }
+.home-menu-dropdown .item-home-store.theme-color li.orange a:before {
+  background-color: ##ff7400;
+}
 .home-menu-dropdown .item-home-store.theme-color li.violet a:before {
   background-color: #a358e9;
 }

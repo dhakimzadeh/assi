@@ -14,9 +14,9 @@ class Sm_Ballishop_Model_System_Config_Source_ListColor
 		return array(
 		array('value'=>'red', 'label'=>Mage::helper('ballishop')->__('Red')),
 		array('value'=>'blue', 'label'=>Mage::helper('ballishop')->__('Blue')),
-		array('value'=>'pink', 'label'=>Mage::helper('ballishop')->__('Pink')),
+		array('value'=>'orange', 'label'=>Mage::helper('ballishop')->__('Orange')),
 		array('value'=>'green', 'label'=>Mage::helper('ballishop')->__('Green')),
-		array('value'=>'violet', 'label'=>Mage::helper('ballishop')->__('Violet'))
+		array('value'=>'tan', 'label'=>Mage::helper('ballishop')->__('Tan'))
 		);
 	}
 }
