@@ -13,7 +13,7 @@
     <!-- create menu link for credit in customer account -->
 	<customer_account translate="label">        
         <reference name="customer_account_navigation">
-            <action method="addLink" translate="label" ifconfig="affiliate/config/enabled"><name>affiliate</name><path>affiliate/index/index/</path><label>My Affiliate Account</label></action>
+			<action method="addLink" translate="label" ifconfig="affiliate/config/enabled"><name>affiliate</name><path>affiliate/index/index/</path><label>My Affiliate Account</label><position>20</position></action>
         </reference>
     </customer_account>
     <customer_account_create>
