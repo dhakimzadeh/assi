@@ -80,4 +80,16 @@ $mageRunCode = isset($_SERVER['MAGE_RUN_CODE']) ? $_SERVER['MAGE_RUN_CODE'] : ''
 /* Run store or run website */
 $mageRunType = isset($_SERVER['MAGE_RUN_TYPE']) ? $_SERVER['MAGE_RUN_TYPE'] : 'store';
 
+
+ob_start();
 Mage::run($mageRunCode, $mageRunType);
+
+if(preg_match('/api/', $_SERVER['REQUEST_URI'])) {
+	        Mage::log('<<< request '.$_SERVER['REQUEST_METHOD'].': '.$_SERVER['REQUEST_URI'], null, 'api.log');
+			        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+						                Mage::log('<<< '.file_get_contents('php://input'), null, 'api.log');
+										        }
+			        Mage::log('>>> '.ob_get_contents(), null, 'api.log');
+}
+
+ob_end_flush();
