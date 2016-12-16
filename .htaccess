@@ -184,6 +184,7 @@
 ## Add default Expires header
 ## http://developer.yahoo.com/performance/rules.html#expires
 
+	ExpiresActive On
     ExpiresDefault "access plus 1 year"
 
 </IfModule>
