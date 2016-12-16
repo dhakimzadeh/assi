@@ -46,6 +46,9 @@
             <customer_company_url>
                <to_customer>company_url</to_customer>
             </customer_company_url>
+            <customer_pay_email/>
+            <customer_how_promote/>
+            <customer_middlename/>
          </checkout_onepage_quote>
          <customer_account>
             <referral>
@@ -54,8 +57,11 @@
             <company_url>
                <to_quote>customer_company_url</to_quote>
             </company_url>
+            <pay_email/>
+            <how_promote/>
+            <middlename/>
          </customer_account>
-      </fieldsets>      
+      </fieldsets>
    </global>
    <frontend>
       <layout>
