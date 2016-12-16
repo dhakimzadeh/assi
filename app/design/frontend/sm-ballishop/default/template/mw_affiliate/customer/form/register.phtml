@@ -94,6 +94,14 @@
             <input type="hidden" name="success_url" value="<?php echo $this->getSuccessUrl() ?>" />
             <input type="hidden" name="error_url" value="<?php echo $this->getErrorUrl() ?>" />
             <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+            <?php if($show_signup_affiliate == 1){?>
+                <li class="control">
+                    <div class="input-box">
+                        <input type="checkbox" id="check_affiliate" <?php if($check == true) echo 'checked="checked"';?> name="check_affiliate" title="<?php echo $this->__('Sign up for our Affiliate Program') ?>" class="checkbox" />
+                    </div>
+                    <label for="check_affiliate" ><?php echo $this->__('Sign up for our Affiliate Program') ?></label>
+                </li>
+            <?php }?>
             <h2 class="legend"><?php echo $this->__('Personal Information') ?></h2>
             <ul class="form-list">
                 <li class="fields">
@@ -125,14 +133,7 @@
                     <label for="is_subscribed"><?php echo $this->__('Sign Up for Newsletter') ?></label>
                 </li>
                 <?php endif ?>
-                <?php if($show_signup_affiliate == 1){?>
-                <li class="control">
-                    <div class="input-box">
-                        <input type="checkbox" id="check_affiliate" <?php if($check == true) echo 'checked="checked"';?> name="check_affiliate" title="<?php echo $this->__('Sign up for our Affiliate Program') ?>" class="checkbox" />
-                    </div>
-                    <label for="check_affiliate" ><?php echo $this->__('Sign up for our Affiliate Program') ?></label>
-                </li>
-                <?php }?>
+
             <?php $_dob = $this->getLayout()->createBlock('customer/widget_dob') ?>
             <?php if ($_dob->isEnabled()): ?>
                 <li><?php echo $_dob->setDate($this->getFormData()->getDob())->toHtml() ?></li>
